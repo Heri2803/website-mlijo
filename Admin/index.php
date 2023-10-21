@@ -1,8 +1,8 @@
-<?php 
-include "./config/koneksi.php";
-?>
 <!doctype html>
-<html class="no-js" lang="">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,7 @@ include "./config/koneksi.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
@@ -27,8 +28,7 @@ include "./config/koneksi.php";
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
    <style>
     #weatherWidget .currentDesc {
@@ -73,16 +73,18 @@ include "./config/koneksi.php";
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="index.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                         <hr class="sidebar-divider my-0 w-100">
 
 
                     <li class="menu-title">Menu</li><!-- /.menu-title -->
+                    <li> 
+                        <a href="index.php?banner"> <i class="menu-icon fa fa-image"></i>Banner</a>
+                    </li>
                     <li>
-                        <a href="kategori_produk.php"> <i class="menu-icon fa fa-list"></i>Kategori Produk </a>
-                        <!-- <a href="index.php?kategori_produk"> <i class="menu-icon fa fa-list"></i>Kategori Produk </a> -->
+                        <a href="index.php?kategori_produk"> <i class="menu-icon fa fa-list"></i>Kategori Produk </a>
                     </li>
                     <li> 
                         <a href="index.php?produk"> <i class="menu-icon fa fa-cubes"></i>Produk </a>
@@ -91,15 +93,17 @@ include "./config/koneksi.php";
                         <a href="index.php?pembelian"> <i class="menu-icon fa fa-shopping-cart"></i>Pembelian</a>
                     </li>   
                     <li>
-                        <a href="index.php?pelanggan"> <i class="menu-icon fa fa-users"></i>Pelanggan</a>
+                        <a href="index1.php?pelanggan"> <i class="menu-icon fa fa-users"></i>Pelanggan</a>
                     </li> 
                     <li>
-                        <a href="index.php?laporan"> <i class="menu-icon fa fa-bar-chart"></i>Laporan</a>
+                        <a href="index1.php?laporan"> <i class="menu-icon fa fa-bar-chart"></i>Laporan</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
         <!-- Header-->
         <header id="header" class="header">
@@ -113,6 +117,7 @@ include "./config/koneksi.php";
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
                             <form class="search-form">
                                 <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
@@ -204,17 +209,40 @@ include "./config/koneksi.php";
                 </div>
             </div>
         </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <div class="content">
+        <?php 
+        
+        if(isset($_GET['banner']))
 
+        {
+            include'banner.php';
+        }
 
-        <!-- Begin Page Container -->
+        else
+        
+        {
+            include'dashboard.php';
+        }
+        
+        ?>
+        </div>
+        <!-- /.content -->
+        <div class="clearfix"></div>
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Mlijo Team 2023</span>
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; Mlijo Team
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        Designed by <a href="https://www.instagram.com/agiprasetyo_/">Mlijo Team</a>
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
         <!-- /.site-footer -->
     </div>
     <!-- /#right-panel -->
@@ -225,6 +253,17 @@ include "./config/koneksi.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="assets/js/init/datatables-init.js"></script>
 
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
