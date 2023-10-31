@@ -10,7 +10,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: 100vh;
+<<<<<<< HEAD:Login/style1.css
     background: #8a9a58;
+=======
+    background: #8a9a58 ;
+>>>>>>> 7e3b95e7fd59f08f6cff56b2a2d9fdb98260f73d:Login/style.css
 }
 
 .container{
