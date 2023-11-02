@@ -11,7 +11,7 @@
     }
     ?>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mt-3">
             <div class="card">
                 <div class="card-header py-3">
                     <strong class="card-title">Data Kategori Produk</strong>
