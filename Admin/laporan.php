@@ -68,7 +68,10 @@
 </div>
 
 <!-- <div class="alert alert-primary shadow mt-3"></div> -->
-<a href="#" class="btn btn-success">
-    <i class="fa fa-download" style="margin-left: 5px;"></i>
-    Download
+
+<a href="index.php?kategori_produk" class="btn btn-sm btn-danger" style="float: left;">
+    <i class="fa fa-chevron-left"></i>kembali
+</a>
+<a href="" class="btn btn-sm btn-success" style="float: right;">
+    <i class="fa fa-download"></i>download
 </a>
