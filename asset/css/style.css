@@ -19,6 +19,7 @@ body{
     line-height: 1.42857143;
     color: #333333;
     background: #f0f0f0;
+    margin-bottom: 100px;
 }
 @media(max-width: 991px){
     body{
@@ -91,6 +92,9 @@ body{
     border-bottom: 2px solid #3cb371;
     margin-bottom: 20px;
 }
+#navbar .navbar-nav{
+    margin-top: 5px;
+}
 #navbar .navbar-brand a{
     font-family: bold;
     font-size: 26px;
@@ -121,7 +125,6 @@ body{
 @media(max-width: 991px){
     #navbar .navbar-brand{
         line-height: 20px;
-        margin-bottom: 10px;
     }
     #navabar .navbar-brand a{
         font-size: 20px;
@@ -196,7 +199,7 @@ body{
     border: 1px solid #e6e6e6;
     padding: 10px;
     border-radius: 5px 5px 5px 5px;
-    box-sizing: content-box;
+    box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
 }
 #advantags .card-box{
@@ -229,9 +232,6 @@ body{
     z-index: 2;
 }
 @media(max-width: 991px){
-    #advantags .box{
-        margin-bottom: 0px;
-    }
     #advantags .card-box{
         width: 80%;
         height: 80%;
@@ -243,5 +243,8 @@ body{
     }
     #advantags .card-box h3{
         font-size: 20px;
+    }
+    #advantags .card-box p{
+        margin-bottom: 20px;
     }
 }

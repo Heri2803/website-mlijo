@@ -138,7 +138,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-4 box">
+                <div class="col-md-4 ">
                     <div class="card-box">
                         <div class="icon">
                             <i class="fas fa-heart"></i>
@@ -151,7 +151,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 box">
+                <div class="col-md-4 ">
                 <div class="card-box">
                         <div class="icon">
                             <i class="fas fa-tags"></i>
@@ -162,7 +162,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 box">
+                <div class="col-md-4 ">
                 <div class="card-box">
                         <div class="icon">
                             <i class="fas fa-thumbs-up"></i>
@@ -178,6 +178,13 @@
     </div>
     <!-- advantags end -->
 
+    <div id="terbaru">
+        <div class="col-md-12">
+            <div class="card-box">
+                <h2>Sayur Segar Hari Ini</h2>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Bootstrap core JavaScript-->
