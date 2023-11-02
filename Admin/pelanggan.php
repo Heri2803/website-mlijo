@@ -1,7 +1,18 @@
 <div class="animated fadeIn">
+
+    <?php
+
+    $pelanggan = array();
+    $ambil = $koneksi->query("select * from pelanggan");
+    while ($pecah = $ambil->fetch_assoc()) {
+        $pelanggan[] = $pecah;
+    }
+
+    ?>
+
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-12 mt-3">
             <div class="card">
                 <div class="card-header py-3">
                     <strong class="card-title">Data Pelanggan</strong>
@@ -19,29 +30,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td width="50">1</td>
-                                <td>
-                                    x
-                                </td>
-                                <td>
-                                    x
-                                </td>
-                                <td>
-                                    x
-                                </td>
-                                <td>
-                                    <img src="../images/admin.jpg" class="img-responsive" width="150">
-                                </td>
-                                <td class="text center" width="15">
-                                    <a href="index.php?detail_pembelian" class="btn btn-sm btn-danger">
-                                        <i class="fa fa-trash"></i>Hapus
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php foreach ($pelanggan as $key => $value): ?>
+
+                                <tr>
+                                    <td width="50">
+                                        <?php echo $key + 1; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $value['nama_pelanggan']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $value['email_pelanggan']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $value['telepon_pelanggan']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $value['foto_pelanggan'] ?>
+                                    </td>
+                                    <td class="text center" width="15">
+                                        <a href="#" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-trash"></i>Hapus
+                                        </a>
+                                    </td>
+                                </tr>
 
 
-                            </tr>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
