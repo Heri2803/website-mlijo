@@ -143,7 +143,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-4 box">
+                <div class="col-md-4 ">
                     <div class="card-box">
                         <div class="icon">
                             <i class="fas fa-heart"></i>
@@ -161,11 +161,11 @@
                 </div>
 
                 <div class="col-md-4 box">
-                    <div class="card-box">
+                <div class="card-box">
                         <div class="icon">
                             <i class="fas fa-tags"></i>
                         </div>
-                        <h3>Segera Pesan</h3>
+                        <h3>Segera Pesan Sekarang</h3>
                         <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat
                             salad dengan saus gurih creamy dan enak rasanya.
                             Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman,
@@ -174,7 +174,7 @@
                 </div>
 
                 <div class="col-md-4 box">
-                    <div class="card-box">
+                <div class="card-box">
                         <div class="icon">
                             <i class="fas fa-thumbs-up"></i>
                         </div>
@@ -192,6 +192,100 @@
     </div>
     <!-- advantags end -->
 
+    <!-- terbaru -->
+    <div id="terbaru">
+        <div class="col-md-12">
+            <div class="card-box">
+                <h2>Sayur Segar Hari Ini</h2>
+            </div>
+        </div>
+    </div>
+    <!-- terbaru end -->
+
+    <!-- content produk start -->
+    <div id="content">
+        <div class="container">
+            <div  class="row">
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content produk end -->
+
+    <!-- footer start -->
+    <?php include 'includes/footer.php'?>
+    <!-- footer End -->
 
 
     <!-- Bootstrap core JavaScript-->
