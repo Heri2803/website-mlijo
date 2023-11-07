@@ -54,11 +54,14 @@
             <!-- navbar brand end -->
             <!-- btn navbar start -->
             <div class="btn-navbar">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-search"></i>
                 </button>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-list"></i>
                 </button>
@@ -89,7 +92,8 @@
                         <div class="input-group">
                             <input type="search" name="keyword" class="form-control" placeholder="search" required>
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" name="keyword" value="search" type="submit"><i class="fas fa-search"></i></button>
+                                <button class="btn btn-primary" name="keyword" value="search" type="submit"><i
+                                        class="fas fa-search"></i></button>
                             </span>
                         </div>
                     </form>
@@ -98,7 +102,8 @@
                 <!-- btn search start -->
                 <div class="btn-search">
                     <div class="collapse navbar-collapse">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#search">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#search">
                             <span class="toggler"></span>
                             <i class="fas fa-search"></i>
                         </button>
@@ -144,33 +149,42 @@
                             <i class="fas fa-heart"></i>
                         </div>
                         <h3>Sayur Segar Setiap Hari</h3>
-                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat salad dengan saus gurih creamy dan enak rasanya.
-                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman, buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.
-                            Bisa dimakan begitu saja atau diolah menjadi salad. Buah segar bisa dipadukan dengan sayuran agar rasanya lebih enak dan nutrisinya lebih lengkap mencukupi kebutuhan tubuh.
-                            Baca artikel detikfood, "Resep Salad Sayur dan Buah, Praktis Menyegarkan Cocok Untuk Udara Panas".</p>
+                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat
+                            salad dengan saus gurih creamy dan enak rasanya.
+                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman,
+                            buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.
+                            Bisa dimakan begitu saja atau diolah menjadi salad. Buah segar bisa dipadukan dengan sayuran
+                            agar rasanya lebih enak dan nutrisinya lebih lengkap mencukupi kebutuhan tubuh.
+                            Baca artikel detikfood, "Resep Salad Sayur dan Buah, Praktis Menyegarkan Cocok Untuk Udara
+                            Panas".</p>
                     </div>
                 </div>
 
-                <div class="col-md-4 ">
+                <div class="col-md-4 box">
                 <div class="card-box">
                         <div class="icon">
                             <i class="fas fa-tags"></i>
                         </div>
-                        <h3>Segera Pesan</h3>
-                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat salad dengan saus gurih creamy dan enak rasanya.
-                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman, buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.</p>
+                        <h3>Segera Pesan Sekarang</h3>
+                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat
+                            salad dengan saus gurih creamy dan enak rasanya.
+                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman,
+                            buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.</p>
                     </div>
                 </div>
 
-                <div class="col-md-4 ">
+                <div class="col-md-4 box">
                 <div class="card-box">
                         <div class="icon">
                             <i class="fas fa-thumbs-up"></i>
                         </div>
                         <h3>Permudah Hidup Anda</h3>
-                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat salad dengan saus gurih creamy dan enak rasanya.
-                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman, buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.
-                            Bisa dimakan begitu saja atau diolah menjadi salad. Buah segar bisa dipadukan dengan sayuran agar rasanya lebih enak dan nutrisinya lebih lengkap mencukupi kebutuhan tubuh.</p>
+                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat
+                            salad dengan saus gurih creamy dan enak rasanya.
+                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman,
+                            buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.
+                            Bisa dimakan begitu saja atau diolah menjadi salad. Buah segar bisa dipadukan dengan sayuran
+                            agar rasanya lebih enak dan nutrisinya lebih lengkap mencukupi kebutuhan tubuh.</p>
                     </div>
                 </div>
             </div>
@@ -178,6 +192,7 @@
     </div>
     <!-- advantags end -->
 
+    <!-- terbaru -->
     <div id="terbaru">
         <div class="col-md-12">
             <div class="card-box">
@@ -185,12 +200,100 @@
             </div>
         </div>
     </div>
+    <!-- terbaru end -->
+
+    <!-- content produk start -->
+    <div id="content">
+        <div class="container">
+            <div  class="row">
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content produk end -->
+
+    <!-- footer start -->
+    <?php include 'includes/footer.php'?>
+    <!-- footer End -->
 
 
     <!-- Bootstrap core JavaScript-->
     <script src="/asset/vendor/jquery/jquery.min.js"></script>
     <script src="/asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <!-- Core plugin JavaScript-->
     <script src="/asset/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
