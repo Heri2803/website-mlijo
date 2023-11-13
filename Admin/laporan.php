@@ -9,8 +9,10 @@
 
                 <div class="col-md-4">
                     <div class="form-group row">
-                        <label for="col-sm-3 col-form-label" class="col-sm-3 col-form-label text-end">Mulai :</label>
-                        <div class="col-sm-9">
+                        <div class="col-sm-4">
+                            <label for="" class="col-form-label text-end">Mulai :</label>
+                        </div>
+                        <div class="col-sm-8 text-left">
                             <input type="date" name="tglm" class="form-control">
                         </div>
                     </div>
@@ -18,14 +20,16 @@
 
                 <div class="col-md-4">
                     <div class="form-group row">
-                        <label for="col-sm-3 col-form-label" class="col-sm-3 col-form-label text-end">Sampai :</label>
-                        <div class="col-sm-9">
+                        <div class="col-sm-4">
+                            <label for="" class="col-form-label text-end">Sampai :</label>
+                        </div>
+                        <div class="col-sm-8">
                             <input type="date" name="tgls" class="form-control">
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-1">
+                <div class="col-md-4">
                     <button name="cari" class="btn btn-primary" type="submit">
                         <i class="fa fa-search"></i>
                     </button>
@@ -39,7 +43,7 @@
 <div class="card shadow bg-white">
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped" id="tables">
+            <table id="bootstrap-data-table" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -69,9 +73,6 @@
 
 <!-- <div class="alert alert-primary shadow mt-3"></div> -->
 
-<a href="index.php?kategori_produk" class="btn btn-sm btn-danger" style="float: left;">
-    <i class="fa fa-chevron-left"></i>kembali
-</a>
 <a href="" class="btn btn-sm btn-success" style="float: right;">
     <i class="fa fa-download"></i>download
 </a>

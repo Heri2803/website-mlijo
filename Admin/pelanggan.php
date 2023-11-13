@@ -49,7 +49,8 @@
                                         <?php echo $value['foto_pelanggan'] ?>
                                     </td>
                                     <td class="text center" width="15">
-                                        <a href="#" class="btn btn-sm btn-danger">
+                                        <a href="index.php?hapus_pelanggan=<?php echo $value['id_pelanggan']; ?>"
+                                            class="btn btn-sm btn-danger">
                                             <i class="fa fa-trash"></i>Hapus
                                         </a>
                                     </td>

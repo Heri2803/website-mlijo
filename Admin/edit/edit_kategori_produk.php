@@ -1,3 +1,6 @@
+<?php
+$id_kategori = $_GET['edit_kategori_produk']
+    ?>
 <div class="animated fadeIn">
     <div class="row">
         <div class="col-md-12">
@@ -25,9 +28,9 @@
                             </a>
                         </div>
                         <div class="col text-right">
-                            <a href="" class="btn btn-sm btn-primary">
+                            <button type="submit" class="btn btn-sm btn-danger">
                                 Simpan<i class="fa fa-chevron-left"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
