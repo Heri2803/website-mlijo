@@ -209,12 +209,80 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
+<<<<<<< HEAD
                             <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+=======
+                            <img src="../asset/img/selada.jpg" class="img-responsive" width="240px" height="300px">
+>>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
-                                <h3>Nama Sayuran</h3>
+                                <h3>selada</h3>
                             </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+<<<<<<< HEAD
+                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+=======
+                            <img src="../asset/img/jagung.jpg" class="img-responsive" width="240px" height="300px">
+
+>>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>jagung</h3>
+                            </a>
+                            <p class="harga">Rp. 2000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="../asset/img/kangkung1.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>kangkung</h3>
+                            </a>
+                            <p class="harga">Rp. 1000</p>
+                            <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+<<<<<<< HEAD
+                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+=======
+                            <img src="../asset/img/bayam.jpg" class="img-responsive" width="240px" height="300px">
+>>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>bayam</h3>
+                            </a>
+<<<<<<< HEAD
                             <p class="harga">Rp. 1000</p>
                             <p class="button">
                                 <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
@@ -234,42 +302,9 @@
                                 <h3>Nama Sayuran</h3>
                             </a>
                             <p class="harga">Rp. 1000</p>
-                            <p class="button">
-                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
-                                <a href="keranjang.php" class="btn btn-primary">
-                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-produk">
-                        <a href="detail_produk.php">
-                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
-                        </a>
-                        <div class="text">
-                            <a href="detail_produk.php">
-                                <h3>Nama Sayuran</h3>
-                            </a>
-                            <p class="harga">Rp. 1000</p>
-                            <p class="button">
-                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
-                                <a href="keranjang.php" class="btn btn-primary">
-                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-produk">
-                        <a href="detail_produk.php">
-                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
-                        </a>
-                        <div class="text">
-                            <a href="detail_produk.php">
-                                <h3>Nama Sayuran</h3>
-                            </a>
-                            <p class="harga">Rp. 1000</p>
+=======
+                            <p class="harga">Rp. 1500</p>
+>>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
                             <p class="button">
                                 <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
                                 <a href="keranjang.php" class="btn btn-primary">
