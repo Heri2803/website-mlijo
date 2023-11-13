@@ -1,84 +1,58 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-<<<<<<< HEAD:Admin/login/style.css
 
-body {
+body{
     display: flex;
     justify-content: center;
-    align-items: center; 
-    height: 100vh; 
-    background:  #f4f4f4 ;
+    align-items: center;
+    min-height: 100vh;
+    background: #D0F0C0;
 }
-=======
-/* body{
+.container{
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: 100vh;
-<<<<<<< HEAD:Login/style.css
-    background: #8A9A58;
-=======
-<<<<<<< HEAD:Login/style1.css
-    background: #8a9a58;
-=======
-    background: #8a9a58 ;
->>>>>>> 7e3b95e7fd59f08f6cff56b2a2d9fdb98260f73d:Login/style.css
->>>>>>> c1c2329ca939ac1a463f400bc15091d82209ef06:Login/style1.css
-} */ */
->>>>>>> 61a1021fe97f082d98c0e03402aff9dc406ec7db:Login/style1.css
-
-.container {
-       width: 100%;
     max-width: 850px;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 15px rgba(0, 0, 0, 0.1);
-    display: flex;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
-
-.login {
-    width: 400%;
+.login{
+    width: 400px;
 }
-
-form {
+form{
     width: 250px;
     margin: 60px auto;
 }
-
-h1 {
-    margin: 20px;
+h3{
+    margin: 10px;
     text-align: center;
     font-weight: bolder;
     text-transform: uppercase;
 }
-
-hr {
-    border-top: 2px solid #ffa12c;
+hr{
+    border-top: 2px solid #D0F0C0;
 }
-
-p {
+p{
     text-align: center;
     margin: 10px;
 }
-
-.right img {
+.right img{
     width: 450px;
     height: 100%;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-
-form label {
+form label{
     display: block;
     font-size: 16px;
     font-weight: 600;
     padding: 5px;
 }
-
-input {
+input{
     width: 100%;
     margin: 2px;
     border: none;
@@ -87,47 +61,47 @@ input {
     border-radius: 5px;
     border: 1px solid gray;
 }
-
-button {
+button{
     border: none;
     outline: none;
     padding: 8px;
     width: 252px;
     color: #fff;
     font-size: 16px;
+    cursor: pointer;
     margin-top: 20px;
     border-radius: 5px;
-    background: #ffa12c;
+    background: rgb(55, 32, 209);
 }
-
-button:hover {
+button:hover{
     background: rgba(214, 86, 64, 1);
 }
-
-@media (max-width: 880px) {
-    .container {
+@media (max-width: 880px){
+    .container{
         width: 100%;
         max-width: 750px;
         margin-left: 20px;
         margin-right: 20px;
     }
 
-    form {
+    form{
         width: 300px;
         margin: 20px auto;
+
     }
 
-    .login {
+    .login{
         width: 400px;
         padding: 20px;
     }
 
-    button {
+    button{
         width: 100%;
     }
 
-    .right img {
+    .right img{
         width: 100%;
         height: 100%;
+
     }
 }

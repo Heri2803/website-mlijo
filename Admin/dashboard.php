@@ -1,4 +1,4 @@
-<!-- Animated -->
+ <!-- Animated -->
 <div class="animated fadeIn">
                 <!-- Widgets  -->
                 <div class="row">
