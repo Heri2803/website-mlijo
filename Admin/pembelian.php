@@ -3,9 +3,13 @@
 
     <?php
     $peembelian = array();
-    $ambil = $koneksi->query("select * from pembelian join pelanggan
-    on pembelian.id_pelanggan=pelanggan.id_pelanggan");
+    $ambil = $koneksi->query("SELECT pembelian.*, pelanggan.nama_pelanggan
+    FROM pembelian
+    LEFT JOIN pelanggan ON pembelian.id_pelanggan = pelanggan.id_pelanggan");
 
+
+    // $ambil = $koneksi->query("select * from pembelian");
+    
     while ($pecah = $ambil->fetch_assoc()) {
         $peembelian[] = $pecah;
     }

@@ -25,12 +25,11 @@ while ($pecah = $ambil->fetch_assoc()) {
                             <div class="col-sm-10">
                                 <select name="id_kategori_produk" class="form-control">
                                     <option selected disabled>pilih kategori produk</option>
-
-
-
-                                    <option value="Sayuran">Sayuran</option>
-                                    <option value="Bumbu Dapur">Bumbu Dapur</option>
-                                    <option value="Buah-buahan">Buah-buahan</option>
+                                    <?php foreach ($kategori_produk as $key => $value): ?>
+                                        <option value="</php? echo $value['id_kategori_produk'];?>">
+                                            <?php echo $value['nama_kategori_produk']; ?>
+                                        </option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
@@ -72,22 +71,17 @@ while ($pecah = $ambil->fetch_assoc()) {
 
                     </form>
                 </div>
-
-
-
-
-
                 <div class="card-footer py-3">
                     <div class="row">
                         <div class="col">
-                            <a href="index.php?kategori_produk" class="btn btn-sm btn-danger">
+                            <a href="index.php?produk" class="btn btn-sm btn-danger">
                                 <i class="fa fa-chevron-left"></i>Kembali
                             </a>
                         </div>
                         <div class="col text-right">
-                            <a href="" class="btn btn-sm btn-primary">
-                                Simpan<i class="fa fa-chevron-left"></i>
-                            </a>
+                            <button name="simpan" class="btn btn-sm-pramry">
+                                Simpan <i class="fa fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -95,3 +89,11 @@ while ($pecah = $ambil->fetch_assoc()) {
         </div>
     </div>
 </div>
+
+<?php
+
+if (isset($_POST['simpan'])) {
+
+}
+
+?>

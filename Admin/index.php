@@ -1,5 +1,6 @@
 <?php
-include "./config/koneksi.php";
+session_start();
+include "../config/koneksi.php";
 ?>
 
 <!doctype html>
@@ -36,6 +37,9 @@ include "./config/koneksi.php";
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
         #weatherWidget .currentDesc {
@@ -127,13 +131,7 @@ include "./config/koneksi.php";
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..."
-                                    aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
                         </div>
 
                         <div class="dropdown for-notification">
@@ -206,18 +204,18 @@ include "./config/koneksi.php";
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <i class="fa fa-user-circle fa-lg"></i> <!-- Ikon orang Font Awesome yang lebih besar -->
                         </a>
 
+
+
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                            <a class="nav-link" href="index.php?admin"><i class="fa fa- user"></i>My Profile</a>
 
                             <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span
                                     class="count">13</span></a>
 
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="../Login/login.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -273,6 +271,10 @@ include "./config/koneksi.php";
 
                 // data pembelian
             
+            } elseif (isset($_GET['logout'])) {
+
+                include 'logout.php';
+
             } elseif (isset($_GET['pembelian'])) {
 
                 include 'pembelian.php';
@@ -295,6 +297,10 @@ include "./config/koneksi.php";
 
                 //data pelanggan
             
+            } elseif (isset($_GET['admin'])) {
+
+                include 'admin.php';
+
             } elseif (isset($_GET['pelanggan'])) {
 
                 include 'pelanggan.php';

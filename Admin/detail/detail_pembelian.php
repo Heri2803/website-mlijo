@@ -9,8 +9,6 @@
 
     $detail = $ambil->fetch_assoc();
     ?>
-    <pre><?php print_r($detail) ?></pre>
-
 
     <div class="row">
         <div class="col-md-12 mt-3">
@@ -28,12 +26,21 @@
                                 <table class="table">
                                     <tr>
                                         <th>Nama</th>
+                                        <td>
+                                            <?php echo $detail["nama_pelanggan"]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Email</th>
+                                        <td>
+                                            <?php echo $detail["email_pelanggan"]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Telepon</th>
+                                        <td>
+                                            <?php echo $detail["telepon_pelanggan"]; ?>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -49,12 +56,21 @@
                                 <table class="table">
                                     <tr>
                                         <th>No. Pembelian</th>
+                                        <td>
+                                            <?php echo $detail["id_pelanggan"]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Tanggal</th>
+                                        <td>
+                                            <?php echo $detail["tanggal_pembelian"]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Total</th>
+                                        <td>
+                                            <?php echo $detail["total_pembelian"]; ?>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -89,6 +105,18 @@
     </div>
 </div>
 
+<?php
+
+$pp = array();
+$ambil = $koneksi->query("select * from pembelian_produk join produk
+on pembelian_produk.id_produk=produk.id_produk
+where pembelian_produk.id_pembelian='$id_pembelian'");
+
+while ($pecah = $ambil->fetch_assoc()) {
+    $pp[] = $pecah;
+}
+?>
+
 <div class="card shadow bg-white">
     <div class="card-body">
         <table id="bootstrap-data-table" class="table table-bordered table-hover table-striped">
@@ -102,14 +130,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                </tr>
 
+                <?php foreach ($pp as $key => $value): ?>
+                    <?php $subtotal = $value['harga_produk'] * $value['jumlah']; ?>
+                    <tr>
+                        <td width="50">
+                            <?php echo $key + 1; ?>
+                        </td>
+                        <td>
+                            <?php echo ($value['nama_produk']); ?>
+                        </td>
+                        <td>Rp
+                            <?php echo number_format($value['harga_produk']); ?>
+                        </td>
+                        <td>
+                            <?php echo ($value['jumlah']); ?>
+                        </td>
+                        <td>Rp
+                            <?php echo number_format($subtotal); ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
