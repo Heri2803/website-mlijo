@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mlijo</title>
     <!-- Custom fonts for this template-->
-    <link href="/asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
-    <link href="/asset/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../asset/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <!-- owl carousel -->
-    <link href="/asset/css/owl.carousel.min.css" rel="stylesheet">
-    <link href="/asset/css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="../asset/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="../asset/css/owl.theme.default.min.css" rel="stylesheet">
     <!-- style css -->
-    <link href="/asset/css/style.css" rel="stylesheet">
+    <link href="../asset/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -128,10 +128,10 @@
             <div class="owl-nav"></div>
             <div class="owl-carousel owl-theme">
                 <div class="item">
-                    <img src="/asset/img/vegetables bg.jpg">
+                    <img src="../asset/img/vegetables bg.jpg">
                 </div>
                 <div class="item">
-                    <img src="/asset/img/Vegetables garden.jpeg">
+                    <img src="../asset/img/Vegetables garden.jpeg">
                 </div>
             </div>
         </div>
@@ -209,7 +209,7 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
-                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -227,7 +227,7 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
-                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -245,7 +245,7 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
-                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -263,7 +263,7 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
-                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -289,19 +289,19 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="/asset/vendor/jquery/jquery.min.js"></script>
-    <script src="/asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../asset/vendor/jquery/jquery.min.js"></script>
+    <script src="../asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <!-- Core plugin JavaScript-->
-    <script src="/asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../asset/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="/asset/js/sb-admin-2.min.js"></script>
+    <script src="../asset/js/sb-admin-2.min.js"></script>
     <!-- owl carousel js -->
-    <script src="/asset/js/owl.carousel.min.js"></script>
+    <script src="../asset/js/owl.carousel.min.js"></script>
     <!-- main js -->
-    <script src="/asset/js/main.js"></script>
+    <script src="../asset/js/main.js"></script>
 </body>
 
 </html>
