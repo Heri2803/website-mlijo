@@ -251,7 +251,6 @@
                             <a href="detail_produk.php">
                                 <h3>bayam</h3>
                             </a>
-<<<<<<< HEAD
                             <p class="harga">Rp. 1000</p>
                             <p class="button">
                                 <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
@@ -270,11 +269,8 @@
                             <a href="detail_produk.php">
                                 <h3>Nama Sayuran</h3>
                             </a>
-                            <p class="harga">Rp. 1000</p>
-=======
                             <p class="harga">Rp. 1500</p>
->>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
-                            <p class="button">
+                           <p class="button">
                                 <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
                                 <a href="keranjang.php" class="btn btn-primary">
                                     <i class="fas fa-shopping-cart"></i>Keranjang</a>

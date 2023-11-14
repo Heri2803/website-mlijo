@@ -4,7 +4,7 @@
 .breadcrumb-item{
     margin-top: -20px;
     color: white;
-    background: color #ffffff;
+    background: color #b2d9b2;
 }
 .carousel-item::before{
     content: "";
@@ -36,7 +36,7 @@
     padding-left: 20%;
     padding-right: 20%;
     color: black;
-    background-color: #fff;
+    background-color: #b2d9b2;
     justify-content: center;
     text-align: start;
 }
@@ -49,7 +49,7 @@
     padding-top: 5%;
     padding-left: 20%;
     padding-right: 20%;
-    background-color: #b2d9b2;
+    background-color: #4d754d;
     justify-content: center;
     text-align: center;
 }
@@ -62,10 +62,10 @@
 }
 .box h4{
     font-family: 'Josefin Sans', sans-serif;
-    color: white;
+    color: rgb(7, 7, 7);
 }
 .box p{
-    color: rgb(255, 255, 255);
+    color: rgb(5, 5, 5);
 }
 .col .text-center{
     font-family: 'Josefin Sans', sans-serif;
@@ -73,14 +73,14 @@
 body{
     font-family: 'Josefin Sans', sans-serif;
     font-size: 14px;
-    color: #fff;
+    color: #080808;
     font-weight: 500;
     background-size: 100%;
-    background-color: rgb(0, 0, 0);
+    background-color: #ebfcee;
 }
 
 .text{
-    font-size: 15px;
+    font-size: 30px;
     color: #EB984E;
 }
 
@@ -98,7 +98,7 @@ body{
 }
 
 .card{
-    background-color: #EB984E ;
+    background-color: #b2d9b2 ;
     color: black;
 }
 
@@ -140,7 +140,7 @@ body{
     box-sizing: 0 5px 15px -5px #00000070;
     overflow: hidden;
     position: relative;
-    color: #e67e22;
+    color: #d35400;
     font-size: 40px;
 }
 
