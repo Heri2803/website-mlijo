@@ -18,30 +18,7 @@
 </head>
 
 <body>
-    <!-- top - bar start -->
-    <div id="top-bar">
-        <div class="container">
-            <div class="row">
-                <!-- top left start -->
-                <div class="col-md-6 top-left">
-                    <a href="index.php" class="btn btn-sm btn-primary ">Welcome</a>
-                    <a href="keranjang.php">Ada 4 items di keranjang</a>
-                </div>
-                <!-- top left end -->
-                <!-- top right start -->
-                <div class="col-md-6 top-right">
-                    <ul class="top-menu">
-                        <li><a href="daftar.php">Daftar</a></li>
-                        <li><a href="akun.php">Akun Saya</a></li>
-                        <li><a href="keranjang.php">Keranjang Saya</a></li>
-                        <li><a href="login.php">Login</a></li>
-                    </ul>
-                </div>
-                <!-- top right end -->
-            </div>
-        </div>
-    </div>
-    <!-- top - bar end -->
+
 
     <!-- Navbar Start -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -77,7 +54,7 @@
                         <a class="nav-link" href="produk.php">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pelanggan/profil.php">Akun Saya</a>
+                        <a class="nav-link" href="/pelanggan/profil.php">Akun Saya</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Keranjang.php">Keranjang</a>
@@ -112,7 +89,7 @@
                 <!-- btn search end -->
                 <!-- btn keranjang start -->
                 <div class="btn-keranjang">
-                    <a href="keranjang.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="/asset/keranjang.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
                 </div>
                 <!-- btn keranjang end -->
             </div>
@@ -128,10 +105,10 @@
             <div class="owl-nav"></div>
             <div class="owl-carousel owl-theme">
                 <div class="item">
-                    <img src="../asset/img/vegetables bg.jpg">
+                    <img src="../asset/img/vegetables bg.jpg" width="100px" height="200px">
                 </div>
                 <div class="item">
-                    <img src="../asset/img/Vegetables garden.jpeg">
+                    <img src="../asset/img/Vegetables garden.jpeg" width="100px" height="200px">
                 </div>
             </div>
         </div>

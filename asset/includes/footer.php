@@ -10,11 +10,7 @@
                     <li><a href="pelanggan/profil.php">Akun Saya</a></li>
                 </ul>
 
-                <h4>Pelanggan</h4>
-                <ul>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="registrasi.php">Registrasi</a></li>
-                </ul>
+        
             </div>
 
             <div class="col-md-4 ">

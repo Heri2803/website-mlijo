@@ -19,7 +19,7 @@ body{
     line-height: 1.42857143;
     color: #333333;
     background: #f0f0f0;
-    margin-bottom: 100px;
+   
 }
 @media(max-width: 991px){
     body{
@@ -386,7 +386,13 @@ body{
     font-family: medium;
     font-size: 22px;
 }
-
+@media(max-width: 991px){
+    #detail-produk .img-big{
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
 /* produk slide style */
 #produk-slide .card-box{
     height: 50px;
@@ -439,6 +445,13 @@ body{
 }
 #produk-slide p.harga{
     font-size: 16px;
+}
+
+/* keranjang style */
+@media(max-width: 991px){
+    #content .keranjang h2{
+        font-size: 24px;
+    }
 }
 
 /* footer style */

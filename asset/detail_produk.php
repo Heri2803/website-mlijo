@@ -1,3 +1,11 @@
+<?php
+include('../config/koneksi.php');
+$id_detail = $_GET["idproduk"];
+$detail_produk = query("SELECT * FROM produk WHERE produk.id_produk = '$id_detail';");
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,30 +26,7 @@
 </head>
 
 <body>
-    <!-- top - bar start -->
-    <div id="top-bar">
-        <div class="container">
-            <div class="row">
-                <!-- top left start -->
-                <div class="col-md-6 top-left">
-                    <a href="index.php" class="btn btn-sm btn-primary ">Welcome</a>
-                    <a href="keranjang.php">Ada 4 items di keranjang</a>
-                </div>
-                <!-- top left end -->
-                <!-- top right start -->
-                <div class="col-md-6 top-right">
-                    <ul class="top-menu">
-                        <li><a href="daftar.php">Daftar</a></li>
-                        <li><a href="akun.php">Akun Saya</a></li>
-                        <li><a href="keranjang.php">Keranjang Saya</a></li>
-                        <li><a href="login.php">Login</a></li>
-                    </ul>
-                </div>
-                <!-- top right end -->
-            </div>
-        </div>
-    </div>
-    <!-- top - bar end -->
+    
 
     <!-- Navbar Start -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -74,7 +59,7 @@
                         <a class="nav-link" href="produk.php">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pelanggan/profil.php">Akun Saya</a>
+                        <a class="nav-link" href="/pelanggan/profil.php">Akun Saya</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Keranjang.php">Keranjang</a>
@@ -129,35 +114,31 @@
                     <!-- breadcrumb end -->
                     <!-- side bar start -->
                     <div class="row d-flex ">
+
                         <div class="col-md-3">
                             <?php include 'includes/sidebar.php'; ?>
                         </div>
                         <!-- side bar end -->
                         <!-- row page produk start -->
+                        
                         <div class="col-md-9">
                             <!-- detail produk start -->
                             <div id="detail-produk" class="row">
                                 <!-- col-md-6 start -->
+                                <?php foreach ($detail_produk as $row) : ?>
                                 <div class="col-md-6">
                                     <div class="img-big">
                                         <div class="nav-big">
                                             <div class="owl-corousel">
                                                 <div class="item">
-                                                    <img src="/asset/img/bayam.jpg" class="img-responsive" data-hash="1" weight="100px" height="400px">
+                                                    <img id="gambarbayam" src="/asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive" data-hash="1" weight="100px" height="400px">
                                                 </div>
-                                                <!-- <div class="item">
-                                                    <img src="/asset/img/kangkung1.jpg" class="img-responsive" data-hash="2" weight="100px" height="200px">
-                                                </div>
-                                                <div class="item">
-                                                    <img src="/asset/img/jagung.jpg" class="img-responsive" data-hash="3" weight="100px" height="200px">
-                                                </div>
-                                                <div class="item">
-                                                    <img src="/asset/img/selada.jpg" class="img-responsive" data-hash="4" weight="100px" height="200px">
-                                                </div> -->
+                                        
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                              
                                 <!-- col-md-6 end -->
 
                                 <!-- col-md-6 start form -->
@@ -173,12 +154,12 @@
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Stok Produk : </label>
-                                                <label class="col-sm-4 col-form-label">Tersisa 20 Ikat</label>
+                                                <label class="col-sm-4 col-form-label">Tersisa <?= $row["stok"]; ?> Ikat</label>
                                             </div>
                                             <div>
-                                                <p class="harga">Rp.1500</p>
+                                                <p class="harga">Rp. <?= $row["harga_produk"]; ?></p>
                                                 <p class="text-center">
-                                                    <a href="detail_produk.php" class="btn btn-primary">
+                                                    <a href="keranjang.php" class="btn btn-primary">
                                                         <i class="fas fa-shopping-cart">Pesan</i>
                                                     </a>
                                                 </p>
@@ -193,11 +174,9 @@
                             <!-- card box detail start -->
                             <div class="card-box">
                                 <h4>Deskripsi Produk</h4>
-                                <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat
-                                    salad dengan saus gurih creamy dan enak rasanya.
-                                    Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman,
-                                    buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.</p>
+                                <p><?= $row["deskripsi_produk"]; ?></p>
                             </div>
+                            <?php endforeach; ?>
                             <!-- card box detail end -->
 
                             <!-- produk slide start -->
@@ -208,66 +187,26 @@
                                 <div class="slide">
                                     <div class="nav-slide"></div>
                                     <div class="owl-carousel">
+                                    <?php //foreach ($detail_produk as $row) : ?>
                                         <div class="item">
                                             <a href="detail_produk.php">
-                                                <img src="/asset/img/jagung.jpg" class="img-responsive">
+                                                <img src="/asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive">
                                             </a>
                                             <div class="text">
                                                 <a href="detail_produk">
-                                                    <h4>jagung</h4>
+                                                    <h4><?= $row["nama_produk"]; ?></h4>
                                                 </a>
-                                                <p class="harga">Rp.2000</p>
+                                                <p class="harga"><?= $row["harga_produk"]; ?></p>
                                             </div>
                                         </div>
-                                        <div class="item">
-                                            <a href="detail_produk.php">
-                                                <img src="/asset/img/kangkung1.jpg" class="img-responsive">
-                                            </a>
-                                            <div class="text">
-                                                <a href="detail_produk">
-                                                    <h4>kangkung</h4>
-                                                </a>
-                                                <p class="harga">Rp.1000</p>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <a href="detail_produk.php">
-                                                <img src="/asset/img/selada.jpg" class="img-responsive">
-                                            </a>
-                                            <div class="text">
-                                                <a href="detail_produk">
-                                                    <h4>Selada</h4>
-                                                </a>
-                                                <p class="harga">Rp.1000</p>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <a href="detail_produk.php">
-                                                <img src="/asset/img/jagung.jpg" class="img-responsive">
-                                            </a>
-                                            <div class="text">
-                                                <a href="detail_produk">
-                                                    <h4>jagung</h4>
-                                                </a>
-                                                <p class="harga">Rp.2000</p>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <a href="detail_produk.php">
-                                                <img src="/asset/img/bayam.jpg" class="img-responsive">
-                                            </a>
-                                            <div class="text">
-                                                <a href="detail_produk">
-                                                    <h4>kangkung</h4>
-                                                </a>
-                                                <p class="harga">Rp.1000</p>
-                                            </div>
-                                        </div>
+                                        <?php //endforeach; ?>
+                                        
                                     </div>
                                 </div>
                             </div>
                             <!-- produk slide end -->
                         </div>
+                       
                     </div>
 
                     <!-- <div id="banner">
@@ -338,6 +277,21 @@
     <!-- main js -->
     <script src="/asset/js/main.js"></script>
     <script src="/asset/js/detail_produk.js"></script>
+
+    <script>
+    function gantiGambar(gambarbayam) {
+        // Menghapus path image sesuai ID yang dituju
+        document.getElementById(gambarbayam).src = '';
+
+        // Menambahkan path baru setelah gambar diklik
+        document.getElementById(gambarbayam).src = '/asset/img/jagung.jpg';
+
+        // Optional: Ubah atribut lain jika diperlukan
+        // document.getElementById(targetId).setAttribute('data-hash', '2');
+        // document.getElementById(targetId).setAttribute('width', '200px');
+        // document.getElementById(targetId).setAttribute('height', '300px');
+    }
+</script>
 </body>
 
 </html>

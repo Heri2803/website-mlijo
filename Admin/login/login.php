@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config/koneksi.php';
+require "../../config/koneksi.php";
 ?>
 
 
@@ -52,7 +52,7 @@ where username='$username' and password='$password'");
     $akun = $ambil->num_rows;
 
     if ($akun == 1) {
-        header("Location: Admin/index.php");
+        header("Location: /Admin/index.php");
     }
 }
 

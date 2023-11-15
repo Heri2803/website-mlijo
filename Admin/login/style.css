@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-<<<<<<< HEAD:Admin/login/style.css
+
 
 body {
     display: flex;
@@ -13,7 +13,6 @@ body {
     height: 100vh; 
     background:  #f4f4f4 ;
 }
-=======
 /* body{
     display: flex;
     justify-content: center;
@@ -27,8 +26,8 @@ body {
     background: #8a9a58 ;
 >>>>>>> 7e3b95e7fd59f08f6cff56b2a2d9fdb98260f73d:Login/style.css
 >>>>>>> c1c2329ca939ac1a463f400bc15091d82209ef06:Login/style1.css
-} */ */
->>>>>>> 61a1021fe97f082d98c0e03402aff9dc406ec7db:Login/style1.css
+} */ 
+
 
 .container {
        width: 100%;

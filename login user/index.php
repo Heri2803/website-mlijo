@@ -1,3 +1,9 @@
+<?php
+session_start();
+require('../config/koneksi.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,15 +17,15 @@
     <body>
         <div class="container">
             <div class="login">
-                <form action="">
+                <form action="" method="post">
                     <h3>Selamat Datang</h3>
                     <hr>
                     <p>LOGIN</p>
                     <label for="">Email</label>
-                    <input type="text" placeholder="example@gmail.com">
+                    <input type="text" placeholder="example@gmail.com" name="email_pelanggan">
                     <label for="">Password</label>
-                    <input type="password" placeholder="Password">
-                    <button>Login</button>
+                    <input type="password" placeholder="Password" name="password_pelanggan">
+                    <button name="pelanggan">Login</button>
                     <p>
                         <a href="register.html">Register</a>
                     </p>
@@ -31,3 +37,19 @@
         </div>
     </body>
 </html>
+
+<?php
+if (isset($_POST['pelanggan'])) {
+    $email_pelanggan = $_POST['email_pelanggan'];
+    $password_pelanggan = $_POST['password_pelanggan'];
+
+    $ambil = $koneksi->query("select * from pelanggan 
+where email_pelanggan='$email_pelanggan' and password_pelanggan='$password_pelanggan'");
+
+    $akun = $ambil->num_rows;
+
+    if ($akun == 1) {
+        header("Location: /asset/index.php");
+    }
+}
+?>

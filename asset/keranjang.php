@@ -1,12 +1,3 @@
-<?php
-session_start();
-include('../config/koneksi.php');
-
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +18,30 @@ include('../config/koneksi.php');
 </head>
 
 <body>
-
+    <!-- top - bar start -->
+    <!-- <div id="top-bar">
+        <div class="container">
+            <div class="row"> -->
+                <!-- top left start -->
+                <!-- <div class="col-md-6 top-left">
+                    <a href="index.php" class="btn btn-sm btn-primary ">Welcome</a>
+                    <a href="keranjang.php">Ada 4 items di keranjang</a>
+                </div> -->
+                <!-- top left end -->
+                <!-- top right start -->
+                <!-- <div class="col-md-6 top-right">
+                    <ul class="top-menu">
+                        <li><a href="daftar.php">Daftar</a></li>
+                        <li><a href="akun.php">Akun Saya</a></li>
+                        <li><a href="keranjang.php">Keranjang Saya</a></li>
+                        <li><a href="login.php">Login</a></li>
+                    </ul>
+                </div> -->
+                <!-- top right end -->
+            <!-- </div>
+        </div>
+    </div> -->
+    <!-- top - bar end -->
 
     <!-- Navbar Start -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -102,86 +116,81 @@ include('../config/koneksi.php');
     </nav>
     <!-- Navbar End -->
 
-    <!-- content produk start -->
+    <!-- content keranjang start -->
     <div id="content">
         <div class="container">
             <div class="row">
+                <!-- breadcumb start -->
                 <div class="col-md-12">
-                    <!-- breadcrumb start -->
                     <ul class="breadcrumb">
                         <li><a href="index.php">Home</a></li>
-                        <li>produk</li>
+                        <li>Keranjang</li>
                     </ul>
-                    <!-- breadcrumb end -->
-                    <!-- side bar start -->
-                    <div class="row d-flex ">
-                        <div class="col-md-3">
-                            <?php include 'includes/sidebar.php'; ?>
-                        </div>
-                        <!-- side bar end -->
-                        <!-- row page produk start -->
-                        <div class="row col-md-9 d-flex">
-                        <?php foreach ($tampil_produk as $row) : ?>
-                            <div class="col-md-4">
-                                <div class="card-produk">
-                                    <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>">
-                                        <img src="../asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive" width="240px" height="300px">
-                                    </a>
-                                    <div class="text">
-                                        <a href="detail_produk.php">
-                                            <h3><?= $row["nama_produk"]; ?></h3>
-                                        </a>
-                                        <p class="harga"><?= $row["harga_produk"]; ?></p>
-                                        <p class="button">
-                                            <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>" class="btn btn-light">Detail Sayuran</a>
-                                            <a href="keranjang.php" class="btn btn-primary">
-                                                <i class="fas fa-shopping-cart"></i>Keranjang</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <!-- row page produk end -->
-
-                    <!-- pagination start -->
-                    <div class=" row justify-content-center">
-                        <nav aria-label="...">
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link text-success" href="#">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link text-secondary" href="#">1</a></li>
-                                <li class="page-item " aria-current="page">
-                                    <a class="page-link text-secondary" href="#">2</a>
-                                </li>
-                                <li class="page-item"><a class="page-link text-secondary" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link text-success" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- pagination end -->
-
-                    <!-- page produk start -->
-                    <div class="col-md-9 page-produk">
-                        <div class="">
-                            <p>Produk Kami dijamin 100% fresh setiap hari . Jika kalian punya pertanyaan atau mungkin masukan bisa <a href="kontak.php">Hubungi Kami</a>.<strong>Mlijo</strong> Kami melayani pelanggan sepenuh hati</p>
-                        </div>
-                    </div>
-                    <!-- page produk end -->
                 </div>
+                <!-- breadcumb end -->
+                <!-- start card box -->
+                <div class="col-md-12 keranjang">
+                    <div class="card-box">
+                        <h2>Keranjang Belanja</h2>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Produk</th>
+                                        <th>Jumlah</th>
+                                        <th>Harga</th>
+                                        <th>Subtotal</th>
+                                        <th>Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="/asset/img/bayam.jpg" class="img-responsive" width="100"></td>
+                                        <td>Nama Produk</td>
+                                        <td><input type="number" name="jumlah" min="1" value="1" class="form-control form-control-sm" style="width: 200px;"></td>
+                                        <td>Rp.1500</td>
+                                        <td>
+                                            <a href="update_keranjang.php" class="btn btn-sm btn-warning">
+                                                <i class="fas fa-redo-alt"></i>
+                                            </a>
+                                            <a href="hapus_keranjang.php" class="btn btn-sm btn-danger">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="3">Total</th>
+                                        <th>Rp.1500</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+                        </div>
+                    </div>
+                    <!-- end card-box -->
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col">
+                                <a href="produk.php" class="btn btn-light">
+                                    <i class="fas fa-chevron-left"></i> Lanjut Belanja
+                                </a>
+                            </div>
+                            <div class="col-text-right">
+                                <a href="checkout.php" class="btn btn-primary">
+                                    checkout <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- content produk finish -->
-
-
-
-
-
+    <!-- content keranjang end -->
 
     <!-- footer start -->
     <?php include 'includes/footer.php' ?>
@@ -200,6 +209,7 @@ include('../config/koneksi.php');
     <script src="/asset/js/owl.carousel.min.js"></script>
     <!-- main js -->
     <script src="/asset/js/main.js"></script>
+    <script src="/asset/js/detail_produk.js"></script>
 </body>
 
 </html>
