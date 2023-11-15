@@ -186,7 +186,11 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
+<<<<<<< HEAD
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+=======
                             <img src="/asset/img/selada.jpg" class="img-responsive" width="240px" height="300px">
+>>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -204,6 +208,9 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
+<<<<<<< HEAD
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+=======
                             <img src="/asset/img/jagung.jpg" class="img-responsive" width="240px" height="300px">
                         </a>
                         <div class="text">
@@ -223,6 +230,7 @@
                     <div class="card-produk">
                         <a href="detail_produk.php">
                             <img src="../asset/img/kangkung1.jpg" class="img-responsive" width="240px" height="300px">
+>>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -240,7 +248,11 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
+<<<<<<< HEAD
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+=======
                             <img src="../asset/img/bayam.jpg" class="img-responsive" width="240px" height="300px">
+>>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -255,6 +267,27 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+                <div class="col-md-3">
+                    <div class="card-produk">
+                        <a href="detail_produk.php">
+                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                        </a>
+                        <div class="text">
+                            <a href="detail_produk.php">
+                                <h3>Nama Sayuran</h3>
+                            </a>
+                            <p class="harga">Rp. 1500</p>
+                           <p class="button">
+                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
+                                <a href="keranjang.php" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+=======
+>>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
             </div>
         </div>
     </div>
