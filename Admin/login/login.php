@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../config/koneksi.php';
+include '../../config/koneksi.php';
 ?>
 
 
@@ -15,7 +15,6 @@ include '../config/koneksi.php';
 </head>
 
 <body>
-
     <div class="container">
         <div class="login">
             <form action="" method="post" class="user">
@@ -30,7 +29,6 @@ include '../config/koneksi.php';
                     <a href="pages-forget.php">Forgot Password ?</a>
                 </p>
             </form>
-
         </div>
         <div class="right">
             <img src="assets/image.png" alt="">
