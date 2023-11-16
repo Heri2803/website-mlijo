@@ -1,6 +1,11 @@
 <?php
 session_start();
 include "../config/koneksi.php";
+
+if (!isset($_SESSION["nama_lengkap"])) {
+    echo '<script>alert("Harap login terlebih dahulu");
+    window.location.href=("../Login/index.php")</script>';
+}
 ?>
 
 <!doctype html>
@@ -199,8 +204,16 @@ include "../config/koneksi.php";
                                 </a>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="dropdown for-message">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <p class="mt-3">
+                                    <?= $_SESSION['nama_lengkap']; ?>
+                                </p>
+                            </button>
+                        </div>
+                    </div>
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
@@ -215,7 +228,7 @@ include "../config/koneksi.php";
                             <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span
                                     class="count">13</span></a>
 
-                            <a class="nav-link" href="../Login/login.php"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="../Admin/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 

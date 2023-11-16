@@ -18,30 +18,7 @@
 </head>
 
 <body>
-    <!-- top - bar start -->
-    <div id="top-bar">
-        <div class="container">
-            <div class="row">
-                <!-- top left start -->
-                <div class="col-md-6 top-left">
-                    <a href="index.php" class="btn btn-sm btn-primary ">Welcome</a>
-                    <a href="keranjang.php">Ada 4 items di keranjang</a>
-                </div>
-                <!-- top left end -->
-                <!-- top right start -->
-                <div class="col-md-6 top-right">
-                    <ul class="top-menu">
-                        <li><a href="daftar.php">Daftar</a></li>
-                        <li><a href="akun.php">Akun Saya</a></li>
-                        <li><a href="keranjang.php">Keranjang Saya</a></li>
-                        <li><a href="login.php">Login</a></li>
-                    </ul>
-                </div>
-                <!-- top right end -->
-            </div>
-        </div>
-    </div>
-    <!-- top - bar end -->
+
 
     <!-- Navbar Start -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -77,7 +54,7 @@
                         <a class="nav-link" href="produk.php">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pelanggan/profil.php">Akun Saya</a>
+                        <a class="nav-link" href="/pelanggan/profil.php">Akun Saya</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Keranjang.php">Keranjang</a>
@@ -112,7 +89,7 @@
                 <!-- btn search end -->
                 <!-- btn keranjang start -->
                 <div class="btn-keranjang">
-                    <a href="keranjang.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="/asset/keranjang.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
                 </div>
                 <!-- btn keranjang end -->
             </div>
@@ -128,10 +105,10 @@
             <div class="owl-nav"></div>
             <div class="owl-carousel owl-theme">
                 <div class="item">
-                    <img src="../asset/img/vegetables bg.jpg">
+                    <img src="../asset/img/vegetables bg.jpg" width="100px" height="200px">
                 </div>
                 <div class="item">
-                    <img src="../asset/img/Vegetables garden.jpeg">
+                    <img src="../asset/img/Vegetables garden.jpeg" width="100px" height="200px">
                 </div>
             </div>
         </div>
@@ -210,10 +187,10 @@
                     <div class="card-produk">
                         <a href="detail_produk.php">
 <<<<<<< HEAD
-                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
 =======
-                            <img src="../asset/img/selada.jpg" class="img-responsive" width="240px" height="300px">
->>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
+                            <img src="/asset/img/selada.jpg" class="img-responsive" width="240px" height="300px">
+>>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -232,11 +209,9 @@
                     <div class="card-produk">
                         <a href="detail_produk.php">
 <<<<<<< HEAD
-                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
 =======
-                            <img src="../asset/img/jagung.jpg" class="img-responsive" width="240px" height="300px">
-
->>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
+                            <img src="/asset/img/jagung.jpg" class="img-responsive" width="240px" height="300px">
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -255,6 +230,7 @@
                     <div class="card-produk">
                         <a href="detail_produk.php">
                             <img src="../asset/img/kangkung1.jpg" class="img-responsive" width="240px" height="300px">
+>>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -273,16 +249,15 @@
                     <div class="card-produk">
                         <a href="detail_produk.php">
 <<<<<<< HEAD
-                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
+                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
 =======
                             <img src="../asset/img/bayam.jpg" class="img-responsive" width="240px" height="300px">
->>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
+>>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
                                 <h3>bayam</h3>
                             </a>
-<<<<<<< HEAD
                             <p class="harga">Rp. 1000</p>
                             <p class="button">
                                 <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
@@ -292,6 +267,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
@@ -301,11 +277,8 @@
                             <a href="detail_produk.php">
                                 <h3>Nama Sayuran</h3>
                             </a>
-                            <p class="harga">Rp. 1000</p>
-=======
                             <p class="harga">Rp. 1500</p>
->>>>>>> 70b46097f0b2349cf8fd24dd2db740b63156ee33
-                            <p class="button">
+                           <p class="button">
                                 <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
                                 <a href="keranjang.php" class="btn btn-primary">
                                     <i class="fas fa-shopping-cart"></i>Keranjang</a>
@@ -313,6 +286,8 @@
                         </div>
                     </div>
                 </div>
+=======
+>>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
             </div>
         </div>
     </div>
