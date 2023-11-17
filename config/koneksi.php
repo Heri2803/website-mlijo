@@ -2,11 +2,11 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$db = "mlijo";
+$db = "mlijo1";
 $koneksi = mysqli_connect($server, $username, $password, $db);
 
 if (mysqli_connect_errno()) {
-    echo "koneksi gagal : " . mysqli_connect_error();
+  echo "koneksi gagal : " . mysqli_connect_error();
 }
 
 //SELECT DATABASE
@@ -33,4 +33,4 @@ $tampil_produk = query("SELECT * FROM produk;")
 
 
 
-?>
+  ?>

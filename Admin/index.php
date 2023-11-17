@@ -103,6 +103,9 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
                     <li class="menu-title">Menu</li><!-- /.menu-title -->
                     <li>
+                        <a href="index.php?banner"> <i class="menu-icon fa fa-camera"></i>Tambah Banner </a>
+                    </li>
+                    <li>
                         <a href="index.php?kategori_produk"> <i class="menu-icon fa fa-list"></i>Kategori Produk </a>
                     </li>
                     <li>
@@ -206,8 +209,8 @@ if (!isset($_SESSION["nama_lengkap"])) {
                         </div>
 
                         <div class="dropdown for-message">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <p class="mt-3">
                                     <?= $_SESSION['nama_lengkap']; ?>
                                 </p>
@@ -223,7 +226,8 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="index.php?admin"><i class="fa fa- user"></i>My Profile</a>
+                            <a class="nav-link" data-toggle="modal" data-target="#scrollmodal"><i
+                                    class="fa fa- user"></i>My Profile</a>
 
                             <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span
                                     class="count">13</span></a>
@@ -350,6 +354,45 @@ if (!isset($_SESSION["nama_lengkap"])) {
         <!-- /.site-footer -->
     </div>
     <!-- /#right-panel -->
+
+    <!-- modal -->
+    <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <strong>
+                        <h5 class="modal-title" id="scrollmodalLabel">Edit Profil Anda</h5>
+                    </strong>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label mt-0,5">Username</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label mt-0,5">Password</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="password" class="form-control">
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
