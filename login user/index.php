@@ -28,7 +28,10 @@ require('../config/koneksi.php');
                 <input type="password" placeholder="Password" name="password_pelanggan">
                 <button name="pelanggan">Login</button>
                 <p>
-                    <a href="register.html">Register</a>
+                    <a href="register.php">Register</a>
+                </p>
+                <p>
+                    <a href="lupapassword.php">Forgot</a>
                 </p>
             </form>
         </div>
@@ -41,17 +44,39 @@ require('../config/koneksi.php');
 </html>
 
 <?php
-if (isset($_POST['pelanggan'])) {
-    $email_pelanggan = $_POST['email_pelanggan'];
-    $password_pelanggan = $_POST['password_pelanggan'];
+// if (isset($_POST['pelanggan'])) {
+//     $email_pelanggan = $_POST['email_pelanggan'];
+//     $password_pelanggan = $_POST['password_pelanggan'];
 
-    $ambil = $koneksi->query("select * from pelanggan 
-where email_pelanggan='$email_pelanggan' and password_pelanggan='$password_pelanggan'");
+//     $ambil = $koneksi->query("select * from pelanggan 
+// where email_pelanggan='$email_pelanggan' and password_pelanggan='$password_pelanggan'");
 
-    $akun = $ambil->num_rows;
+//     $akun = $ambil->num_rows;
 
-    if ($akun == 1) {
-        header("Location: ../asset/index.php");
+//     if ($akun == 1) {
+//         header("Location: ../asset/index.php");
+//     }
+// }
+
+
+if (isset($_POST["pelanggan"])) {
+    $email = $_POST["email_pelanggan"];
+    $password = $_POST["password_pelanggan"];
+  
+    $caripelanggan = query("SELECT * FROM pelanggan WHERE pelanggan.email_pelanggan = '$email' AND pelanggan.password_pelanggan = '$password';");
+  
+    if ($caripelanggan) {
+      // set session
+      $_SESSION['nama_pelanggan'] = $caripelanggan[0]['nama_pelanggan'];
+      $_SESSION['id_pelanggan'] = $caripelanggan[0]['id_pelanggan']; 
+      $_SESSION['foto_pelanggab'] = $caripelanggan[0]['foto_pelanggan'];
+    //   $_SESSION['alamat'] = $caripelanggan[0]['alamat'];
+    //   $_SESSION['telepon_pelanggan'] = $caripelanggan[0]['telepon_pelanggan'];
+      header("Location: /asset/index.php");
+    } else {
+      echo "<div class='alert alert-warning'>Username atau Password salah</div>
+      <meta http-equiv='refresh' content='2'>";
     }
 }
+
 ?>

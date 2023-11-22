@@ -1,7 +1,15 @@
 <?php
+session_start();
 include('../config/koneksi.php');
 $id_detail = $_GET["idproduk"];
 $detail_produk = query("SELECT * FROM produk WHERE produk.id_produk = '$id_detail';");
+
+if (isset($_POST["kirimproduk"])) {
+    if (pengecekan($_POST) > 0) {
+        echo "<script>location='keranjang.php';</script>";
+    }
+}
+
 ?>
 
 
@@ -149,7 +157,9 @@ $detail_produk = query("SELECT * FROM produk WHERE produk.id_produk = '$id_detai
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Jumlah Produk :</label>
                                                 <div class="col-sm-7">
-                                                    <input type="number" name="jumlah" class="form-control" min="1" value="1">
+                                                    <input type="number" name="jumlah" class="form-control" min="1" value="1" >
+                                                    <input type="text" name="kirim_id_pelanggan" value="<?= isset($_SESSION['id_pelanggan']) ? $_SESSION['id_pelanggan'] : '' ?>" hidden>
+                                                    <input type="text" name="kirim_id_produk" value="<?= $row["id_produk"]; ?>" hidden>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -159,9 +169,10 @@ $detail_produk = query("SELECT * FROM produk WHERE produk.id_produk = '$id_detai
                                             <div>
                                                 <p class="harga">Rp. <?= $row["harga_produk"]; ?></p>
                                                 <p class="text-center">
-                                                    <a href="keranjang.php" class="btn btn-primary">
-                                                        <i class="fas fa-shopping-cart">Pesan</i>
-                                                    </a>
+                                                
+                                                    <button type="submit" name="kirimproduk" id="insertkeranjang" class="btn btn-primary">
+                                                        <i class="fas fa-shopping-cart"></i>pesan
+                                                    </button>
                                                 </p>
                                             </div>
                                         </form>
@@ -186,22 +197,23 @@ $detail_produk = query("SELECT * FROM produk WHERE produk.id_produk = '$id_detai
                                 </div>
                                 <div class="slide">
                                     <div class="nav-slide"></div>
+                                   
                                     <div class="owl-carousel">
-                                    <?php //foreach ($detail_produk as $row) : ?>
+                                    <?php foreach ($tampil_produk as $row) : ?>
                                         <div class="item">
-                                            <a href="detail_produk.php">
+                                            <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>">
                                                 <img src="/asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive">
                                             </a>
                                             <div class="text">
-                                                <a href="detail_produk">
+                                                <a href="detail_produk?idproduk=<?= $row["id_produk"]; ?>">
                                                     <h4><?= $row["nama_produk"]; ?></h4>
                                                 </a>
                                                 <p class="harga"><?= $row["harga_produk"]; ?></p>
                                             </div>
                                         </div>
-                                        <?php //endforeach; ?>
-                                        
+                                        <?php endforeach; ?> 
                                     </div>
+                                   
                                 </div>
                             </div>
                             <!-- produk slide end -->
@@ -279,19 +291,35 @@ $detail_produk = query("SELECT * FROM produk WHERE produk.id_produk = '$id_detai
     <script src="/asset/js/detail_produk.js"></script>
 
     <script>
-    function gantiGambar(gambarbayam) {
-        // Menghapus path image sesuai ID yang dituju
-        document.getElementById(gambarbayam).src = '';
+    function updateSubtotal(input) {
+            var jumlah = input.value;
+            var row = input.closest('tr'); // Dapatkan baris terkait dengan elemen input
+            var harga = parseFloat(row.querySelector('.harga').innerText);
+            var subtotalElement = row.querySelector('.subtotal');
+            // var subtotal = jumlah * harga;
 
-        // Menambahkan path baru setelah gambar diklik
-        document.getElementById(gambarbayam).src = '/asset/img/jagung.jpg';
+            // Tampilkan subtotal pada elemen dengan class subtotal
+            // subtotalElement.innerText = subtotal;
 
-        // Optional: Ubah atribut lain jika diperlukan
-        // document.getElementById(targetId).setAttribute('data-hash', '2');
-        // document.getElementById(targetId).setAttribute('width', '200px');
-        // document.getElementById(targetId).setAttribute('height', '300px');
-    }
+            // Ambil ID dari data
+            var id = input.getAttribute('data-id');
+
+            // Kirim permintaan Ajax untuk mengupdate data di database
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "update_keranjang.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Tanggapan dari server (jika diperlukan)
+                    console.log(xhr.responseText);
+                }
+            };
+            xhr.send("id=" + id + "&jumlah=" + jumlah);
+
+        }
+    
 </script>
+
 </body>
 
 </html>

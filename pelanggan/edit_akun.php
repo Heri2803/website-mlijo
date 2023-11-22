@@ -37,3 +37,19 @@
         </div>
     </div>
 </form>
+
+<?php
+ob_start(); // Start output buffering
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+require('../config/koneksi.php');
+
+if (isset($_POST["update"])) {
+    if (perbarui($_POST) > 0) {
+        echo "<script>location='profil.php';</script>";
+    }
+} 
+
+ob_end_flush(); // End output buffering and send output
+?>

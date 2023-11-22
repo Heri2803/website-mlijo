@@ -30,10 +30,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" aria-current="page" href="home.html">Home</a>
-          <a class="nav-link active" href="Menu.html">Menu</a>
-          <a class="nav-link" href="Contact.html">Contact</a>
-          <a class="nav-link" href="Login.html">Login</a>
+          <a class="nav-link" aria-current="page" href="Home.php">Home</a>
+          <a class="nav-link active" href="Menu.php">Menu</a>
+          <a class="nav-link" href="Contact.php">Contact</a>
+      <a class="nav-link" href="/login user/index.php">Login</a>
         </div>
       </div>
     </div>

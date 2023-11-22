@@ -17,9 +17,9 @@
                 <h4>Kategori Prouduk</h4>
                 <ul>
                     <li><a href="#">Sayuran</a></li>
-                    <li><a href="#">Bumbu Dapur</a></li>
+                    <li><a href="#">Perdagingan</a></li>
                     <li><a href="#">Buah - Buahan</a></li>
-                    <li><a href="#">Telur</a></li>
+                    <li><a href="#">Paket Sayur</a></li>
                 </ul>
 
                 <p class="sosial">

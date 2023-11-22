@@ -26,6 +26,21 @@ body{
         font-size: 12px;
     }
 }
+.block .about{
+    height: 30rem;
+    margin: 0;
+    padding-top: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
+    color: black;
+    background-color: #cbdac5;
+    justify-content: center;
+    text-align: start;
+}
+.block .title{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 /* btn-primary style */
 .btn-primary{
     color: rgb(255, 255, 255);

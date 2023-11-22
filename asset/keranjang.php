@@ -1,3 +1,20 @@
+<?php
+session_start();
+include('../config/koneksi.php');
+$tampil_keranjang = query("SELECT keranjang.id_keranjang, produk.id_produk, produk.nama_produk, produk.harga_produk, produk.foto_produk, keranjang.jumlah, produk.harga_produk * keranjang.jumlah AS total_harga FROM keranjang JOIN produk ON keranjang.id_produk = produk.id_produk WHERE keranjang.id_pelanggan = '" . $_SESSION['id_pelanggan'] . "';");
+
+
+if (isset($_POST["checkout"])) {
+    if (tambahtransaksi($_POST) > 0) {
+        $_SESSION['tanggal_pembelian'] = $_POST["tanggal"];
+        echo "<script>location='checkout.php';</script>";
+    }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,30 +35,7 @@
 </head>
 
 <body>
-    <!-- top - bar start -->
-    <!-- <div id="top-bar">
-        <div class="container">
-            <div class="row"> -->
-                <!-- top left start -->
-                <!-- <div class="col-md-6 top-left">
-                    <a href="index.php" class="btn btn-sm btn-primary ">Welcome</a>
-                    <a href="keranjang.php">Ada 4 items di keranjang</a>
-                </div> -->
-                <!-- top left end -->
-                <!-- top right start -->
-                <!-- <div class="col-md-6 top-right">
-                    <ul class="top-menu">
-                        <li><a href="daftar.php">Daftar</a></li>
-                        <li><a href="akun.php">Akun Saya</a></li>
-                        <li><a href="keranjang.php">Keranjang Saya</a></li>
-                        <li><a href="login.php">Login</a></li>
-                    </ul>
-                </div> -->
-                <!-- top right end -->
-            <!-- </div>
-        </div>
-    </div> -->
-    <!-- top - bar end -->
+   
 
     <!-- Navbar Start -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -129,6 +123,7 @@
                 </div>
                 <!-- breadcumb end -->
                 <!-- start card box -->
+
                 <div class="col-md-12 keranjang">
                     <div class="card-box">
                         <h2>Keranjang Belanja</h2>
@@ -137,6 +132,7 @@
                                 <thead>
                                     <tr>
                                         <th>Produk</th>
+                                        <th>Nama Produk</th>
                                         <th>Jumlah</th>
                                         <th>Harga</th>
                                         <th>Subtotal</th>
@@ -144,31 +140,42 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><img src="/asset/img/bayam.jpg" class="img-responsive" width="100"></td>
-                                        <td>Nama Produk</td>
-                                        <td><input type="number" name="jumlah" min="1" value="1" class="form-control form-control-sm" style="width: 200px;"></td>
-                                        <td>Rp.1500</td>
-                                        <td>
-                                            <a href="update_keranjang.php" class="btn btn-sm btn-warning">
-                                                <i class="fas fa-redo-alt"></i>
-                                            </a>
-                                            <a href="hapus_keranjang.php" class="btn btn-sm btn-danger">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    <?php foreach ($tampil_keranjang as $row) : ?>
+                                        <tr>
+                                            <td>
+                                                <a href="detail_produk.php?id=<?= $row["id_produk"]; ?>">
+                                                    <img src="/asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive" width="100">
+                                                </a>
+                                            </td>
+                                            <td><?= $row["nama_produk"]; ?></td>
+                                            <td>
+                                                <input type="number" name="jumlah" min="1" value="<?= $row["jumlah"]; ?>" class="form-control form-control-sm" style="width: 200px;" oninput="updateSubtotal(this); totaluang();" data-id="<?= $row["id_keranjang"]; ?>">
+                                            </td>
+                                            <td class="harga"><?= $row["harga_produk"]; ?></td>
+                                            <td class="subtotal"><?= $row["total_harga"]; ?></td>
+
+                                            <td>
+                                                <a href="update_keranjang.php" class="btn btn-sm btn-warning">
+                                                    <i class="fas fa-redo-alt"></i>
+                                                </a>
+                                                <a href="hapus_keranjang.php?id=<?= $row["id_keranjang"]; ?>" class="btn btn-sm btn-danger">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th colspan="3">Total</th>
-                                        <th>Rp.1500</th>
+                                        <th></th>
+                                        <th class="totalAmount"></th>
                                         <th></th>
                                     </tr>
                                 </tfoot>
-
                             </table>
                         </div>
+
                     </div>
                     <!-- end card-box -->
                     <div class="card-footer">
@@ -179,13 +186,19 @@
                                 </a>
                             </div>
                             <div class="col-text-right">
-                                <a href="checkout.php" class="btn btn-primary">
+                                <form action="" method="post">
+                                    <input type="text" value="<?= $_SESSION['id_pelanggan']  ?>" name="kirim_id_pelanggan">
+                                    <input type="datetime-local" value="<?= date('Y-m-d\TH:i:s'); ?>" name="tanggal">
+
+                                <button  class="btn btn-primary" name="checkout">
                                     checkout <i class="fas fa-chevron-right"></i>
-                                </a>
+                                </button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
             </div>
         </div>
@@ -195,6 +208,65 @@
     <!-- footer start -->
     <?php include 'includes/footer.php' ?>
     <!-- footer End -->
+
+    <script>
+        function updateSubtotal(input) {
+            var jumlah = input.value;
+            var row = input.closest('tr'); // Dapatkan baris terkait dengan elemen input
+            var harga = parseFloat(row.querySelector('.harga').innerText);
+            var subtotalElement = row.querySelector('.subtotal');
+            var subtotal = jumlah * harga;
+
+            // Tampilkan subtotal pada elemen dengan class subtotal
+            subtotalElement.innerText = subtotal;
+
+            // Ambil ID dari data
+            var id = input.getAttribute('data-id');
+
+            // Kirim permintaan Ajax untuk mengupdate data di database
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "update_keranjang.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Tanggapan dari server (jika diperlukan)
+                    console.log(xhr.responseText);
+                }
+            };
+            xhr.send("id=" + id + "&jumlah=" + jumlah + "&subtotal=" + subtotal);
+
+        }
+
+        window.onload = function() {
+            var subtotalElements = document.querySelectorAll('.subtotal');
+            var totalAmountElement = document.querySelector('.totalAmount');
+
+            var total = 0;
+
+            // Loop melalui setiap elemen subtotal dan tambahkan nilainya ke total
+            for (var i = 0; i < subtotalElements.length; i++) {
+                total += parseFloat(subtotalElements[i].innerText.replace('Rp.', '').replace(',', ''));
+            }
+
+            // Tampilkan total pada elemen totalAmount
+            totalAmountElement.innerHTML = 'Rp.' + total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        };
+
+        function totaluang() {
+            var subtotalElements = document.querySelectorAll('.subtotal');
+            var totalAmountElement = document.querySelector('.totalAmount');
+
+            var total = 0;
+
+            // Loop melalui setiap elemen subtotal dan tambahkan nilainya ke total
+            for (var i = 0; i < subtotalElements.length; i++) {
+                total += parseFloat(subtotalElements[i].innerText.replace('Rp.', '').replace(',', ''));
+            }
+
+            // Tampilkan total pada elemen totalAmount
+            totalAmountElement.innerHTML = 'Rp.' + total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        }
+    </script>
 
 
     <!-- Bootstrap core JavaScript-->
@@ -210,6 +282,9 @@
     <!-- main js -->
     <script src="/asset/js/main.js"></script>
     <script src="/asset/js/detail_produk.js"></script>
+
+
+
 </body>
 
 </html>

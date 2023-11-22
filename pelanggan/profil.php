@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,30 +23,7 @@
 </head>
 
 <body>
-    <!-- top - bar start -->
-    <!-- <div id="top-bar">
-        <div class="container">
-            <div class="row"> -->
-    <!-- top left start -->
-    <!-- <div class="col-md-6 top-left">
-                    <a href="index.php" class="btn btn-sm btn-primary ">Welcome</a>
-                    <a href="keranjang.php">Ada 4 items di keranjang</a>
-                </div> -->
-    <!-- top left end -->
-    <!-- top right start -->
-    <!-- <div class="col-md-6 top-right">
-                    <ul class="top-menu">
-                        <li><a href="daftar.php">Daftar</a></li>
-                        <li><a href="akun.php">Akun Saya</a></li>
-                        <li><a href="keranjang.php">Keranjang Saya</a></li>
-                        <li><a href="login.php">Login</a></li>
-                    </ul>
-                </div> -->
-    <!-- top right end -->
-    <!-- </div>
-        </div>
-    </div> -->
-    <!-- top - bar end -->
+
 
     <!-- Navbar Start -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -146,11 +128,7 @@
                                     <i class="fas fa-edit"></i> Edit Akun
                                 </a>
                            </li>
-                           <li class="<?php if(isset($_GET['ubah_password'])){echo"active";} ?>">
-                                <a href="profil.php?ubah_password" class="nav-link">
-                                    <i class="fas fa-user"></i> Ubah Password
-                                </a>
-                           </li>
+            
                            <li class="<?php if(isset($_GET['hapus_akun'])){echo"active";} ?>">
                                 <a href="profil.php?hapus_akun" class="nav-link">
                                     <i class="fas fa-trash"></i> Hapus Akun

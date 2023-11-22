@@ -1,56 +1,93 @@
+<?php
+ob_start(); // Start output buffering
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+include('../config/koneksi.php');
+
+// Mengambil id_pembelian dari parameter URL
+$id_pembelian = $_GET['id'];
+
+// Query untuk mendapatkan data pembelian sesuai dengan id_pembelian
+$query_detail_pembelian = "SELECT
+                                pembelian.id_pembelian,
+                                pembelian.tanggal_pembelian,
+                                pembelian.total_pembelian,
+                                pembelian.status_pembayaran,
+                                pelanggan.id_pelanggan,
+                                pelanggan.nama_pelanggan,
+                                pelanggan.alamat,
+                                pelanggan.telepon_pelanggan,
+                                ongkir.nama_jalan,
+                                ongkir.tarif
+                           FROM pembelian
+                           JOIN pelanggan ON pembelian.id_pelanggan = pelanggan.id_pelanggan
+                           JOIN ongkir ON pembelian.id_ongkir = ongkir.id_ongkir
+                           WHERE pembelian.id_pembelian = $id_pembelian;";
+$result_detail_pembelian = mysqli_query($koneksi, $query_detail_pembelian);
+
+// Memeriksa apakah query berhasil dijalankan
+if (!$result_detail_pembelian) {
+    echo "Error: " . mysqli_error($koneksi);
+}
+
+ob_end_flush(); // End output buffering
+?>
+
+<!-- Tambahkan kode untuk menampilkan data pembelian -->
+<center>
+    <h2>Detail Pesanan</h2>
+</center>
+
 <div class="table-responsive">
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Data Pelanggan</th>
-                <th>Data Pembelian</th>
-                <th>Data Pengiriman</th>
+                <th>ID Pembelian</th>
+                <th>Tanggal Pembelian</th>
+                <th>Total Pembelian</th>
+                <th>Status Pembayaran</th>
+                <th>ID Pelanggan</th>
+                <th>Nama Pelanggan</th>
+                <th>Alamat Pelanggan</th>
+                <th>Telepon Pelanggan</th>
+                <th>Nama Jalan</th>
+                <th>Tarif Ongkir</th>
+                <!-- Tambahkan kolom sesuai dengan kebutuhan -->
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    <p>Nama : <br>Muhammad Heriyanto</p>
-                    <p>Email : <br>muhammadheriyanto28@gmail.com</p>
-                    <p>Telephone : <br>085730655948</p>
-                </td>
-                <td>
-                    <p>No.Pembelian : <br>#1</p>
-                    <p>Tanggal Pembelian : <br>23 Juli 2023</p>
-                    <p>Total Pembelian : <br>Rp. 50000</p>
-                </td>
-                <td>
-                    <p>Alamat : <br>Desa Kemundong Kulon</p>
-                    <p>Ekspedisi : <br>JNT 2 - 3 hari</p>
-                    <p>Ongkir : <br>Rp.2000</p>
-                </td>
-            </tr>
+            <?php
+            while ($data_detail_pembelian = mysqli_fetch_assoc($result_detail_pembelian)) :
+            ?>
+                <tr>
+                    <td><?= $data_detail_pembelian['id_pembelian']; ?></td>
+                    <td><?= $data_detail_pembelian['tanggal_pembelian']; ?></td>
+                    <td>Rp. <?= number_format($data_detail_pembelian['total_pembelian']); ?></td>
+                    <td><?= $data_detail_pembelian['status_pembayaran']; ?></td>
+                    <td><?= $data_detail_pembelian['id_pelanggan']; ?></td>
+                    <td><?= $data_detail_pembelian['nama_pelanggan']; ?></td>
+                    <td><?= $data_detail_pembelian['alamat']; ?></td>
+                    <td><?= $data_detail_pembelian['telepon_pelanggan']; ?></td>
+                    <td><?= $data_detail_pembelian['nama_jalan']; ?></td>
+                    <td>Rp. <?= number_format($data_detail_pembelian['tarif']); ?></td>
+                    <!-- Tambahkan baris sesuai dengan kebutuhan -->
+                </tr>
+            <?php endwhile; ?>
         </tbody>
     </table>
-    <table class="table table-bordered table-hover tabel-stripped">
+    <table class="table table-bordered">
         <thead>
-            <tr>
-                <th>No</th>
-                <th>Produk</th>
-                <th>harga</th>
-                <th>Jumlah</th>
-                <th>Ukuran</th>
-                <th>Warna</th>
-                <th>Subberat</th>
-                <th>SubHarga</th>
-            </tr>
+            <th>Nama Produk</th>
+            <th>Harga Produk</th>
+            <th>Jumlah</th>
+            <th>subtotal</th>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tbody>
     </table>
 </div>

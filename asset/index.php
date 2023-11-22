@@ -31,14 +31,11 @@
             <!-- navbar brand end -->
             <!-- btn navbar start -->
             <div class="btn-navbar">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-search"></i>
                 </button>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-list"></i>
                 </button>
@@ -69,8 +66,7 @@
                         <div class="input-group">
                             <input type="search" name="keyword" class="form-control" placeholder="search" required>
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" name="keyword" value="search" type="submit"><i
-                                        class="fas fa-search"></i></button>
+                                <button class="btn btn-primary" name="keyword" value="search" type="submit"><i class="fas fa-search"></i></button>
                             </span>
                         </div>
                     </form>
@@ -79,8 +75,7 @@
                 <!-- btn search start -->
                 <div class="btn-search">
                     <div class="collapse navbar-collapse">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#search">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#search">
                             <span class="toggler"></span>
                             <i class="fas fa-search"></i>
                         </button>
@@ -115,8 +110,21 @@
     </div>
     <!-- owl carousel banner end -->
 
+    <!-- about -->
+    <div class="block">
+        <div class="about">
+            <div></div>
+            <h2 class="title"><strong>CERITA Mlijo.com</strong></h2>
+            <p>Berawal dari sebuah ide seseorang yang kita kembangkan didaerah jember kota. Yang merupakan sebuah bisnis
+                dibidang sayur, buah dan lain-lainnya.
+                Pada Mlijo.com ini terdapat paket masakan yang nantinya akan mempermudah dikalangan masyarakat dan mahasiswa
+                didaerah jember kota,
+            </p>
+        </div>
+    </div>
+
     <!-- advantags start -->
-    <div id="advantags">
+    <!-- <div id="advantags">
         <div class="container">
             <div class="row">
 
@@ -166,7 +174,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- advantags end -->
 
     <!-- terbaru -->
@@ -179,18 +187,68 @@
     </div>
     <!-- terbaru end -->
 
+
+    <div id="advantags">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 ">
+                    <div class="card-box">
+                        <div class="icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Sayur Segar Setiap Hari</h3>
+                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat
+                            salad dengan saus gurih creamy dan enak rasanya.
+                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman,
+                            buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.
+                            Bisa dimakan begitu saja atau diolah menjadi salad. Buah segar bisa dipadukan dengan sayuran
+                            agar rasanya lebih enak dan nutrisinya lebih lengkap mencukupi kebutuhan tubuh.
+                            Baca artikel detikfood, "Resep Salad Sayur dan Buah, Praktis Menyegarkan Cocok Untuk Udara
+                            Panas".</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 box">
+                    <div class="card-box">
+                        <div class="icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3>Segera Pesan Sekarang</h3>
+                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat
+                            salad dengan saus gurih creamy dan enak rasanya.
+                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman,
+                            buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 box">
+                    <div class="card-box">
+                        <div class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <h3>Permudah Hidup Anda</h3>
+                        <p>Buah dan sayuran segar bisa mencukupi kebutuhan cairan tubuh saat udara panas. Bisa dibuat
+                            salad dengan saus gurih creamy dan enak rasanya.
+                            Saat udara panas sangat dianjurkan mencukupi kebutuhan cairan tubuh. Selain dari minuman,
+                            buah dan sayuran segar bisa jadi sumber cairan yang kaya nutrisi.
+                            Bisa dimakan begitu saja atau diolah menjadi salad. Buah segar bisa dipadukan dengan sayuran
+                            agar rasanya lebih enak dan nutrisinya lebih lengkap mencukupi kebutuhan tubuh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- content produk start -->
-    <div id="content">
+    <!-- <div id="content">
         <div class="container">
             <div  class="row">
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
-<<<<<<< HEAD
-                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
-=======
                             <img src="/asset/img/selada.jpg" class="img-responsive" width="240px" height="300px">
->>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -208,9 +266,7 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
-<<<<<<< HEAD
-                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
-=======
+
                             <img src="/asset/img/jagung.jpg" class="img-responsive" width="240px" height="300px">
                         </a>
                         <div class="text">
@@ -230,7 +286,7 @@
                     <div class="card-produk">
                         <a href="detail_produk.php">
                             <img src="../asset/img/kangkung1.jpg" class="img-responsive" width="240px" height="300px">
->>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
+
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -248,11 +304,9 @@
                 <div class="col-md-3">
                     <div class="card-produk">
                         <a href="detail_produk.php">
-<<<<<<< HEAD
-                            <img src="/asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
-=======
+
                             <img src="../asset/img/bayam.jpg" class="img-responsive" width="240px" height="300px">
->>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
+
                         </a>
                         <div class="text">
                             <a href="detail_produk.php">
@@ -267,43 +321,21 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-                <div class="col-md-3">
-                    <div class="card-produk">
-                        <a href="detail_produk.php">
-                            <img src="../asset/img/teknik bezier 2.jpg" class="img-responsive" width="240px" height="300px">
-                        </a>
-                        <div class="text">
-                            <a href="detail_produk.php">
-                                <h3>Nama Sayuran</h3>
-                            </a>
-                            <p class="harga">Rp. 1500</p>
-                           <p class="button">
-                                <a href="detail_produk.php" class="btn btn-light">Detail Sayuran</a>
-                                <a href="keranjang.php" class="btn btn-primary">
-                                    <i class="fas fa-shopping-cart"></i>Keranjang</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-=======
->>>>>>> 376900c51f9960483956c7b2f27c31224baad4aa
+
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- content produk end -->
 
     <!-- footer start -->
-    <?php include 'includes/footer.php'?>
+    <?php include 'includes/footer.php' ?>
     <!-- footer End -->
 
 
     <!-- Bootstrap core JavaScript-->
     <script src="../asset/vendor/jquery/jquery.min.js"></script>
     <script src="../asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- Core plugin JavaScript-->
     <script src="../asset/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->

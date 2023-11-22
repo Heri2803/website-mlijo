@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="/landing page/css/Style.css">
     <link rel="shortcut icon" href="assets/mlijo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -31,10 +31,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" aria-current="page" href="home.html">Home</a>
-          <a class="nav-link" href="Menu.html">Menu</a>
-          <a class="nav-link active" href="Contact.html">Contact</a>
-          <a class="nav-link" href="Login.html">Login</a>
+          <a class="nav-link" aria-current="page" href="home.php">Home</a>
+          <a class="nav-link" href="Menu.php">Menu</a>
+          <a class="nav-link active" href="Contact.php">Contact</a>
+          <a class="nav-link" href="/login user/index.php">Login</a>
         </div>
       </div>
     </div>

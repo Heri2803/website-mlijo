@@ -2,7 +2,34 @@
 session_start();
 include('../config/koneksi.php');
 
+if (isset($_POST["kirimproduk"])) {
+    if (pengecekan($_POST) > 0) {
+        echo "<script>location='keranjang.php';</script>";
+    }
+}
 
+
+
+
+
+// // data produk
+// $data_produk = array();
+// $ambil = $koneksi->query("SELECT * FROM produk");
+// while ($pecah = $ambil->fetch_assoc()) {
+//     $data_produk[] = $pecah;
+// }
+
+
+// //jika ada id_kategori di url
+// if (isset($_GET['$id_kategori'])) {
+//     $id_kategori = $_GET['id_kategori'];
+
+//     $data_kategori =  array();
+//     $ambil = $koneksi->query("SELECT * FROM produk JOIN kategori_produk ON produk.id_kategori_produk = kategori_produk.id_kategori_produk WHERE produk.id_kategori_produk='$id_kategori';");
+//     while ($pecah = $ambil->fetch_assoc()) {
+//         $data_kategori[] = $pecah;
+//     }
+// }
 ?>
 
 
@@ -121,25 +148,31 @@ include('../config/koneksi.php');
                         <!-- side bar end -->
                         <!-- row page produk start -->
                         <div class="row col-md-9 d-flex">
-                        <?php foreach ($tampil_produk as $row) : ?>
-                            <div class="col-md-4">
-                                <div class="card-produk">
-                                    <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>">
-                                        <img src="../asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive" width="240px" height="300px">
-                                    </a>
-                                    <div class="text">
-                                        <a href="detail_produk.php">
-                                            <h3><?= $row["nama_produk"]; ?></h3>
+                            <?php foreach ($tampil_produk as $row) : ?>
+                                <div class="col-md-4" id="produk-container">
+                                    <div class="card-produk">
+                                        <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>">
+                                            <img src="../asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive" width="240px" height="300px">
                                         </a>
-                                        <p class="harga"><?= $row["harga_produk"]; ?></p>
-                                        <p class="button">
-                                            <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>" class="btn btn-light">Detail Sayuran</a>
-                                            <a href="keranjang.php" class="btn btn-primary">
-                                                <i class="fas fa-shopping-cart"></i>Keranjang</a>
-                                        </p>
+                                        <div class="text">
+                                            <a href="detail_produk.php">
+                                                <h3><?= $row["nama_produk"]; ?></h3>
+                                            </a>
+                                            <p class="harga"><?= $row["harga_produk"]; ?></p>
+                                            <form action="" method="post">
+                                                <input type="text" name="kirim_id_pelanggan" value="<?= $_SESSION['id_pelanggan']  ?>" hidden>
+                                                <input type="text" name="kirim_id_produk" value="<?= $row["id_produk"]; ?>" hidden>
+                                                <input type="text" name="jumlah" value="1" hidden>
+                                                <p class="button">
+                                                    <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>" class="btn btn-light">Detail Sayuran</a>
+                                                    <button type="submit" name="kirimproduk" id="insertkeranjang" class="btn btn-primary">
+                                                        <i class="fas fa-shopping-cart"></i>Keranjang
+                                                    </button>
+                                                </p>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -200,6 +233,8 @@ include('../config/koneksi.php');
     <script src="/asset/js/owl.carousel.min.js"></script>
     <!-- main js -->
     <script src="/asset/js/main.js"></script>
+
+    
 </body>
 
 </html>

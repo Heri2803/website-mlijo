@@ -6,7 +6,37 @@
             <button name="hapus" class="btn btn-danger" >Ya , saya yakin menghapus akun ini </button>
         </div>
         <div class="col">
-            <a href="profil.php" class="btn btn-primary">Tidak , saya tidak jadi menghapus akun ini </a>
+            <a href="/asset/index.php" class="btn btn-primary">Tidak , saya tidak jadi menghapus akun ini </a>
         </div>
     </div>
 </center>
+
+<?php
+session_start();
+require('../config/koneksi.php');
+
+function hapusAkun($idPelanggan) {
+    global $koneksi;
+
+    // Query untuk menghapus akun
+    $query = "DELETE FROM `pelanggan` WHERE `id_pelanggan` = $idPelanggan";
+
+    // Eksekusi query
+    $result = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        // Hapus sesi pelanggan atau lakukan tindakan sesuai kebutuhan
+        unset($_SESSION['pelanggan']);
+        echo "<script>alert('Akun berhasil dihapus.'); window.location.href = '/login user/index.php.php';</script>";
+        exit();
+    } else {
+        echo "<script>alert('Gagal menghapus akun. Silakan coba lagi.'); window.location.href = 'profil.php';</script>";
+        exit();
+    }
+}
+
+// Contoh penggunaan fungsi dengan nilai id_pelanggan sebagai parameter
+$idPelanggan = 1; // Ganti nilai ini sesuai kebutuhan
+hapusAkun($idPelanggan);
+?>
+

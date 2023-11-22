@@ -93,28 +93,30 @@ while ($pecah = $ambil->fetch_assoc()) {
 <?php
 
 if (isset($_POST['simpan'])) {
-    $id_kategori_produk = $_POST['id_kategori_produk']; // Remove the dollar sign before 'id_kategori_produk'
+    $id_kategori_produk = $_POST['id_kategori_produk'];
     $nama = $_POST['nama_produk'];
     $harga = $_POST['harga_produk'];
     $deskripsi = $_POST['deskripsi_produk'];
     $stok = $_POST['stok_produk'];
 
-    $nama_foto = $_FILES['foto_produk']['name']; // Remove the square brackets
-    $lokasi_foto = $_FILES['foto_produk']['tmp_name']; // Remove the square brackets
+    // Ambil informasi foto
+    $nama_foto = $_FILES['foto_produk']['name'];
+    $lokasi_foto = $_FILES['foto_produk']['tmp_name'];
 
-    move_uploaded_file($lokasi_foto, "../assets/foto_produk/" . $nama_foto); // Fix the path to the destination folder
+    // Pindahkan foto ke folder tujuan
+    move_uploaded_file($lokasi_foto, "../assets/foto_produk/" . $nama_foto);
 
+    // Masukkan data produk ke tabel produk
     $koneksi->query("INSERT INTO produk(id_kategori_produk, nama_produk, harga_produk, deskripsi_produk, stok, foto_produk)
     VALUES ('$id_kategori_produk', '$nama', '$harga', '$deskripsi', '$stok', '$nama_foto')");
 
-    $id_produk_baru = $koneksi->insert_id; // Assuming you have an auto-increment primary key; get the last inserted ID
+    // Dapatkan ID produk yang baru saja diinsert
+    $id_produk_baru = $koneksi->insert_id;
 
-    // Assuming you want to handle multiple photos
-    foreach ($nama_foto as $key => $nama_foto_item) {
-        $lokasifoto = $lokasi_foto[$key];
-        move_uploaded_file($lokasifoto, "../assets/foto_produk/" . $nama_foto_item);
-        $koneksi->query("INSERT INTO foto(id_produk, nama_foto) VALUES ('$id_produk_baru', '$nama_foto_item')");
-    }
+    // Simpan informasi foto ke tabel foto
+    $koneksi->query("INSERT INTO foto(id_produk, nama_foto) VALUES ('$id_produk_baru', '$nama_foto')");
+
+  
 
     echo "<script>alert('Data berhasil disimpan');</script>";
     echo "<script>location='index.php?produk';</script>";
