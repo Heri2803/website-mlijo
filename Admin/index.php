@@ -43,8 +43,11 @@ if (!isset($_SESSION["nama_lengkap"])) {
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?= 'http://localhost/Mlijo-main/'; ?>sweetalert2/sweetalert2.min.css">
+
 
     <style>
         #weatherWidget .currentDesc {
@@ -102,9 +105,6 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
 
                     <li class="menu-title">Menu</li><!-- /.menu-title -->
-                    <li>
-                        <a href="index.php?banner"> <i class="menu-icon fa fa-camera"></i>Tambah Banner </a>
-                    </li>
                     <li>
                         <a href="index.php?kategori_produk"> <i class="menu-icon fa fa-list"></i>Kategori Produk </a>
                     </li>
@@ -193,8 +193,8 @@ if (!isset($_SESSION["nama_lengkap"])) {
                                     <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Cheryl Wheeler</span>
-                                        <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                        <spa n class="time float-right">10 minutes ago</span>
+                                            <p>Hello, this is an example msg</p>
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
@@ -212,28 +212,48 @@ if (!isset($_SESSION["nama_lengkap"])) {
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <p class="mt-3">
+
                                     <?= $_SESSION['nama_lengkap']; ?>
+
                                 </p>
+
                             </button>
                         </div>
                     </div>
                     <div class="user-area dropdown float-right">
+                        <!-- Dropdown untuk menu profil -->
+                        <!-- Dropdown untuk menu profil -->
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <i class="fa fa-user-circle fa-lg"></i> <!-- Ikon orang Font Awesome yang lebih besar -->
+                            <?php
+                            $result = $koneksi->query("SELECT foto_admin FROM admin WHERE username = '" . $_SESSION['username'] . "'");
+
+                            if (mysqli_num_rows($result) > 0) {
+                                $row = mysqli_fetch_assoc($result);
+                                $urlFoto = $row['foto_admin'];
+
+                                if (!is_null($urlFoto)) {
+                                    $urlFoto = str_replace($_SERVER['DOCUMENT_ROOT'], '', $urlFoto);
+                                    echo '<img alt="" src="images/foto_admin/' . $urlFoto . '" class="rounded-circle img-thumbnail img-fluid" style="width: 40px; height: 40px;">';
+                                } else {
+                                    echo '<img alt="" src="assets/images/polije.png" class="rounded-circle img-thumbnail img-fluid" style="width: 40px; height: 40px;">';
+                                }
+                            } else {
+                                echo '<img alt="" src="assets/images/polije.png" class="rounded-circle img-thumbnail img-fluid" style="width: 40px; height: 40px;">';
+                            }
+                            ?>
                         </a>
 
 
 
+
+
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" data-toggle="modal" data-target="#scrollmodal"><i
-                                    class="fa fa- user"></i>My Profile</a>
+                            <a class="nav-link" href="index.php?admin"><i class="fa fa-user"></i>My Profil</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span
-                                    class="count">13</span></a>
-
-                            <a class="nav-link" href="../Admin/logout.php"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="../Admin/logout.php"><i class="fa fa-power-off"></i>Logout</a>
                         </div>
+
                     </div>
 
                 </div>
@@ -273,6 +293,10 @@ if (!isset($_SESSION["nama_lengkap"])) {
             } elseif (isset($_GET['tambah_produk'])) {
 
                 include 'tambah/tambah_produk.php';
+
+            } elseif (isset($_GET['detail_produk'])) {
+
+                include 'detail/detail_produk.php';
 
             } elseif (isset($_GET['edit_produk'])) {
 
@@ -318,6 +342,10 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
                 include 'admin.php';
 
+            } elseif (isset($_GET['edit_admin'])) {
+
+                include 'edit/edit_admin.php';
+
             } elseif (isset($_GET['pelanggan'])) {
 
                 include 'pelanggan.php';
@@ -355,7 +383,7 @@ if (!isset($_SESSION["nama_lengkap"])) {
     </div>
     <!-- /#right-panel -->
 
-    <!-- modal -->
+    <!-- modal
     <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -392,7 +420,7 @@ if (!isset($_SESSION["nama_lengkap"])) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
@@ -430,6 +458,21 @@ if (!isset($_SESSION["nama_lengkap"])) {
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
     <script src="assets/js/init/fullcalendar-init.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="<?= 'http://localhost/Mlijo-main/'; ?>sweetalert2/sweetalert2.min.js"></script>
+    <script>
+        <?php if (isset($_SESSION['success'])): ?>
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            <?php unset($_SESSION['success']);
+        endif; ?>
+    </script>
     <!--Local Stuff-->
     <script>
         jQuery(document).ready(function ($) {
