@@ -51,6 +51,7 @@ if (isset($_POST['login'])) {
                 <button type="submit" name="login">Login</button>
                 <p>
                     <a href="pages-forget.php">Forgot Password ?</a>
+                    <a href="register.html">Register</a>
                 </p>
             </form>
         </div>
