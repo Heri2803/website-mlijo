@@ -14,23 +14,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $harga = $_POST['harga_produk'];
         $deskripsi = $_POST['deskripsi_produk'];
         $stok = $_POST['stok_produk'];
+        $foto = $_FILES['foto_produk'];
+        $fotoName = $foto['name'];
 
-        $nama_foto = $_FILES['foto_produk']['nama'];
-        $lokasi_foto = $_FILES['foto_produk']['tmp_name'];
+        $fotoFileName = '';
 
-        move_uploaded_file($lokasi_foto[0], "..assets/foto_produk/" . $nama_foto[0]);
+        if ($foto['size'] > 0) {
+            $targetDirectory = 'C:\xampp\htdocs\Mlijo-main\Admin\assets\foto_produk\\';
+            $fotoFileName = $targetDirectory . basename($foto['name']);
 
-        // var_dump($id_kategori_produk);
+            if (move_uploaded_file($foto['tmp_name'], $fotoFileName)) {
+                // File berhasil diupload
+            } else {
+                echo "Error uploading file.";
+                exit();
+            }
+        }
+
+
+        // var_dump($id_kategori_produk, $nama, $harga, $deskripsi, $stok, $fotoFileName);
+
+        // $nama_foto = $_FILES['foto_produk']['nama'];
+        // $lokasi_foto = $_FILES['foto_produk']['tmp_name'];
+
+        // move_uploaded_file($lokasi_foto, "..assets/foto_produk/" . $nama_foto);
+
 
         $koneksi->query("insert into produk(id_kategori_produk,nama_produk, harga_produk, deskripsi_produk,stok, foto_produk)
-        values('$id_kategori_produk','$nama','$harga','$deskripsi','$stok','$nama_foto[0]' )");
-
-        foreach ($nama_foto as $key => $nama_foto) {
-            $lokasifoto = $lokasi_foto[$key];
-            move_uploaded_file($lokasifoto, "..assets/foto_produk/" . $nama_foto);
-            $koneksi->query("insert into foto(id_kategori_produk,nama_foto)
-            values('$id_produk_baru','$nama_foto')");
-        }
+        values('$id_kategori_produk','$nama','$harga','$deskripsi','$stok','$fotoName' )");
 
         echo "<script>alert('data berhasil disimpan');</script>";
         echo "<script>location='index.php?produk ';</script>";
@@ -48,7 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <strong class="card-title">Tambah Data Produk</strong>
                 </div>
                 <div class="card-body">
-                    <form action="<?= $_SERVER['PHP_SELF']; ?>?tambah_produk" method="post">
+                    <form action="<?= $_SERVER['PHP_SELF']; ?>?tambah_produk" method="post"
+                        enctype="multipart/form-data">
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label mt-0,5">Nama Kategori</label>
@@ -95,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label mt-0,5">Foto</label>
                             <div class="col-sm-10">
-                                <input type="file" name="foto" class="form-control">
+                                <input type="file" name="foto_produk" class="form-control">
                             </div>
                         </div>
                         <div class="card-footer py-3">

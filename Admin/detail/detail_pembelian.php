@@ -10,6 +10,7 @@
     $detail = $ambil->fetch_assoc();
     ?>
 
+
     <div class="row">
         <div class="col-md-12 mt-3">
             <div class="card">

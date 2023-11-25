@@ -39,11 +39,11 @@
                                     <td>
                                         <?= $value['nama_kategori_produk']; ?>
                                     </td>
-                                    <td class="text-center" width="150">
-                                        <a href="index.php?edit_kategori_produk=<?php echo $value['id_kategori_produk']; ?>"
+                                    <td class="text-center" width="100">
+                                        <!-- <a href="index.php?edit_kategori_produk=<?php echo $value['id_kategori_produk']; ?>"
                                             class="btn btn-sm btn-primary">
                                             <i class="fa fa-edit"></i> Edit
-                                        </a>
+                                        </a> -->
 
                                         <a href="index.php?hapus_kategori_produk=<?php echo $value['id_kategori_produk']; ?>"
                                             class="btn btn-sm btn-danger">

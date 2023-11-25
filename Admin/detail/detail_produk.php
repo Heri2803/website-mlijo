@@ -3,7 +3,7 @@
         <div class="col-md-12 mt-3">
             <div class="card">
                 <div class="card-header py-3">
-                    <strong class="card-title">Edit Data Produk</strong>
+                    <strong class="card-title">Halaman Detail Produk</strong>
                 </div>
                 <div class="card-body">
                     <form action="">
@@ -15,7 +15,7 @@
                                     <option selected disabled>pilih kategori produk</option>
                                     <option value="Sayuran">Sayuran</option>
                                     <option value="Bumbu Dapur">Bumbu Dapur</option>
-                                    <option value="Buah-buahan">Buah-buahan</option>
+                                    <option value="Buah-buahan  ">Buah-buahan</option>
                                 </select>
                             </div>
                         </div>

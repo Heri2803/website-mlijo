@@ -31,6 +31,7 @@
                                 <th>Nama</th>
                                 <th>Tanggal</th>
                                 <th>Total</th>
+                                <th>Status</th>
                                 <th>Opsi</th>
                             </tr>
                         </thead>
@@ -42,26 +43,25 @@
                                     <td width="50">
                                         <?php echo $key + 1 ?>
                                     </td>
-                                    <td>
+                                    <td width="170">
                                         <?php echo $value['nama_pelanggan']; ?>
                                     </td>
-                                    <td>
+                                    <td width="150">
                                         <?php echo date("d F Y", strtotime($value['tanggal_pembelian'])); ?>
                                     </td>
-                                    <td>
+                                    <td width="150">
                                         Rp
                                         <?php echo number_format($value['total_pembelian']); ?>
                                     </td>
-                                    <!-- <td class="text center" width="15">
-                                        <a href="index.php?detail_pembelian%id="
-                                            class="btn btn-sm btn-info">
-                                            <i class="fa fa-edit"></i>Detail
-                                        </a>
-                                    </td> -->
-                                    <td class="text center" width="15">
+
+                                    <td width="150">
+                                        <?php echo $value['status_pembayaran']; ?>
+                                    </td>
+
+                                    <td class="text center" width="200">
                                         <a href="index.php?detail_pembelian=<?php echo $value['id_pembelian']; ?>"
                                             class="btn btn-sm btn-info">
-                                            <i class="fa fa-edit"></i>Detail
+                                            <i class="fa fa-edit"></i>Detail Pembelian
                                         </a>
                                     </td>
                                 </tr>
