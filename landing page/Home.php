@@ -31,10 +31,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
+<<<<<<< HEAD:landing page/Home.php
           <a class="nav-link active" aria-current="page" href="Home.php">Home</a>
           <a class="nav-link" href="Menu.php">Menu</a>
           <a class="nav-link" href="Contact.php">Contact</a>
           <a class="nav-link" href="login user/index.php">Login</a>
+=======
+          <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+          <a class="nav-link" href="Menu.html">Menu</a>
+          <a class="nav-link" href="Contact.html">Contact</a>
+          <a class="nav-link" href="Login.html" type="submit"><button>Login</button></a>
+>>>>>>> dd349e972fab7b29f80e71a06b361931d649bc92:landing page/Home.html
         </div>
       </div>
     </div>

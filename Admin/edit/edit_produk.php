@@ -1,83 +1,51 @@
-<div class="animated fadeIn">
-    <div class="row">
-        <div class="col-md-12 mt-3">
-            <div class="card">
-                <div class="card-header py-3">
-                <strong class="card-title">Edit Data Produk</strong>
-                </div>
-                <div class="card-body">
-    <form action="">
+<?php
+$id_produk = $_GET['edit_produk'];
+$ambil = $koneksi->query("select * from kategori_produk");
+while ($pecah = $ambil->fetch_assoc()) {
+    $kategori_produk[] = $pecah;
+}
 
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label mt-0,5">Nama Kategori</label>
-            <div class="col-sm-10">
-                <select name="id_kategori_produk" class="form-control">
-                    <option selected disabled>pilih kategori produk</option>
-                    <option value="Sayuran">Sayuran</option>
-                    <option value="Bumbu Dapur">Bumbu Dapur</option>
-                    <option value="Buah-buahan">Buah-buahan</option>
-                </select>
-            </div>
-        </div>
+$query_produk = $koneksi->query("SELECT `id_produk`, produk.id_kategori_produk as id_kategori, kategori_produk.nama_kategori_produk, `nama_produk`, `harga_produk`, `deskripsi_produk`, `stok`, `foto_produk` 
+FROM `produk` JOIN kategori_produk ON produk.id_kategori_produk = kategori_produk.id_kategori_produk where `id_produk` = $id_produk");
 
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label mt-0,5">Nama Produk</label>
-            <div class="col-sm-10">
-                <input type="text" name="nama_produk" class="form-control">
-            </div>
-        </div>
+while ($produk = $query_produk->fetch_assoc()) {
+    $produks[] = $produk;
+}
+if (isset($_POST['edit_produk1'])) {
 
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label mt-0,5">Harga</label>
-            <div class="col-sm-10">
-                <input type="number" name="harga_produk" class="form-control">
-            </div>
-        </div>
+    // var_dump($_POST);
+    $id = $_POST['id'];
+    $id_kategori = $_POST['id_kategori_produk'];
+    $nama_produk = $_POST['nama_produk'];
+    $harga_produk = $_POST['harga_produk'];
+    $stok = $_POST['stok_produk'];
+    $deskripsi_produk = $_POST['deskripsi_produk'];
+    $foto = $_FILES['foto_produk'];
+    $foto_produk = $foto['name'];
 
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label mt-0,5">Deskripsi</label>
-            <div class="col-sm-10">
-                <textarea name="deskripsi_produk" class="form-control"></textarea>
-            </div>
-        </div>
+    $fotoFileName = '';
 
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label mt-0,5">Stok</label>
-            <div class="col-sm-10">
-                <input type="number" name="stok_produk" class="form-control">
-            </div>
-        </div>
+    if ($foto['size'] > 0) {
+        $targetDirectory = 'C:\xampp\htdocs\Mlijo-main\Admin\assets\foto_produk\\';
+        $fotoFileName = $targetDirectory . basename($foto['name']);
 
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label mt-0,5">Foto</label>
-            <div class="col-sm-10">
-                <input type="file" name="foto_produk" class="form-control">
-            </div>
-        </div>
+        if (move_uploaded_file($foto['tmp_name'], $fotoFileName)) {
+            // File berhasil diupload
+        } else {
+            echo "Error uploading file.";
+            exit();
+        }
+    }
 
-    </form>
-</div>
+    $query = "UPDATE `produk` SET `id_kategori_produk`='
+    $id_kategori',`nama_produk`='$nama_produk',`harga_produk`='$harga_produk',
+    `deskripsi_produk`='$deskripsi_produk',`stok`='$stok',`foto_produk`='$foto_produk' WHERE  `id_produk`= $id";
+    $result = mysqli_query($koneksi, $query);
 
-                
-
-                
-
-                <div class="card-footer py-3">
-                    <div class="row">
-                        <div class="col">
-                            <a href="index.php?produk" class="btn btn-sm btn-danger">
-                                <i class="fa fa-chevron-left"></i>Kembali
-                            </a>
-                        </div>
-                        <div class="col text-right">
-                            <a href="" class="btn btn-sm btn-primary">
-                            Simpan<i class="fa fa-chevron-left"></i>
-                            </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+    if ($result) {
+        echo "<script>location='index.php?produk ';</script>";
+    } else {
+        echo "Error: " . mysqli_error($koneksi);
+    }
+}
+?>
