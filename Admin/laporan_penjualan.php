@@ -1,5 +1,5 @@
 <div class="shadow p-3 mb-3 mt-3 bg-white" style="border-radius: 5px;">
-    <h5><b>Laporan Pembelian</b></h5>
+    <h5><b>Laporan Penjualan</b></h5>
 </div>
 
 <?php
@@ -54,7 +54,7 @@ if (isset($_POST["cari"])) {
                 </div>
 
                 <div class="col-md-4">
-                    <button name="cari" class="btn btn-primary" id="buttonSubmit" type="submit">
+                    <button name="cari" class="btn btn-primary" onclick="setDate()" id="buttonSubmit" type="submit">
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
@@ -66,7 +66,7 @@ if (isset($_POST["cari"])) {
 
 <div class="" id="pesan">
     <?php error_reporting(E_ERROR | E_PARSE);
-    if (($semuadata)): ?>
+    if (($semuadata)) { ?>
         <div class="alert alert-info shadow">
             <h5>
                 <b>Laporan Pembelian dari
@@ -76,13 +76,23 @@ if (isset($_POST["cari"])) {
                 </b>
             </h5>
         </div>
-    <?php endif; ?>
+
+    <?php } elseif (!$semuadata) { ?>
+        <div id="pesan1" class="alert alert-danger shadow">
+            <h5>
+                Harap isi tanggal terlebih dahulu!
+            </h5>
+        </div>
+    <?php } ?>
 </div>
 
 
+
 <div class="card shadow bg-white" id="tabelLaporan">
+
     <div class="card-body">
         <div class="table-responsive">
+
             <table id="bootstrap-data-table" class="table table-striped table-bordered">
                 <thead>
                     <tr>
@@ -128,22 +138,43 @@ if (isset($_POST["cari"])) {
 
 <?php if (!empty($semuadata)): ?>
 
-    <a href="download.php?tglm=<?php echo $tgl_mulai; ?>&tgls=<?php echo $tgl_selesai ?>" class="btn btn-sm btn-success"
-        style="float: right;" target="_blank">
-        <i class="fa fa-download"></i> Download
-    </a>
+    <?php if (!empty($semuadata)): ?>
+        <form action="download.php">
+            <button id="downloadBtn" class="btn btn-sm btn-success" style="float: right;">
+                <i class="fa fa-download"></i> Download
+            </button>
+        </form>
+    <?php endif; ?>
+
 
 <?php endif; ?>
 
 <script>
     function setDate() {
         const form = document.getElementById('formTanggal')
-        const pesan = document.getElementById('pesan');
+        const pesan = document.getElementById('pesan1');
         const tabelLaporan = document.getElementById('tabelLaporan');
 
         form.method = "post";
         form.submit();
-        // pesan.style.display = "block"
+        // pesan.style.display = "none"
         // tabelLaporan.style.display = "block"
     }
+</script>
+
+
+<script src="https://unpkg.com/html2pdf.js"></script>
+
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+        // Buat instance html2pdf
+        var element = document.getElementById('tabelLaporan'); // Ganti dengan ID elemen yang ingin Anda cetak
+        html2pdf(element);
+    });
+
+    // function hiddenPesan() {
+    //     const pesan1 = documnet.getElementById('pesan1');
+
+    //     pesan1.style.display = "none";
+    // }
 </script>

@@ -48,7 +48,7 @@
                 title: 'Login Successful',
                 text: 'Welcome back, $namaLengkap!',
             }).then(() => {
-                window.location.href = '../Admin/index.php';
+                window.location.href = '../Admin/index.php?dashboard';
             });
         </script>";
         exit(); // Ensure that no code is executed after the redirect
@@ -75,10 +75,9 @@
             echo "<script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Login Successful',
-                    text: 'Welcome back, $namaLengkap!',
+                    title: 'Anda berhasil login',
                 }).then(() => {
-                    window.location.href = '../Admin/index.php';
+                    window.location.href = '../Admin/index.php?dashboard';
                 });
             </script>";
             exit(); // Ensure that no code is executed after the redirect

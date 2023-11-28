@@ -7,13 +7,12 @@ if (!isset($_SESSION["nama_lengkap"])) {
     window.location.href=("../Login/index.php")</script>';
 }
 ?>
-
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang=""> <!--<![endif]-->
+<html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -46,7 +45,8 @@ if (!isset($_SESSION["nama_lengkap"])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="<?= 'http://localhost/Mlijo-main/'; ?>sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZwTl" crossorigin="anonymous">
 
 
     <style>
@@ -100,11 +100,12 @@ if (!isset($_SESSION["nama_lengkap"])) {
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="index.php?dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                         <hr class="sidebar-divider my-0 w-100">
+                    </li>
 
+                    <li class="menu-title">Menu</li>
 
-                    <li class="menu-title">Menu</li><!-- /.menu-title -->
                     <li>
                         <a href="index.php?kategori_produk"> <i class="menu-icon fa fa-list"></i>Kategori Produk </a>
                     </li>
@@ -117,13 +118,20 @@ if (!isset($_SESSION["nama_lengkap"])) {
                     <li>
                         <a href="index.php?pelanggan"> <i class="menu-icon fa fa-users"></i>Pelanggan</a>
                     </li>
-                    <li>
-                        <a href="index.php?laporan"> <i class="menu-icon fa fa-bar-chart"></i>Laporan</a>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Laporan</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-bar-chart"></i><a
+                                    href="index.php?laporan_penjualan">Penjualan</a></li>
+                            <li><i class="fa fa-money"></i><a href="index.php?laporan_pengeluaran">Pengeluaran</a></li>
+                        </ul>
                     </li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </nav>
     </aside>
+
     <!-- /#left-panel -->
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
@@ -251,7 +259,10 @@ if (!isset($_SESSION["nama_lengkap"])) {
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="index.php?admin"><i class="fa fa-user"></i>My Profil</a>
 
-                            <a class="nav-link" href="../Admin/logout.php"><i class="fa fa-power-off"></i>Logout</a>
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fa fa-power-off"></i> Logout
+                            </a>
+
                         </div>
 
                     </div>
@@ -259,6 +270,28 @@ if (!isset($_SESSION["nama_lengkap"])) {
                 </div>
             </div>
         </header>
+
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Apakah anda yakin untuk logout?
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-danger" href="../Admin/logout.php">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- /#header -->
         <!-- Content -->
         <div class="content">
@@ -354,9 +387,14 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
                 include 'hapus/hapus_pelanggan.php';
 
-            } elseif (isset($_GET['laporan'])) {
+            } elseif (isset($_GET['laporan_penjualan'])) {
 
-                include 'laporan.php';
+                include 'laporan_penjualan.php';
+
+            } elseif (isset($_GET['laporan_pengeluaran'])) {
+
+                include 'laporan_pengeluaran.php';
+
 
             } else {
                 include 'dashboard.php';
@@ -458,10 +496,12 @@ if (!isset($_SESSION["nama_lengkap"])) {
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
     <script src="assets/js/init/fullcalendar-init.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script src="<?= 'http://localhost/Mlijo-main/'; ?>sweetalert2/sweetalert2.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
+
         <?php if (isset($_SESSION['success'])): ?>
             Swal.fire({
                 position: "top-end",
@@ -668,3 +708,13 @@ if (!isset($_SESSION["nama_lengkap"])) {
 </body>
 
 </html>
+<!-- <?php if (isset($_SESSION['username'])): ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Anda berhasil login',
+            showConfirmButton: false,
+            timer: 1300
+        });
+    </script>
+<?php endif; ?> -->
