@@ -1,55 +1,55 @@
-<!doctype html>
-<html class="no-js" lang="">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mlijo</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+require('../config/koneksi.php');
 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = mysqli_real_escape_string($koneksi, $_POST['email']);
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    // Cek apakah email terdaftar di database
+    $query = "SELECT * FROM mlijo WHERE email='$email'";
+    $ambil = $koneksi->query("select * from admin");
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-</head>
-<body class="bg-dark">
+    if (mysqli_num_rows($result) > 0) {
+        // Generate token untuk verifikasi
+        $token = bin2hex(random_bytes(32));
 
-    <div class="sufee-login d-flex align-content-center flex-wrap">
-        <div class="container">
-            <div class="login-content">
-                <div class="login-logo">
-                    <a href="index.html">
-                        <img class="align-content" src="logo.jpg" alt="">
-                    </a>
-                </div>
-                <div class="login-form">
-                    <form>
-                        <div class="form-group">
-                            <label>Email address</label>
-                            <input type="email" class="form-control" placeholder="Email">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-flat m-b-15">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+        // Update token ke dalam database
+        $updateQuery = "UPDATE users SET reset_token='$token' WHERE email='$email'";
+        mysqli_query($koneksi, $updateQuery);
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
+        // Kirim email verifikasi
+        $to = $email;
+        $subject = "Reset Password";
+        $message = "Silakan klik link berikut untuk mereset password Anda: \n";
+        $message .= "http://localhost/reset-password.php?email=$email&token=$token";
+        $headers = "From: webmaster@example.com";
 
+        email($to, $subject, $message, $headers);
+
+        echo "Email verifikasi telah dikirim. Silakan cek email Anda.";
+    } else {
+        echo "Email tidak terdaftar di database.";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style1.css">
+        <title>Forgot Password</title>
+    </head>
+
+<body>
+    <h2>Lupa Password</h2>
+    <form action="" method="post">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <br>
+        <button type="submit">Kirim Verifikasi</button>
+    </form>
 </body>
+
 </html>
