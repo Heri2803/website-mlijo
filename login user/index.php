@@ -57,22 +57,46 @@ require('../config/koneksi.php');
 //         header("Location: ../asset/index.php");
 //     }
 // }
-
+if (isset($_SESSION["role"])) {
+   $role = $_SESSION["role"];
+   if ($role == "admin") {
+    header("Location: /Admin/index.php");
+   }elseif($role == "customer"){
+    header("Location: /asset/index.php");
+   }else{
+    header("Location: /loginuser/index.php");
+   }
+}
 
 if (isset($_POST["pelanggan"])) {
     $email = $_POST["email_pelanggan"];
     $password = $_POST["password_pelanggan"];
   
     $caripelanggan = query("SELECT * FROM pelanggan WHERE pelanggan.email_pelanggan = '$email' AND pelanggan.password_pelanggan = '$password';");
+    $cariadmin = query("SELECT * FROM admin WHERE admin.email ='$email' AND admin.password = '$password';");
   
     if ($caripelanggan) {
       // set session
       $_SESSION['nama_pelanggan'] = $caripelanggan[0]['nama_pelanggan'];
-      $_SESSION['id_pelanggan'] = $caripelanggan[0]['id_pelanggan']; 
+      $_SESSION['id_pelanggan'] = $caripelanggan[0]['id_pelanggan'];
+      $_SESSION['tlpn'] = $caripelanggan[0]['telepon_pelanggan'];
       $_SESSION['foto_pelanggab'] = $caripelanggan[0]['foto_pelanggan'];
+      $_SESSION['email_pelanggab'] = $caripelanggan[0]['email_pelanggan'];
+      $_SESSION['alamat_pelanggab'] = $caripelanggan[0]['alamat'];
+      $_SESSION["role"] = 'customer';
+      
+     
     //   $_SESSION['alamat'] = $caripelanggan[0]['alamat'];
     //   $_SESSION['telepon_pelanggan'] = $caripelanggan[0]['telepon_pelanggan'];
       header("Location: /asset/index.php");
+    }elseif($cariadmin){
+        $_SESSION["nama_lengkap"] = $cariadmin[0]['nama_lengkap'];
+        $_SESSION["username"] = $cariadmin[0]['username'];
+        $_SESSION["password"] = $cariadmin[0]['password'];
+        $_SESSION["foto_admin"] = $cariadmin[0]['foto_admin'];
+        $_SESSION["role"] = 'admin';
+        // $_SESSION["terserah"] = $kontol;
+        header("Location: /Admin/index.php");
     } else {
       echo "<div class='alert alert-warning'>Username atau Password salah</div>
       <meta http-equiv='refresh' content='2'>";

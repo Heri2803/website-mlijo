@@ -9,6 +9,14 @@ if (isset($_POST["kirimproduk"])) {
 }
 
 
+if (isset($_POST["nama_kategori"])) {
+    $tampilkategori = kategori($_POST);
+} else {
+    $tampilkategori = $tampil_produk;
+}
+
+
+
 
 
 
@@ -148,7 +156,7 @@ if (isset($_POST["kirimproduk"])) {
                         <!-- side bar end -->
                         <!-- row page produk start -->
                         <div class="row col-md-9 d-flex">
-                            <?php foreach ($tampil_produk as $row) : ?>
+                            <?php foreach ($tampilkategori  as $row) : ?>
                                 <div class="col-md-4" id="produk-container">
                                     <div class="card-produk">
                                         <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>">

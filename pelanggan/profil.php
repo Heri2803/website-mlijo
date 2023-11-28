@@ -113,9 +113,9 @@ session_start();
                 <div class="col-md-3">
                     <div class="card kategori">
                         <div class="card-header text-center">
-                            <img src="/asset/img/teletabis.jpg" class="img-responsive rounded-circle rounded mx-auto 
+                            <img src="/asset/img/<?php echo $_SESSION['foto_pelanggab']; ?>" class="img-responsive rounded-circle rounded mx-auto 
                             d-block mb-3" width="150px" height="150px">
-                            <h4>Muhammad Heriyanto</h4>
+                            <h4><?php echo $_SESSION['nama_pelanggan']; ?></h4>
                         </div>
                         <nav class="nav flex-column nav-menu">
                            <li class="<?php if(isset($_GET['pesanan'])){echo"active";} ?>">

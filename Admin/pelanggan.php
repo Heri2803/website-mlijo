@@ -24,8 +24,8 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Email</th>
-                                <th>Telepon</th>
-                                <th>Foto</th>
+                                <!-- <th>Telepon</th>
+                                <th>Foto</th> -->
                                 <th>Opsi</th>
                             </tr>
                         </thead>

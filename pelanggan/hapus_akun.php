@@ -27,7 +27,7 @@ function hapusAkun($idPelanggan) {
     if ($result) {
         // Hapus sesi pelanggan atau lakukan tindakan sesuai kebutuhan
         unset($_SESSION['pelanggan']);
-        echo "<script>alert('Akun berhasil dihapus.'); window.location.href = '/login user/index.php.php';</script>";
+        echo "<script>alert('Akun berhasil dihapus.'); window.location.href = '/loginuser/index.php';</script>";
         exit();
     } else {
         echo "<script>alert('Gagal menghapus akun. Silakan coba lagi.'); window.location.href = 'profil.php';</script>";
@@ -36,7 +36,7 @@ function hapusAkun($idPelanggan) {
 }
 
 // Contoh penggunaan fungsi dengan nilai id_pelanggan sebagai parameter
-$idPelanggan = 1; // Ganti nilai ini sesuai kebutuhan
+$idPelanggan = 4; // Ganti nilai ini sesuai kebutuhan
 hapusAkun($idPelanggan);
 ?>
 

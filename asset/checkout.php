@@ -53,7 +53,6 @@ if (isset($_POST["lunas"])) {
                 <!-- breadcumb end -->
                 <!-- start card box -->
                 <form action="" method="post">
-
                     <div class="col-md-12 keranjang">
                         <div class="card-box">
                             <h2>Checkout Belanja Mu</h2>
@@ -73,20 +72,20 @@ if (isset($_POST["lunas"])) {
                                         <?php foreach ($tampil_keranjang as $row) : ?>
                                             <tr>
                                                 <td>
-                                                    <input type="text" value="<?= $row["id_keranjang"]; ?>" name="idkeranjang">
+                                                    <input type="text" value="<?= $row["id_keranjang"]; ?>" name="idkeranjang[]">
                                                     <a href="detail_produk.php?id=<?= $row["id_produk"]; ?>">
-                                                    <input type="text" value="<?= $row["id_produk"]; ?>" name="idproduk">
+                                                    <input type="text" value="<?= $row["id_produk"]; ?>" name="idproduk[]">
                                                         <img src="/asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive" width="100">
                                                     </a>
                                                 </td>
                                                 <td><?= $row["nama_produk"]; ?></td>
                                                 <td>
-                                                    <input type="number" name="jumlah" min="1" value="<?= $row["jumlah"]; ?>" class="form-control form-control-sm" style="width: 200px;" oninput="updateSubtotal(this); totaluang();" data-id="<?= $row["id_keranjang"]; ?>">
+                                                    <input type="number" name="jumlah[]" min="1" value="<?= $row["jumlah"]; ?>" class="form-control form-control-sm" style="width: 200px;" oninput="updateSubtotal(this); totaluang();" data-id="<?= $row["id_keranjang"]; ?>">
                                                 </td>
                                                 <td class="harga"><?= $row["harga_produk"]; ?></td>
                                                 <td class="subtotal">
                                                     <?= $row["total_harga"]; ?>
-                                                    <input type="text" value="<?= $row["total_harga"]; ?>" name="subtotal">
+                                                    <input type="text" value="<?= $row["total_harga"]; ?>" name="subtotal[]" hidden>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -113,11 +112,11 @@ if (isset($_POST["lunas"])) {
                                                 <?php endforeach; ?>
                                                 <?php foreach ($tampil_pelanggan as $row) : ?>
                                                     <label for="">Nama :</label>
-                                                    <input type="text" class="form-control" value="<?= $row["nama_pelanggan"]; ?>" name="nama_plg">
+                                                    <input type="text" class="form-control" value="<?php echo $_SESSION['nama_pelanggan']; ?>" name="nama_plg">
                                                     <label for="">Alamat :</label>
-                                                    <input type="text" class="form-control" value="<?= $row["alamat"]; ?>" name="alamat_plg">
+                                                    <input type="text" class="form-control" value="<?php echo $_SESSION['alamat_pelanggab']; ?>" name="alamat_plg">
                                                     <label for="">telepon :</label>
-                                                    <input type="text" class="form-control" value="<?= $row["telepon_pelanggan"]; ?>" name="tlpn_plg">
+                                                    <input type="text" class="form-control" value="<?php echo isset($_SESSION['tlpn']) ? $_SESSION['tlpn'] : ''; ?>" name="tlpn_plg">
                                                     <?php break; ?>
                                                 <?php endforeach; ?>
                                             </div>
@@ -145,9 +144,11 @@ if (isset($_POST["lunas"])) {
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col">
-                                    <a href="keranjang.php" class="btn btn-light">
+                                <?php foreach ($tampiltransaksi as $row) : ?>
+                                    <a href="hapuscheckout.php?hapus=<?= $row['id_pembelian']; ?>" class="btn btn-light">
                                         <i class="fas fa-chevron-left"></i> Kembali
                                     </a>
+                                    <?php endforeach; ?>
                                 </div>
                                 <div class="col-text-right">
                                     <button href="/pelanggan/profil.php" class="btn btn-primary" name="lunas">

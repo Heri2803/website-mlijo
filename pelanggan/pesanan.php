@@ -48,11 +48,12 @@ ob_end_flush(); // End output buffering
                     <td style="width: 200px;">
                         <!-- Menambahkan data-id pada atribut detail-button untuk menyimpan ID pembelian -->
                         <a href="javascript:void(0);" class="btn btn-sm btn-info detail-button" data-id="<?= $data_pembelian['id_pembelian']; ?>">Detail</a>
-                        <?php
-                        // Tambahkan kondisi untuk menampilkan tombol Bayar Sekarang hanya jika status pembayaran belum lunas
-                        if ($data_pembelian['status_pembayaran'] != 'Lunas') :
-                        ?>
-                            <a href="profil.php?bayar&id=<?= $data_pembelian['id_pembelian']; ?>" class="btn btn-sm btn-primary">Bayar Sekarang</a>
+                        <?php if ($data_pembelian['status_pembayaran'] != 'Lunas') : ?>
+                            <!-- Tombol Bayar Sekarang -->
+                            <a href="profil.php?bayar&id=<?= $data_pembelian['id_pembelian']; ?>" class="btn btn-sm btn-primary bayar-button" data-id="<?= $data_pembelian['id_pembelian']; ?>" data-idpelanggan="<?= $_SESSION['id_pelanggan']; ?>" data-total="<?= $data_pembelian['total_pembelian']; ?>">
+                                Bayar Sekarang
+                            </a>
+
                         <?php endif; ?>
                     </td>
                 </tr>
@@ -64,9 +65,9 @@ ob_end_flush(); // End output buffering
 <!-- Menambahkan script jQuery untuk menangani klik pada tombol detail -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         // Menangani klik pada tombol detail
-        $('.detail-button').click(function () {
+        $('.detail-button').click(function() {
             // Mengambil data-id dari atribut detail-button
             var id_pembelian = $(this).data('id');
 
@@ -75,3 +76,4 @@ ob_end_flush(); // End output buffering
         });
     });
 </script>
+

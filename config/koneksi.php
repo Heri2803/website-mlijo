@@ -2,11 +2,11 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$db = "mlijo";
+$db = "Mlijo";
 $koneksi = mysqli_connect($server, $username, $password, $db);
 
 if (mysqli_connect_errno()) {
-    echo "koneksi gagal : " . mysqli_connect_error();
+  echo "koneksi gagal : " . mysqli_connect_error();
 }
 
 //SELECT DATABASE
@@ -53,6 +53,16 @@ function hapusproduk($id_pos)
 
   return mysqli_affected_rows($koneksi);
 }
+
+//DELETE PRODUK CHECKOUT
+function hapusco($id_pos)
+{
+  global $koneksi;
+  mysqli_query($koneksi, "DELETE FROM pembelian WHERE `pembelian`.`id_pembelian` = '$id_pos';");
+
+  return mysqli_affected_rows($koneksi);
+}
+
 
 //UPDATE PRODUK KERANJANG
 function updatekrnjng($id_pos)
@@ -180,6 +190,8 @@ $tampil_pelanggan = query("SELECT * FROM pelanggan;");
 $tampil_ongkir = query("SELECT * FROM ongkir;");
 //tampil pembelian
 $tampil_pembelian = query("SELECT * FROM pembelian;");
+//tampil kategori
+$tampil_kategori1 = query("SELECT * FROM kategori_produk;");
 
 //update akun 
 function perbarui($data){
@@ -259,7 +271,7 @@ $tgl = $_POST["tanggal"];
 // Konversi format tanggal
 $tanggal_pembelian = date('Y-m-d H:i:s', strtotime($tgl));
 
-$data = "INSERT INTO `pembelian` (`id_pembelian`, `id_pelanggan`, `tanggal_pembelian`, `total_pembelian`, `id_ongkir`) VALUES (NULL, '$id_pembelian', '$tanggal_pembelian', NULL, NULL);";
+$data = "INSERT INTO `pembelian` (`id_pembelian`, `id_pelanggan`, `tanggal_pembelian`, `total_pembelian`, `id_ongkir`,status_pembayaran) VALUES (NULL, '$id_pembelian', '$tanggal_pembelian', NULL, NULL,'Belum Dibayar');";
 
 mysqli_query($koneksi, $data);
 
@@ -283,17 +295,59 @@ function tambahsemuatransaksi($data){
   $queryUpdate = "UPDATE `pembelian` SET `total_pembelian` = '$totalfinal', `id_ongkir` = '$ongkos' WHERE `pembelian`.`id_pembelian` = '$id';";
   mysqli_query($koneksi, $queryUpdate);
 
+
+  foreach ($id_keranjang as $index => $value) {
+    // Lakukan sesuatu dengan nilai pada setiap indeks
+    $idKeranjang = $value;
+    $idProduk = $id_produk[$index];
+    $jumlahProduk = $jumlah[$index];
+    $subtotalProduk = $subtotal[$index];
+
+    // Lakukan operasi database atau aksi lainnya sesuai kebutuhan
+    // ...
+
+    // Contoh penyimpanan data ke dalam database (gunakan metode yang sesuai untuk Anda)
+    $queryInsert = "INSERT INTO `pembelian_produk` (`id_pembelian`, `id_produk`, `jumlah`, `sub_total`) VALUES ('$id', '$idProduk', '$jumlahProduk', '$subtotalProduk');";
+    mysqli_query($koneksi, $queryInsert);
+
+    $queryDelete = "DELETE FROM `keranjang` WHERE `id_keranjang` = '$idKeranjang';";
+  mysqli_query($koneksi, $queryDelete);
+    // Eksekusi query sesuai dengan cara Anda menjalankan query di aplikasi Anda
+}
   // Query INSERT
-  $queryInsert = "INSERT INTO `pembelian_produk` (`id_pembelian`, `id_produk`, `jumlah`, `sub_total`) VALUES ('$id', '$id_produk', '$jumlah', '$subtotal');";
-  mysqli_query($koneksi, $queryInsert);
+  // $queryInsert = "INSERT INTO `pembelian_produk` (`id_pembelian`, `id_produk`, `jumlah`, `sub_total`) VALUES ('$id', '$id_produk', '$jumlah', '$subtotal');";
+  // mysqli_query($koneksi, $queryInsert);
 
   // Query DELETE
-  $queryDelete = "DELETE FROM `keranjang` WHERE `id_keranjang` = '$id_keranjang';";
-  mysqli_query($koneksi, $queryDelete);
+  // $queryDelete = "DELETE FROM `keranjang` WHERE `id_keranjang` = '$id_keranjang';";
+  // mysqli_query($koneksi, $queryDelete);
 
   return mysqli_affected_rows($koneksi);
 }
 
-//menampilkan data pembelian bukan detail
+//menyesuaikan kategori
+function kategori($data){
+  global $koneksi;
 
-?>
+  $idkategori = $_POST["id_kategori"];
+  $tampilkategori4 = '';
+  
+  $tampilkategori4 = query("SELECT * FROM produk WHERE produk.id_kategori_produk = '$idkategori';");
+  return $tampilkategori4;
+}
+
+//Pembayaran akhir
+function bayarakhir($data){
+  global $koneksi;
+
+  $idpembeli = $_POST["id_pembelian"];
+  $upload = upload();
+  if (!$upload) {
+    return false;
+  }
+  
+  $queryInsert = "UPDATE `pembelian` SET `status_pembayaran` = 'Sedang Proses', `Bukti_pembayaran` = '$upload' WHERE `id_pembelian` = '$idpembeli';";
+    mysqli_query($koneksi, $queryInsert);
+    
+}
+  ?>
