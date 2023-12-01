@@ -113,6 +113,9 @@ if (!isset($_SESSION["nama_lengkap"])) {
                         <a href="index.php?produk"> <i class="menu-icon fa fa-cubes"></i>Produk </a>
                     </li>
                     <li>
+                        <a href="index.php?ongkir"> <i class="menu-icon fa fa-truck"></i>Ongkir </a>
+                    </li>
+                    <li>
                         <a href="index.php?pembelian"> <i class="menu-icon fa fa-shopping-cart"></i>Pembelian</a>
                     </li>
                     <li>
@@ -154,7 +157,7 @@ if (!isset($_SESSION["nama_lengkap"])) {
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="notification"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">3</span>
+                                <!-- <span class="count bg-danger">3</span> -->
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
                                 <p class="red">You have 3 Notification</p>
@@ -169,49 +172,6 @@ if (!isset($_SESSION["nama_lengkap"])) {
                                 <a class="dropdown-item media" href="#">
                                     <i class="fa fa-warning"></i>
                                     <p>Server #3 overloaded.</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown for-message">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-envelope"></i>
-                                <span class="count bg-primary">4</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Jonathan Smith</span>
-                                        <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Jack Sanders</span>
-                                        <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Cheryl Wheeler</span>
-                                        <spa n class="time float-right">10 minutes ago</span>
-                                            <p>Hello, this is an example msg</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Rachel Santos</span>
-                                        <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -317,8 +277,23 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
                 include 'hapus/hapus_kategori_produk.php';
 
+
+
                 //data produk 
             
+            } elseif (isset($_GET['ongkir'])) {
+
+                include('ongkir.php');
+
+            } elseif (isset($_GET['hapus_ongkir'])) {
+
+                include 'hapus/hapus_ongkir.php';
+
+            } elseif (isset($_GET['edit_ongkir'])) {
+
+                include 'edit/edit_ongkir.php';
+
+
             } elseif (isset($_GET['produk'])) {
 
                 include 'produk.php';
@@ -369,6 +344,10 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
                 include 'detail/detail_pembelian.php';
 
+            } elseif (isset($_GET['pembayaran'])) {
+
+                include 'pembayaran.php';
+
                 //data pelanggan
             
             } elseif (isset($_GET['admin'])) {
@@ -379,6 +358,10 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
                 include 'edit/edit_admin.php';
 
+            } elseif (isset($_GET['edit_pengeluaran'])) {
+
+                include 'edit/edit_pengeluaran.php';
+
             } elseif (isset($_GET['pelanggan'])) {
 
                 include 'pelanggan.php';
@@ -387,6 +370,10 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
                 include 'hapus/hapus_pelanggan.php';
 
+            } elseif (isset($_GET['hapus_pengeluaran'])) {
+
+                include 'hapus/hapus_pengeluaran.php';
+
             } elseif (isset($_GET['laporan_penjualan'])) {
 
                 include 'laporan_penjualan.php';
@@ -394,6 +381,7 @@ if (!isset($_SESSION["nama_lengkap"])) {
             } elseif (isset($_GET['laporan_pengeluaran'])) {
 
                 include 'laporan_pengeluaran.php';
+
 
 
             } else {
@@ -502,15 +490,7 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
     <script>
 
-        <?php if (isset($_SESSION['success'])): ?>
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Your work has been saved",
-                showConfirmButton: false,
-                timer: 1500
-            });
-            <?php unset($_SESSION['success']);
+        <?php if (isset($_SESSION['success'])): ?>         Swal.fire({ position: "top-end", icon: "success", title: "Your work has been saved", showConfirmButton: false, timer: 1500 }); <?php unset($_SESSION['success']);
         endif; ?>
     </script>
     <!--Local Stuff-->

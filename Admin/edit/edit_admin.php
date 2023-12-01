@@ -1,5 +1,9 @@
 <?php
-include('../../config/koneksi.php');
+$server = "localhost";
+$username = "root";
+$password = "";
+$db = "mlijo";
+$koneksi = mysqli_connect($server, $username, $password, $db);
 
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
@@ -26,7 +30,7 @@ if (isset($_POST['update'])) {
 
     // $query = "UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoFileName' WHERE id_admin='$id'";
 
-    $koneksi->query("UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoName' WHERE id_admin='$id'");
+    $query = ("UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoName' WHERE id_admin='$id'");
     $result = mysqli_query($koneksi, $query);
 
 

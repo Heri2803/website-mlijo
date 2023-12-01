@@ -42,24 +42,15 @@
     if (isset($_SESSION['username'])) {
         $namaLengkap = $_SESSION['nama_lengkap'];
 
-        // Use SweetAlert for the success message
-        echo "<script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Login Successful',
-                text: 'Welcome back, $namaLengkap!',
-            }).then(() => {
-                window.location.href = '../Admin/index.php?dashboard';
-            });
-        </script>";
-        exit(); // Ensure that no code is executed after the redirect
+        header("Location: ../Admin/index.php?dashboard");
+        exit(); // Pastikan tidak ada kode yang dijalankan setelah pengalihan
     }
 
     if (isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        // Use prepared statements to prevent SQL injection
+        // Gunakan prepared statements untuk mencegah SQL injection
         $stmt = $koneksi->prepare("SELECT * FROM admin WHERE username = ? AND password = ?");
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
@@ -72,23 +63,19 @@
             $_SESSION['username'] = $username;
             $_SESSION['nama_lengkap'] = $namaLengkap;
 
-            // Use SweetAlert for the success message
-            echo "<script>
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Anda berhasil login',
-                }).then(() => {
-                    window.location.href = '../Admin/index.php?dashboard';
-                });
-            </script>";
-            exit(); // Ensure that no code is executed after the redirect
+            // Set pesan login berhasil di sesi
+            $_SESSION['login_success'] = true;
+
+            header("Location: ../Admin/index.php?dashboard");
+            exit(); // Pastikan tidak ada kode yang dijalankan setelah pengalihan
         } else {
             session_destroy();
-            // Add code for handling incorrect login credentials
-            // (e.g., display an error message to the user)
+            // Tambahkan kode untuk menangani kredensial login yang salah
+            // (misalnya, tampilkan pesan kesalahan kepada pengguna)
         }
     }
     ?>
+
 </body>
 
 </html>
