@@ -12,29 +12,41 @@ if (isset($_POST['update'])) {
 
     $fotoFileName = '';
 
+    $targetDirectory =__DIR__ . '/../../asset/img/';
+    $fotoFileName = $targetDirectory . basename($fotoName);
+
     if ($foto['size'] > 0) {
-        $targetDirectory = 'C:\xampp\htdocs\Mlijo-main\Admin\images\foto_admin\\';
-        $fotoFileName = $targetDirectory . basename($foto['name']);
+        // Tambahkan ini untuk debugging
+        var_dump($targetDirectory, $fotoFileName, $foto['tmp_name']);
 
         if (move_uploaded_file($foto['tmp_name'], $fotoFileName)) {
             // File berhasil diupload
+
+            // Hapus foto lama jika ada
+            $queryHapusFotoLama = "SELECT foto_admin FROM  `admin` WHERE id_admin = '" . $id . "'";
+            $resultHapusFotoLama = mysqli_query($koneksi, $queryHapusFotoLama);
+            $rowHapusFotoLama = mysqli_fetch_assoc($resultHapusFotoLama);
+
+            if ($rowHapusFotoLama['foto_admin'] != "") {
+                $pathFotoLama = $targetDirectory . $rowHapusFotoLama['foto_admin'];
+                if (file_exists($pathFotoLama)) {
+                    unlink($pathFotoLama);
+                }
+            }
         } else {
             echo "Error uploading file.";
             exit();
         }
     }
 
-    // $query = "UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoFileName' WHERE id_admin='$id'";
-
-    $koneksi->query("UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoName' WHERE id_admin='$id'");
-    $result = mysqli_query($koneksi, $query);
-
+    // Perbaiki query UPDATE dan jalankan langsung di $koneksi
+    $query = "UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoName' WHERE id_admin='$id'";
+    $result = $koneksi->query($query);
 
     if ($result) {
-
-        header('Location: ../admin.php');
+        header('Location: ../index.php?admin');
     } else {
-
         echo "Error: " . mysqli_error($koneksi);
     }
 }
+?>

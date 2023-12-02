@@ -24,14 +24,14 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" style="background-color: rgb(255, 255, 255);">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" >
-        <img src="assets/logo.jpg" alt="" width="60" height="20" class="d-inline-block align-text-top">
-       Mlijo.com</a>
+        <img src="assets/logo.jpg" alt="" width="120" height="30" class="d-inline-block align-text-top">
+       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" aria-current="page" href="home.php">Home</a>
+          <a class="nav-link" aria-current="page" href="/index.php">Home</a>
           <a class="nav-link" href="Menu.php">Menu</a>
           <a class="nav-link active" href="Contact.php">Contact</a>
           <a class="nav-link" href="/login user/index.php">Login</a>
@@ -47,10 +47,10 @@
   </nav>
   <body> 
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb my-2 p-5">
+      <!-- <ol class="breadcrumb my-2 p-5">
         <li class="breadcrumb-item"><a href="Home.html">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">Contact</li>
-      </ol>
+      </ol> -->
     </nav>
     <!-- Contact -->
     <section class="page-section" id="contact">

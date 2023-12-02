@@ -1,27 +1,21 @@
 <?php
+// include "../config/koneksi.php";
 
-$sql = "SELECT * FROM admin WHERE username = ?";
-$stmt = mysqli_prepare($koneksi, $sql);
+$stmt = $koneksi->prepare("SELECT * FROM admin WHERE username = ?");
+$stmt->bind_param("s", $_SESSION['username']);
+$stmt->execute();
 
-if (!$stmt) {
-
-    die("Error in preparing statement: " . mysqli_error($koneksi));
-}
-
-mysqli_stmt_bind_param($stmt, "s", $_SESSION['username']);
-mysqli_stmt_execute($stmt);
-
-$result = mysqli_stmt_get_result($stmt);
+// Mengambil hasil query
+$result = $stmt->get_result();
 
 if (!$result) {
-
     die("Error in getting result: " . mysqli_error($koneksi));
 }
 
-$userData = mysqli_fetch_assoc($result);
+$userData = $result->fetch_assoc();
 
-
-mysqli_stmt_close($stmt);
+// Tutup prepared statement
+$stmt->close();
 
 
 ?>
@@ -39,22 +33,20 @@ mysqli_stmt_close($stmt);
                             <div class="row">
                                 <div class="col-12">
                                     <?php
-                                    $result = $koneksi->query("SELECT foto_admin FROM admin WHERE username = '" . $_SESSION['username'] . "'");
-                                    // $query = "SELECT foto_admin FROM admin WHERE username = '" . $_SESSION['username'] . "'";
-                                    // $result = mysqli_query($koneksi, $query);
-                                    // var_dump($result);
+                                    $stmt = $koneksi->prepare("SELECT foto_admin FROM admin WHERE username = ?");
+                                    $stmt->bind_param("s", $_SESSION['username']);
+                                    $stmt->execute();
                                     
-                                    if (mysqli_num_rows($result) > 0) {
-                                        $row = mysqli_fetch_assoc($result);
+                                    // Mengambil hasil query
+                                    $result = $stmt->get_result();
+                                    
+                                    if ($result->num_rows > 0) {
+                                        $row = $result->fetch_assoc();
                                         $urlFoto = $row['foto_admin'];
-
-
-                                        // var_dump($urlFoto);
                                     
                                         if (!is_null($urlFoto)) {
                                             $urlFoto = str_replace($_SERVER['DOCUMENT_ROOT'], '', $urlFoto);
-                                            echo '<img alt="" src="images/foto_admin/' . $urlFoto . '" class="img-thumbnail img-fluid" >';
-                                            // echo '<img alt="" src="images/foto_admin/3.png" class="img-thumbnail img-fluid" >';
+                                            echo '<img alt="" src="/../../asset/img/' . $urlFoto . '" class="img-thumbnail img-fluid" >';
                                         } else {
                                             echo '<img alt="" src="assets/images/polije.png" class="img-thumbnail img-fluid" >';
                                         }

@@ -61,9 +61,9 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="/asset/keranjang.php">Keranjang</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="/asset/Kontak.php">Kontak</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- search start -->
                 <div class="collapse clearfix" id="search">

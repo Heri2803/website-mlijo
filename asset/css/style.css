@@ -18,7 +18,7 @@ body{
     font-size: 14px;
     line-height: 1.42857143;
     color: #333333;
-    background: #f0f0f0;
+    background: #fff;
    
 }
 @media(max-width: 991px){
@@ -448,10 +448,10 @@ body{
     background: rgba(0, 0, 0, 0.5);
     transition: 0.3s;
 }
-#produk-slide .item{
+/* #produk-slide .item{
     background: #fff;
     text-align: center;
-}
+} */
 #produk-slide .item img{
     margin-bottom: 20px;
 }
@@ -534,4 +534,78 @@ body{
     #copyright{
         font-size: 12px;
     }
+}
+
+/* halaman home */
+.carousel-item::before{
+    content: "";
+    position: absolute;
+    display: block;
+    
+}
+.carousel-item{
+    height: 45rem;
+    background-size: cover;
+}
+.carousel-caption{
+    position: absolute;
+    top: 40%;
+}
+.carousel-item .display-1{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.carousel-item .display-6{
+    font-size: 20px;
+}
+navbar-brand{
+    font-family: 'Lobster', cursive;
+}
+.block .about{
+    height: 30rem;
+    margin: 0;
+    padding-top: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
+    color: black;
+    background-color: #b2d9b2;
+    justify-content: center;
+    text-align: start;
+}
+.block .title{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.block .about2{
+    height: 30rem;
+    margin: 0;
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #4d754d;
+    justify-content: center;
+    text-align: center;
+}
+.box .col-4 {
+	width:33%;
+	padding:20px;
+	box-sizing: border-box;
+	text-align: center;
+	float: left;
+}
+.box h4{
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgb(7, 7, 7);
+}
+.box p{
+    color: rgb(5, 5, 5);
+}
+.col .text-center{
+    font-family: 'Josefin Sans', sans-serif;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    color: #080808;
+    font-weight: 500;
+    background-size: 100%;
+  
 }

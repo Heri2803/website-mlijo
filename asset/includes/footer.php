@@ -14,14 +14,14 @@
             </div>
 
             <div class="col-md-4 ">
-                <h4>Kategori Prouduk</h4>
+            <h4>Temukan Kami</h4>
                 <ul>
-                    <li><a href="#">Sayuran</a></li>
-                    <li><a href="#">Perdagingan</a></li>
-                    <li><a href="#">Buah - Buahan</a></li>
-                    <li><a href="#">Paket Sayur</a></li>
+                    <li>Mlijo</li>
+                    <li>Sumbersari</li>
+                    <li>Kecamatan Sumbersari</li>
+                    <li>Kabupaten Jember</li>
+                    <li>089756543</li>
                 </ul>
-
                 <p class="sosial">
                     <a href="#" class="fab fa-facebook"></a>
                     <a href="#" class="fab fa-instagram"></a>
@@ -29,7 +29,7 @@
                     <a href="#" class="fab fa-youtube"></a>
                 </p>
             </div>
-            <div class="lokasi">
+            <!-- <div class="lokasi">
                 <h4>Temukan Kami</h4>
                 <ul>
                     <li>Mlijo</li>
@@ -38,7 +38,7 @@
                     <li>Kabupaten Jember</li>
                     <li>089756543</li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

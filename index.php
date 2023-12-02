@@ -8,12 +8,12 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/Style.css">
+  <link rel="stylesheet" href="/landing page/css/Style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lobster&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="assets/mlijo.png">
+  <link rel="shortcut icon" href="/landing page/assets/mlijo.png">
   <title>Mlijo.com</title>
 </head>
 
@@ -23,25 +23,19 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" style="background-color: rgb(255, 255, 255);">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="assets/logo.jpg" alt="" width="60" height="20" class="d-inline-block align-text-top">
-        Mlijo.com</a>
+        <img src="/landing page/assets/logo.jpg" alt="" width="120" height="30" class="d-inline-block align-text-top">
+        </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-<<<<<<< HEAD:landing page/Home.php
-          <a class="nav-link active" aria-current="page" href="Home.php">Home</a>
-          <a class="nav-link" href="Menu.php">Menu</a>
-          <a class="nav-link" href="Contact.php">Contact</a>
-          <a class="nav-link" href="login user/index.php">Login</a>
-=======
-          <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
-          <a class="nav-link" href="Menu.html">Menu</a>
-          <a class="nav-link" href="Contact.html">Contact</a>
-          <a class="nav-link" href="Login.html" type="submit"><button>Login</button></a>
->>>>>>> dd349e972fab7b29f80e71a06b361931d649bc92:landing page/Home.html
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link" href="/landing page/Menu.php">Menu</a>
+          <a class="nav-link" href="/landing page/Contact.php">Contact</a>
+          <a class="nav-link" href="/login user/index.php" type="submit">Login</a>
+
         </div>
       </div>
     </div>
@@ -49,59 +43,55 @@
 
   <!-- Slide -->
   <section class="carousel" id="home">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="8000">
-          <img src="assets/Foto1.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption">
-            <h1 class="display-1"><strong>SAYUR-SAYURAN</strong></h1>
-            <p class="display-6">Tersedia berbagai macam sayur yang selalu fresh dan terjamin mutunya</p>
-            <!-- button -->
-            <div class="button">
-              <a class="btn btn-outline-light" href="Menu.html" role="button">More</a>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="assets/buah1.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption">
-            <h1 class="display-1"><strong>BUAH-BUAHAN</strong></h1>
-            <p class="display-6">Tersedia berbagai macam buah-buah dengan kualitas yang terbaik.</p>
-
-            <div class="button">
-              <a class="btn btn-outline-light" href="Menu.html" role="button">More</a>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="3000">
-          <img src="assets/sayurbox1.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption">
-            <h1 class="display-1"><strong>PAKET SAYUR</strong></h1>
-            <p class="display-6">Dengan adanya paket sayur akan mempermudah anda untuk memasak sesuai keinginan anda</p>
-
-            <div class="button">
-              <a class="btn btn-outline-light" href="Menu.html" role="button">More</a>
-            </div>
-
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="8000">
+        <img src="/landing page/assets/Foto1.jpg" class="d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption">
+          <h1 class="display-1"><strong>SAYUR-SAYURAN</strong></h1>
+          <p class="display-6">Tersedia berbagai macam sayur yang selalu fresh dan terjamin mutunya</p>
+          <!-- tombol -->
+          <div class="button">
+            <a class="btn btn-outline-light" href="/login user/index.php" role="button">Lebih Lanjut</a>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="/landing page/assets/buah1.jpg" class="d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption">
+          <h1 class="display-1"><strong>BUAH-BUAHAN</strong></h1>
+          <p class="display-6">Tersedia berbagai macam buah-buah dengan kualitas yang terbaik.</p>
+          <div class="button">
+            <a class="btn btn-outline-light" href="/login user/index.php" role="button">Lebih Lanjut</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="/landing page/assets/sayurbox1.jpg" class="d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption">
+          <h1 class="display-1"><strong>PAKET SAYUR</strong></h1>
+          <p class="display-6">Dengan adanya paket sayur akan mempermudah anda untuk memasak sesuai keinginan anda</p>
+          <div class="button">
+            <a class="btn btn-outline-light" href="/login user/index.php" role="button">Lebih Lanjut</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Sebelumnya</span>
+    </button>
+    
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Selanjutnya</span>
+    </button>
+  </div>
+</section>
+
 
   <!-- Column 2 -->
   <div class="block">
@@ -122,19 +112,19 @@
       <p style="color:white ;">Dengan berbagai macam sayur, buah dan daging</p>
       <div class="box">
         <div class="col-4">
-          <img src="assets/icon sayur.png" alt="" width="100" height="100" class="me-2">
+          <img src="/landing page/assets/icon sayur.png" alt="" width="100" height="100" class="me-2">
           <h4><strong>Sayuran</strong></h4>
           <p>Mlijo.com menyediakan sayuran yang selalu fresh</p>
         </div>
         <div class="box">
           <div class="col-4">
-            <img src="assets/icon buah.png" alt="" width="100" height="100" class="me-2">
+            <img src="/landing page/assets/icon buah.png" alt="" width="100" height="100" class="me-2">
             <h4><strong>Buah-Buahan</strong></h4>
             <p>Nikmati buah dengan kuliatas terbaik</p>
           </div>
           <div class="box">
             <div class="col-4">
-              <img src="assets/icondaging.png" alt="" width="100" height="100" class="me-2">
+              <img src="/landing page/assets/icondaging.png" alt="" width="100" height="100" class="me-2">
               <h4><strong>Daging</strong></h4>
               <p>Tersedia berbagai macam daging yang lebih mengutama kualitas dan terjamin fresh</p>
             </div>
@@ -151,7 +141,7 @@
   <div class="container-fluid">
     <div class="row mt-1">
       <div class="col">
-        <p class="text-center" style="color: white;"><img src="assets/mlijo.png" style="width: 40px;">Copyright
+        <p class="text-center" style="color: white;"><img src="/landing page/assets/mlijo.png" style="width: 40px;">Copyright
           &copy;2023 | Created by Mlijo.com</a></p>
       </div>
     </div>

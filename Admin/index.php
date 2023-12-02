@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../config/koneksi.php";
+require "../config/koneksi.php";
 
 if (!isset($_SESSION["nama_lengkap"])) {
     echo '<script>alert("Harap login terlebih dahulu");
@@ -242,7 +242,7 @@ if (!isset($_SESSION["nama_lengkap"])) {
 
                                 if (!is_null($urlFoto)) {
                                     $urlFoto = str_replace($_SERVER['DOCUMENT_ROOT'], '', $urlFoto);
-                                    echo '<img alt="" src="images/foto_admin/' . $urlFoto . '" class="rounded-circle img-thumbnail img-fluid" style="width: 40px; height: 40px;">';
+                                    echo '<img alt="" src="/../../asset/img/' . $urlFoto . '" class="rounded-circle img-thumbnail img-fluid" style="width: 40px; height: 40px;">';
                                 } else {
                                     echo '<img alt="" src="assets/images/polije.png" class="rounded-circle img-thumbnail img-fluid" style="width: 40px; height: 40px;">';
                                 }

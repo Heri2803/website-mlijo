@@ -23,14 +23,14 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" style="background-color: rgb(255, 255, 255);">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" >
-        <img src="assets/logo.jpg" alt="" width="60" height="20" class="d-inline-block align-text-top">
-        Mlijo.com</a>
+        <img src="assets/logo.jpg" alt="" width="120" height="30" class="d-inline-block align-text-top">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link" aria-current="page" href="Home.php">Home</a>
+          <a class="nav-link" aria-current="page" href="/index.php">Home</a>
           <a class="nav-link active" href="Menu.php">Menu</a>
           <a class="nav-link" href="Contact.php">Contact</a>
       <a class="nav-link" href="/login user/index.php">Login</a>
@@ -38,12 +38,12 @@
       </div>
     </div>
   </nav>
-  <nav aria-label="breadcrumb">
+  <!-- <nav aria-label="breadcrumb">
     <ol class="breadcrumb my-2 p-5">
       <li class="breadcrumb-item"><a href="Home.html">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Menu</li>
     </ol>
-  </nav>
+  </nav> -->
   <body>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb my-2 p-5">
@@ -60,7 +60,7 @@
             <p>Berbagai macam sayuran, buah-buahan dan paket sayur hemat dan praktis</p>
             <div class="hestia-search-in-menu">
               <div class="hestia-nav-search-is-focused">
-                <form role="search" method="get" class="search-form form-group" action="Home.html">
+                <form role="search" method="get" class="search-form form-group" action="/login user/index.php">
                   <label class="label-floating is-empty form-group">
                     <span class="screen-reader-text"></span>
                     <label class="control-label"></label>
@@ -82,20 +82,20 @@
           <div class="row row-mb-2 g-4">
             <div class="col">
               <div class="card border-light h-60">
-                <img src="assets/bayam.jpg" class="card-img-top" >
+                <img src="assets/bayam.jpeg" class="card-img-top" >
                 <div class="card-body">
                   <h5 class="text-center card-title"><strong>Bayam</strong></h5>
                 </div>
-                <button type="button" class="btn btn-dark center-block"></a>Order Here</button>
+                <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
               </div>
             </div>
             <div class="col">
               <div class="card border-light h-60">
-                <img src="assets/kangkung1.jpg" class="card-img-top" >
+                <img src="assets/kangkung.jpeg" class="card-img-top" >
                 <div class="card-body">
                   <h5 class="text-center card-title"><strong>Kangkung</strong></h5>
                 </div>
-                <button type="button" class="btn btn-dark center-block">Order Here</button>
+                <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
               </div>
             </div>
             <div class="col">
@@ -104,7 +104,7 @@
                   <div class="card-body">
                     <h5 class="text-center card-title"><strong>Jagung</strong></h5>
                   </div>
-                  <button type="button" class="btn btn-dark center-block">Order Here</button>
+                  <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
                 </div>
               </div>
               <div class="col">
@@ -113,7 +113,7 @@
                   <div class="card-body">
                     <h5 class="text-center card-title"><strong>Selada</strong></h5>
                   </div>
-                  <button type="button" class="btn btn-dark center-block">Order Here</button>
+                  <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
                 </div>
               </div>          
           </div>        
@@ -133,7 +133,7 @@
               <div class="card-body">
                 <h5 class="text-center card-title"><strong>Apel</strong></h5>
               </div>
-              <button type="button" class="btn btn-dark center-block">Order Here</button>
+              <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
             </div>
           </div>
           <div class="col">
@@ -142,7 +142,7 @@
               <div class="card-body">
                 <h5 class="text-center card-title"><strong>Jeruk</strong></h5>
               </div>
-              <button type="button" class="btn btn-dark center-block">Order Here</button>
+              <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
             </div>
           </div>
           <div class="col">
@@ -151,7 +151,7 @@
                 <div class="card-body">
                   <h5 class="text-center card-title"><strong>Semangka</strong></h5>
                 </div>
-                <button type="button" class="btn btn-dark center-block">Order Here</button>
+                <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
               </div>
             </div>
             <div class="col">
@@ -160,7 +160,7 @@
                 <div class="card-body">
                   <h5 class="text-center card-title"><strong>Strawberry</strong></h5>
                 </div>
-                <button type="button" class="btn btn-dark center-block">Order Here</button>
+                <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
               </div>
             </div>
         </div>
@@ -179,7 +179,7 @@
               <div class="card-body">
                 <h5 class="text-center card-title"><strong>Sayur Soup</strong></h5>
               </div>
-              <button type="button" class="btn btn-dark center-block">Order Here</button>
+              <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
             </div>
           </div>
           <div class="col">
@@ -188,16 +188,16 @@
               <div class="card-body">
                 <h5 class="text-center card-title"><strong>Sayur Asem Jakarta</strong></h5>
               </div>
-              <button type="button" class="btn btn-dark center-block">Order Here</button>
+              <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
             </div>
           </div>
           <div class="col">
               <div class="card border-light h-60">
                 <img src="assets/cap jay.jpg" class="card-img-top" >
                 <div class="card-body">
-                  <h5 class="text-center card-title"><strong>Paket Sayur Cap Cay</strong></h5>
+                  <h5 class="text-center card-title"><strong>Paket Cap Cay</strong></h5>
                 </div>
-                <button type="button" class="btn btn-dark center-block">Order Here</button>
+                <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
               </div>
             </div>
             <div class="col">
@@ -206,7 +206,7 @@
                 <div class="card-body">
                   <h5 class="text-center card-title"><strong>Tumis</strong></h5>
                 </div>
-                <button type="button" class="btn btn-dark center-block">Order Here</button>
+                <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
               </div>
             </div>
         </div>
@@ -225,7 +225,7 @@
             <div class="card-body">
               <h5 class="text-center card-title"><strong>Daging Ayam</strong></h5>
             </div>
-            <button type="button" class="btn btn-dark center-block">Order Here</button>
+            <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
           </div>
         </div>
         <div class="col">
@@ -234,7 +234,7 @@
             <div class="card-body">
               <h5 class="text-center card-title"><strong>Daging Sapi</strong></h5>
             </div>
-            <button type="button" class="btn btn-dark center-block">Order Here</button>
+            <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
           </div>
         </div>
         <div class="col">
@@ -243,7 +243,7 @@
               <div class="card-body">
                 <h5 class="text-center card-title"><strong>Ikan Salmon</strong></h5>
               </div>
-              <button type="button" class="btn btn-dark center-block">Order Here</button>
+              <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
             </div>
           </div>
           <div class="col">
@@ -252,7 +252,7 @@
               <div class="card-body">
                 <h5 class="text-center card-title"><strong>Telur</strong></h5>
               </div>
-              <button type="button" class="btn btn-dark center-block">Order Here</button>
+              <a href="/login user/index.php" class="btn btn-dark center-block">Order Here</a>
             </div>
           </div>
       </div>

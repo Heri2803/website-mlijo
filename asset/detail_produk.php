@@ -10,6 +10,8 @@ if (isset($_POST["kirimproduk"])) {
     }
 }
 
+
+
 ?>
 
 
@@ -72,31 +74,31 @@ if (isset($_POST["kirimproduk"])) {
                     <li class="nav-item">
                         <a class="nav-link" href="Keranjang.php">Keranjang</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="Kontak.php">Kontak</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- search start -->
-                <div class="collapse clearfix" id="search">
-                    <form action="produk.php" method="get" class="navbar-form">
+                <div class=" clearfix" id="search">
+                    <form action="produk.php" method="post" class="navbar-form">
                         <div class="input-group">
-                            <input type="search" name="keyword" class="form-control" placeholder="search" required>
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary" name="keyword" value="search" type="submit"><i class="fas fa-search"></i></button>
-                            </span>
+                            <input id="search-detail" type="search" name="keyword" class="form-control" placeholder="search" required>
+                            <!-- <span class="input-group-btn">
+                                <button class="btn btn-primary" name="cari" value="search" type="submit"><i class="fas fa-search"></i></button>
+                            </span> -->
                         </div>
                     </form>
                 </div>
                 <!-- seacrh end -->
                 <!-- btn search start -->
-                <div class="btn-search">
+                <!-- <div class="btn-search">
                     <div class="collapse navbar-collapse">
                         <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#search">
                             <span class="toggler"></span>
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <!-- btn search end -->
                 <!-- btn keranjang start -->
                 <div class="btn-keranjang">
@@ -123,15 +125,12 @@ if (isset($_POST["kirimproduk"])) {
                     <!-- side bar start -->
                     <div class="row d-flex ">
 
-                        <div class="col-md-3">
-                            <?php include 'includes/sidebar.php'; ?>
-                        </div>
-                        <!-- side bar end -->
-                        <!-- row page produk start -->
                         
-                        <div class="col-md-9">
+                        <!-- side bar end -->
+                        <!-- row page produk start -->                       
+                        <div class="col-md-12" >
                             <!-- detail produk start -->
-                            <div id="detail-produk" class="row">
+                            <div id="detail-produk" class="row" >
                                 <!-- col-md-6 start -->
                                 <?php foreach ($detail_produk as $row) : ?>
                                 <div class="col-md-6">
@@ -152,7 +151,7 @@ if (isset($_POST["kirimproduk"])) {
                                 <!-- col-md-6 start form -->
                                 <div class="col-md-6">
                                     <div class="card-box">
-                                        <h2>Bayam Segar</h2>
+                                        <h2><?= $row["nama_produk"]; ?></h2>
                                         <form method="post" class="form-horizontal">
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Jumlah Produk :</label>
@@ -319,6 +318,44 @@ if (isset($_POST["kirimproduk"])) {
         }
     
 </script>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInputDetail = document.getElementById('search-detail');
+    const searchInputResult = document.getElementById('menerimadatadetail');
+
+    searchInputDetail.addEventListener('input', function () {
+        const keyword = searchInputDetail.value;
+
+        // Menangani perubahan input pada #search-detail dan mengisikan nilainya pada #menerimadatadetail
+        searchInputResult.value = keyword;
+    });
+
+    searchInputDetail.addEventListener('keypress', function (event) {
+        // Jika tombol yang ditekan adalah "Enter" (kode 13)
+        if (event.key === 'Enter') {
+            // Mencegah pengiriman formulir secara otomatis
+            event.preventDefault();
+            
+            // Mengubah nilai pada #menerimadatadetail sesuai dengan nilai #search-detail
+            searchInputResult.value = searchInputDetail.value;
+
+            // Melakukan pengiriman formulir atau tindakan lain sesuai kebutuhan Anda
+            // Sebagai contoh, Anda dapat memanggil fungsi pencarian atau melakukan redirect
+            document.getElementById('search-form').submit();
+        }
+    });
+});
+
+
+    
+</script>
+
+
+
+
+
 
 </body>
 

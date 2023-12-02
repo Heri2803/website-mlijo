@@ -73,9 +73,9 @@ if (isset($_POST["checkout"])) {
                     <li class="nav-item">
                         <a class="nav-link" href="Keranjang.php">Keranjang</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="Kontak.php">Kontak</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- search start -->
                 <div class="collapse clearfix" id="search">

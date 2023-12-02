@@ -35,7 +35,7 @@
     padding-top: 10%;
     padding-left: 20%;
     padding-right: 20%;
-    color: black;
+    color: #f1f1f1;
     background-color: #b2d9b2;
     justify-content: center;
     text-align: start;
@@ -73,10 +73,10 @@
 body{
     font-family: 'Josefin Sans', sans-serif;
     font-size: 14px;
-    color: #080808;
+    color: #fff;
     font-weight: 500;
     background-size: 100%;
-    background-color: #ebfcee;
+    background-color: #4d754d;
 }
 
 .text{

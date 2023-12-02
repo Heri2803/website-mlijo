@@ -24,8 +24,8 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Email</th>
-                                <!-- <th>Telepon</th>
-                                <th>Foto</th> -->
+                                 <th>Telepon</th>
+                                <th>Foto</th>
                                 <th>Opsi</th>
                             </tr>
                         </thead>
@@ -46,7 +46,7 @@
                                         <?php echo $value['telepon_pelanggan']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['foto_pelanggan'] ?>
+                                    <img src="/../../asset/img/<?php echo $value['foto_pelanggan']; ?>" alt="">
                                     </td>
                                     <td class="text center" width="15">
                                         <a href="index.php?hapus_pelanggan=<?php echo $value['id_pelanggan']; ?>"

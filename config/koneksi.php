@@ -1,8 +1,15 @@
 <?php
+// $server = "mifa.myhost.id";
+// $username = "mifamyho_mlijo";
+// $password = "WSImif2023";
+// $db = "mifamyho_mlijo";
+
+
 $server = "localhost";
 $username = "root";
 $password = "";
-$db = "Mlijo";
+$db = "mlijo";
+
 $koneksi = mysqli_connect($server, $username, $password, $db);
 
 if (mysqli_connect_errno()) {
@@ -11,7 +18,7 @@ if (mysqli_connect_errno()) {
 
 //SELECT DATABASE
 function query($query)
-{
+{ 
   global $koneksi;
   $result = mysqli_query($koneksi, $query);
   $rows = [];
@@ -349,5 +356,23 @@ function bayarakhir($data){
   $queryInsert = "UPDATE `pembelian` SET `status_pembayaran` = 'Sedang Proses', `Bukti_pembayaran` = '$upload' WHERE `id_pembelian` = '$idpembeli';";
     mysqli_query($koneksi, $queryInsert);
     
+}
+
+function insertuser($data){
+  global $koneksi;
+
+  $email = $_POST['emailu'];
+  $password = $_POST['pwu'];
+  $nama = $_POST['namau'];
+  
+  $queryInsert = "UPDATE `pelanggan` SET `password_pelanggan` = '$password' WHERE `email_pelanggan` = '$email'";
+    mysqli_query($koneksi, $queryInsert);
+    
+}
+
+//cari produk 
+function cari($keyword){
+  $query = "SELECT * FROM produk WHERE nama_produk = '$keyword'";
+  return query($query);
 }
   ?>

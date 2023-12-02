@@ -15,6 +15,8 @@
     <link href="../asset/css/owl.theme.default.min.css" rel="stylesheet">
     <!-- style css -->
     <link href="../asset/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
 </head>
 
 <body>
@@ -31,14 +33,14 @@
             <!-- navbar brand end -->
             <!-- btn navbar start -->
             <div class="btn-navbar">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-search"></i>
                 </button>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-list"></i>
-                </button>
+                </button> -->
                 <!-- btn navbar end -->
                 <!-- navbar start -->
             </div>
@@ -56,36 +58,36 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Keranjang.php">Keranjang</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="Kontak.php">Kontak</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- search start -->
-                <div class="collapse clearfix" id="search">
-                    <form action="produk.php" method="get" class="navbar-form">
+                <!-- <div class="collapse clearfix" id="search">
+                    <form action="produk.php" method="post" class="navbar-form">
                         <div class="input-group">
                             <input type="search" name="keyword" class="form-control" placeholder="search" required>
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" name="keyword" value="search" type="submit"><i class="fas fa-search"></i></button>
+                                <button class="btn btn-primary" name="cari" value="search" type="submit"><i class="fas fa-search"></i></button>
                             </span>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <!-- seacrh end -->
                 <!-- btn search start -->
-                <div class="btn-search">
+                <!-- <div class="btn-search">
                     <div class="collapse navbar-collapse">
                         <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#search">
                             <span class="toggler"></span>
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <!-- btn search end -->
                 <!-- btn keranjang start -->
-                <div class="btn-keranjang">
+                <!-- <div class="btn-keranjang">
                     <a href="/asset/keranjang.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
-                </div>
+                </div> -->
                 <!-- btn keranjang end -->
             </div>
             <!-- navbar end -->
@@ -95,7 +97,7 @@
     <!-- Navbar End -->
 
     <!-- owl carousel banner start -->
-    <div id="banner">
+    <!-- <div id="banner">
         <div class="container">
             <div class="owl-nav"></div>
             <div class="owl-carousel owl-theme">
@@ -107,11 +109,61 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- owl carousel banner end -->
 
+    <section class="carousel" id="home">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="8000">
+        <img src="/landing page/assets/Foto1.jpg" class="d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption">
+          <h1 class="display-1"><strong>SAYUR-SAYURAN</strong></h1>
+          <p class="display-6">Tersedia berbagai macam sayur yang selalu fresh dan terjamin mutunya</p>
+          <!-- tombol -->
+          <div class="button">
+            <a class="btn btn-outline-light" href="Menu.html" role="button">Lebih Lanjut</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="/landing page/assets/buah1.jpg" class="d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption">
+          <h1 class="display-1"><strong>BUAH-BUAHAN</strong></h1>
+          <p class="display-6">Tersedia berbagai macam buah-buah dengan kualitas yang terbaik.</p>
+          <div class="button">
+            <a class="btn btn-outline-light" href="Menu.html" role="button">Lebih Lanjut</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="/landing page/assets/sayurbox1.jpg" class="d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption">
+          <h1 class="display-1"><strong>PAKET SAYUR</strong></h1>
+          <p class="display-6">Dengan adanya paket sayur akan mempermudah anda untuk memasak sesuai keinginan anda</p>
+          <div class="button">
+            <a class="btn btn-outline-light" href="Menu.html" role="button">Lebih Lanjut</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Sebelumnya</span>
+    </button>
+    
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Selanjutnya</span>
+    </button>
+  </div>
+</section>
+
     <!-- about -->
-    <div class="block">
+    <!-- <div class="block">
         <div class="about">
             <div></div>
             <h2 class="title"><strong>CERITA Mlijo.com</strong></h2>
@@ -121,7 +173,35 @@
                 didaerah jember kota,
             </p>
         </div>
+    </div> -->
+
+    <div class="block">
+    <div class="about2">
+      <h2 class="title" style="color: white;"><strong>KAMI SIAP MELAYANI ANDA!</strong></h2>
+      <p style="color:white ;">Dengan berbagai macam sayur, buah dan daging</p>
+      <div class="box">
+        <div class="col-4">
+          <img src="/landing page/assets/icon sayur.png" alt="" width="100" height="100" class="me-2">
+          <h4><strong>Sayuran</strong></h4>
+          <p>Mlijo.com menyediakan sayuran yang selalu fresh</p>
+        </div>
+        <div class="box">
+          <div class="col-4">
+            <img src="/landing page/assets/icon buah.png" alt="" width="100" height="100" class="me-2">
+            <h4><strong>Buah-Buahan</strong></h4>
+            <p>Nikmati buah dengan kuliatas terbaik</p>
+          </div>
+          <div class="box">
+            <div class="col-4">
+              <img src="/landing page/assets/icondaging.png" alt="" width="100" height="100" class="me-2">
+              <h4><strong>Daging</strong></h4>
+              <p>Tersedia berbagai macam daging yang lebih mengutama kualitas dan terjamin fresh</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
     <!-- advantags start -->
     <!-- <div id="advantags">
@@ -181,7 +261,7 @@
     <div id="terbaru">
         <div class="col-md-12">
             <div class="card-box">
-                <h2>Sayur Segar Hari Ini</h2>
+                <h2>Kenapa Harus Beli Di Kami</h2>
             </div>
         </div>
     </div>
@@ -344,6 +424,10 @@
     <script src="../asset/js/owl.carousel.min.js"></script>
     <!-- main js -->
     <script src="../asset/js/main.js"></script>
+
+    <!-- Letakkan ini di akhir bagian body sebelum </body> -->
+
+
 </body>
 
 </html>

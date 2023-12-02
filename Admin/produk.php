@@ -34,7 +34,7 @@ while ($pecah = $ambil->fetch_assoc()) {
                                         <?php echo $key + 1; ?>
                                     </td>
                                     <td width="200">
-                                        <img src="assets/foto_produk/<?= $value['foto_produk']; ?>" alt="">
+                                        <img src="/asset/img/<?= $value['foto_produk']; ?>" alt="">
                                     </td>
                                     <td width="120">
                                         <?php echo $value['nama_produk']; ?>
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $fotoFileName = '';
 
         if ($foto['size'] > 0) {
-            $targetDirectory = 'C:\xampp\htdocs\Mlijo-main\Admin\assets\foto_produk\\';
+            $targetDirectory = '/../../asset/img/';
             $fotoFileName = $targetDirectory . basename($foto['name']);
 
             if (move_uploaded_file($foto['tmp_name'], $fotoFileName)) {

@@ -18,26 +18,13 @@ if (isset($_POST["nama_kategori"])) {
 
 
 
+//ketika button di klik 
+// $produk = query("SELECT * FROM produk");
 
+// Ambil kata kunci pencarian dari parameter GET
+$keyword = isset($_GET['cari']) ? $_GET['cari'] : '';
 
-// // data produk
-// $data_produk = array();
-// $ambil = $koneksi->query("SELECT * FROM produk");
-// while ($pecah = $ambil->fetch_assoc()) {
-//     $data_produk[] = $pecah;
-// }
-
-
-// //jika ada id_kategori di url
-// if (isset($_GET['$id_kategori'])) {
-//     $id_kategori = $_GET['id_kategori'];
-
-//     $data_kategori =  array();
-//     $ambil = $koneksi->query("SELECT * FROM produk JOIN kategori_produk ON produk.id_kategori_produk = kategori_produk.id_kategori_produk WHERE produk.id_kategori_produk='$id_kategori';");
-//     while ($pecah = $ambil->fetch_assoc()) {
-//         $data_kategori[] = $pecah;
-//     }
-// }
+$isipencarian = isset($_GET["keyword"]) ? $_GET["keyword"] : '';
 ?>
 
 
@@ -100,31 +87,32 @@ if (isset($_POST["nama_kategori"])) {
                     <li class="nav-item">
                         <a class="nav-link" href="Keranjang.php">Keranjang</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="Kontak.php">Kontak</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- search start -->
-                <div class="collapse clearfix" id="search">
-                    <form action="produk.php" method="get" class="navbar-form">
+                <div class=" clearfix" id="search">
+                    <form action="produk.php" method="post" class="navbar-form">
                         <div class="input-group">
-                            <input type="search" name="keyword" class="form-control" placeholder="search" required>
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary" name="keyword" value="search" type="submit"><i class="fas fa-search"></i></button>
-                            </span>
+                            <input type="search" name="keyword"  id="menerimadatadetail" class="form-control" placeholder="search" required>
+                            <!-- <span class="input-group-btn">
+                                <button class="btn btn-primary" name="cari" value="search" type="submit"><i class="fas fa-search"></i></button>
+                            </span> -->
                         </div>
                     </form>
                 </div>
                 <!-- seacrh end -->
                 <!-- btn search start -->
-                <div class="btn-search">
+                <!-- <div class="btn-search">
                     <div class="collapse navbar-collapse">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#search">
+                        <button id="search-toggle-btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#search">
                             <span class="toggler"></span>
                             <i class="fas fa-search"></i>
                         </button>
+
                     </div>
-                </div>
+                </div> -->
                 <!-- btn search end -->
                 <!-- btn keranjang start -->
                 <div class="btn-keranjang">
@@ -155,9 +143,10 @@ if (isset($_POST["nama_kategori"])) {
                         </div>
                         <!-- side bar end -->
                         <!-- row page produk start -->
-                        <div class="row col-md-9 d-flex">
+                        <div class="row col-md-9 d-flex" id="produk-container">
+
                             <?php foreach ($tampilkategori  as $row) : ?>
-                                <div class="col-md-4" id="produk-container">
+                                <div class="col-md-4 product-item" data-nama="<?= $row['nama_produk']; ?>" data-harga="<?= $row['harga_produk']; ?>">
                                     <div class="card-produk">
                                         <a href="detail_produk.php?idproduk=<?= $row["id_produk"]; ?>">
                                             <img src="../asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive" width="240px" height="300px">
@@ -242,7 +231,53 @@ if (isset($_POST["nama_kategori"])) {
     <!-- main js -->
     <script src="/asset/js/main.js"></script>
 
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const produkContainer = document.getElementById('produk-container');
+            const inputSearch = document.querySelector('input[name="keyword"]');
+            const productItems = document.querySelectorAll('.product-item');
+
+            inputSearch.addEventListener('input', function() {
+                const keyword = inputSearch.value.toLowerCase();
+
+                productItems.forEach(function(item) {
+                    const namaProduk = item.dataset.nama.toLowerCase();
+                    const hargaProduk = item.dataset.harga.toLowerCase();
+
+                    if (namaProduk.includes(keyword) || hargaProduk.includes(keyword)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInputResult = document.getElementById('menerimadatadetail');
+
+    // Contoh mendapatkan nilai dari elemen input saat terjadi perubahan
+    searchInputResult.addEventListener('input', function () {
+        const nilaiInput = searchInputResult.value;
+
+        // Melakukan sesuatu dengan nilai yang diperoleh, misalnya mencetaknya ke konsol
+        console.log(nilaiInput);
+    });
+
+    // ...
+    // (Script lain di sini)
+    // ...
+});
+
+
+
+    </script>
+
+
+
 </body>
 
 </html>

@@ -1,6 +1,12 @@
 <?php
 session_start();
 require('../config/koneksi.php');
+
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+ob_start();
 ?>
 
 
@@ -57,6 +63,7 @@ require('../config/koneksi.php');
 //         header("Location: ../asset/index.php");
 //     }
 // }
+
 if (isset($_SESSION["role"])) {
    $role = $_SESSION["role"];
    if ($role == "admin") {
@@ -64,7 +71,7 @@ if (isset($_SESSION["role"])) {
    }elseif($role == "customer"){
     header("Location: /asset/index.php");
    }else{
-    header("Location: /loginuser/index.php");
+    header("Location: /index.php");
    }
 }
 
@@ -102,5 +109,5 @@ if (isset($_POST["pelanggan"])) {
       <meta http-equiv='refresh' content='2'>";
     }
 }
-
+ob_end_flush();
 ?>

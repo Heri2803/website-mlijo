@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $fotoFileName = '';
 
         if ($foto['size'] > 0) {
-            $targetDirectory = 'C:\xampp\htdocs\Mlijo-main\Admin\assets\foto_produk\\';
+            $targetDirectory = 'C:\laragon\www\ProjectMlijo\Mlijo\Admin\assets\foto_produk';
             $fotoFileName = $targetDirectory . basename($foto['name']);
 
             if (move_uploaded_file($foto['tmp_name'], $fotoFileName)) {
