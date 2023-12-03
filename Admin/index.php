@@ -688,13 +688,5 @@ if (!isset($_SESSION["nama_lengkap"])) {
 </body>
 
 </html>
-<!-- <?php if (isset($_SESSION['username'])): ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Anda berhasil login',
-            showConfirmButton: false,
-            timer: 1300
-        });
-    </script>
-<?php endif; ?> -->
+<link rel="stylesheet" href="../sweetalert2/sweetalert2.min.css">
+<script src="../sweetalert2/sweetalert2.min.js"></script>

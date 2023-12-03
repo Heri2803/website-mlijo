@@ -1,10 +1,37 @@
 <?php
 
+if (isset($_GET['login_success']) && $_GET['login_success'] == 1) {
+    echo "<script>
+     {
+        Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Loggin Succes',
+            text: 'Welcome',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    };
+</script>";
+}
+
 $result = $koneksi->query('SELECT COUNT(id_pelanggan) as totalPelanggan FROM pelanggan');
 $result1 = $koneksi->query('SELECT COUNT(id_pembelian) as totalTransaksi FROM pembelian');
 $result2 = $koneksi->query('SELECT COUNT(id_produk) as totalProduk FROM produk');
-$result3 = $koneksi->query('SELECT COUNT(id_pengeluaran) as totalPengeluaran FROM pengeluaran');
+$result3 = $koneksi->query('SELECT SUM(`total`) AS total_pengeluaran FROM `pengeluaran`');
+$result4 = $koneksi->query('SELECT SUM(`total_pembelian`) AS total_pembelian FROM `pembelian`');
+
+$row = $result3->fetch_assoc();
+$total_pengeluaran = $row['total_pengeluaran'];
+
+$row = $result4->fetch_assoc();
+$total_pembelian = $row['total_pembelian'];
+
+$totalKeuntungan = $total_pembelian - $total_pengeluaran;
+
+
 ?>
+
 <!-- Animated -->
 <div class="animated fadeIn">
     <!-- Widgets  -->
@@ -86,12 +113,8 @@ $result3 = $koneksi->query('SELECT COUNT(id_pengeluaran) as totalPengeluaran FRO
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <?php foreach ($result3 as $key => $data): ?>
-                                    <div class="stat-text"><span class="count">
-                                            <?= $data['totalPengeluaran']; ?>
-                                        </span></div>
-                                <?php endforeach ?>
-                                <div class="stat-heading">Total Pengeluaran</div>
+                                <?php echo $totalKeuntungan ?>
+                                <div class="stat-heading">Total Keuntungan</div>
                             </div>
                         </div>
                     </div>

@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,0">
     <title>Mlijo</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Include SweetAlert library -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -66,7 +63,7 @@
             // Set pesan login berhasil di sesi
             $_SESSION['login_success'] = true;
 
-            header("Location: ../Admin/index.php?dashboard");
+            header("Location: ../Admin/index.php?dashboardlogin_success=1");
             exit(); // Pastikan tidak ada kode yang dijalankan setelah pengalihan
         } else {
             session_destroy();
