@@ -22,6 +22,7 @@ if (isset($_POST["checkout"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mlijo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/asset/img/logo.jpg">
     <!-- Custom fonts for this template-->
     <link href="/asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
@@ -42,16 +43,16 @@ if (isset($_POST["checkout"])) {
         <div class="container">
             <!-- navbar brand start -->
             <div class="navbar-brand">
-                <a class="d-none d-lg-block mt-1" href="index.php">MLIJO</a>
-                <a class="d-sm-none mt-1" href="index.php">MLIJO</a>
+            <a class="d-none d-lg-block mt-1" href="index.php"><img src="/asset/img/logo mlijo.png" alt="" width="120" height="30"></a>
+                <a class="d-sm-none mt-1" href="index.php"><img src="/asset/img/logo mlijo.png" alt="" width="120" height="30"></a>
             </div>
             <!-- navbar brand end -->
             <!-- btn navbar start -->
             <div class="btn-navbar">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-search"></i>
-                </button>
+                </button> -->
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-list"></i>
@@ -90,19 +91,19 @@ if (isset($_POST["checkout"])) {
                 </div>
                 <!-- seacrh end -->
                 <!-- btn search start -->
-                <div class="btn-search">
+                <!-- <div class="btn-search">
                     <div class="collapse navbar-collapse">
                         <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#search">
                             <span class="toggler"></span>
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <!-- btn search end -->
                 <!-- btn keranjang start -->
-                <div class="btn-keranjang">
+                <!-- <div class="btn-keranjang">
                     <a href="keranjang.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
-                </div>
+                </div> -->
                 <!-- btn keranjang end -->
             </div>
             <!-- navbar end -->
@@ -187,8 +188,8 @@ if (isset($_POST["checkout"])) {
                             </div>
                             <div class="col-text-right">
                                 <form action="" method="post">
-                                    <input type="text" value="<?= $_SESSION['id_pelanggan']  ?>" name="kirim_id_pelanggan">
-                                    <input type="datetime-local" value="<?= date('Y-m-d\TH:i:s'); ?>" name="tanggal">
+                                    <input type="text" value="<?= $_SESSION['id_pelanggan']  ?>" name="kirim_id_pelanggan" hidden>
+                                    <input type="datetime-local" value="<?= date('Y-m-d\TH:i:s'); ?>" name="tanggal" hidden>
 
                                 <button  class="btn btn-primary" name="checkout">
                                     checkout <i class="fas fa-chevron-right"></i>

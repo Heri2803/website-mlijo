@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="assets/mlijo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-    <title>Mlijo.com</title>
+    <title>Mlijo</title>
   </head>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" style="background-color: rgb(255, 255, 255);">
@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
           <a class="nav-link" aria-current="page" href="/index.php">Home</a>
-          <a class="nav-link" href="Menu.php">Menu</a>
+          <a class="nav-link" href="Menu.php">Product</a>
           <a class="nav-link active" href="Contact.php">Contact</a>
           <a class="nav-link" href="/login user/index.php">Login</a>
         </div>

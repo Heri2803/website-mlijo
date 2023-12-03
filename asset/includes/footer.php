@@ -50,7 +50,7 @@
                 <p class="left">&copy; <span>Mlijo</span> | 2023 </p>
             </div>
             <div class="col">
-                <p class="right">&copy; Dibuat Oleh KELOMPOK 3 </p>
+                <p class="right">&copy; Dibuat Oleh <span>MLIJO TEAM</span></p>
             </div>
         </div>
     </div>

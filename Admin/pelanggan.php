@@ -24,9 +24,14 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Email</th>
+
                                  <th>Telepon</th>
                                 <th>Foto</th>
                                 <th>Opsi</th>
+
+                                <th>Telepon</th>
+                              
+
                             </tr>
                         </thead>
                         <tbody>
@@ -36,23 +41,25 @@
                                     <td width="50">
                                         <?php echo $key + 1; ?>
                                     </td>
-                                    <td>
+                                    <td width="150">
                                         <?php echo $value['nama_pelanggan']; ?>
                                     </td>
-                                    <td>
+                                    <td width="200">
                                         <?php echo $value['email_pelanggan']; ?>
                                     </td>
-                                    <td>
+                                    <td width="130">
                                         <?php echo $value['telepon_pelanggan']; ?>
                                     </td>
+
                                     <td>
                                     <img src="/../../asset/img/<?php echo $value['foto_pelanggan']; ?>" alt="">
+
+                                    <td width="200">
+                                        <?php echo $value['foto_pelanggan'] ?>
+
                                     </td>
-                                    <td class="text center" width="15">
-                                        <a href="index.php?hapus_pelanggan=<?php echo $value['id_pelanggan']; ?>"
-                                            class="btn btn-sm btn-danger">
-                                            <i class="fa fa-trash"></i>Hapus
-                                        </a>
+                                    <td>
+                                        <?php echo $value['alamat'] ?>
                                     </td>
                                 </tr>
 

@@ -36,6 +36,7 @@ $isipencarian = isset($_GET["keyword"]) ? $_GET["keyword"] : '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mlijo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/asset/img/logo.jpg">
     <!-- Custom fonts for this template-->
     <link href="/asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
@@ -56,16 +57,16 @@ $isipencarian = isset($_GET["keyword"]) ? $_GET["keyword"] : '';
         <div class="container">
             <!-- navbar brand start -->
             <div class="navbar-brand">
-                <a class="d-none d-lg-block mt-1" href="index.php">MLIJO</a>
-                <a class="d-sm-none mt-1" href="index.php">MLIJO</a>
+            <a class="d-none d-lg-block mt-1" href="index.php"><img src="/asset/img/logo mlijo.png" alt="" width="120" height="30"></a>
+                <a class="d-sm-none mt-1" href="index.php"><img src="/asset/img/logo mlijo.png" alt="" width="120" height="30"></a>
             </div>
             <!-- navbar brand end -->
             <!-- btn navbar start -->
             <div class="btn-navbar">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-search"></i>
-                </button>
+                </button> -->
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-list"></i>
@@ -115,9 +116,9 @@ $isipencarian = isset($_GET["keyword"]) ? $_GET["keyword"] : '';
                 </div> -->
                 <!-- btn search end -->
                 <!-- btn keranjang start -->
-                <div class="btn-keranjang">
+                <!-- <div class="btn-keranjang">
                     <a href="keranjang.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
-                </div>
+                </div> -->
                 <!-- btn keranjang end -->
             </div>
             <!-- navbar end -->
@@ -179,8 +180,8 @@ $isipencarian = isset($_GET["keyword"]) ? $_GET["keyword"] : '';
                     <div class=" row justify-content-center">
                         <nav aria-label="...">
                             <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link text-success" href="#">Previous</a>
+                                <li class="page-item">
+                                <button class="page-link" id="prevPage">&laquo; Previous</button>
                                 </li>
                                 <li class="page-item"><a class="page-link text-secondary" href="#">1</a></li>
                                 <li class="page-item " aria-current="page">
@@ -188,7 +189,7 @@ $isipencarian = isset($_GET["keyword"]) ? $_GET["keyword"] : '';
                                 </li>
                                 <li class="page-item"><a class="page-link text-secondary" href="#">3</a></li>
                                 <li class="page-item">
-                                    <a class="page-link text-success" href="#">Next</a>
+                                <button class="page-link" id="nextPage">Next &raquo;</button>
                                 </li>
                             </ul>
                         </nav>
@@ -255,26 +256,72 @@ $isipencarian = isset($_GET["keyword"]) ? $_GET["keyword"] : '';
 
 
     </script>
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const searchInputResult = document.getElementById('menerimadatadetail');
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var items = document.querySelectorAll('.product-item');
+        var itemsPerPage = 3;
+        var currentPage = 1;
 
-    // Contoh mendapatkan nilai dari elemen input saat terjadi perubahan
-    searchInputResult.addEventListener('input', function () {
-        const nilaiInput = searchInputResult.value;
+        function showPage(page) {
+            var startIndex = (page - 1) * itemsPerPage;
+            var endIndex = startIndex + itemsPerPage;
 
-        // Melakukan sesuatu dengan nilai yang diperoleh, misalnya mencetaknya ke konsol
-        console.log(nilaiInput);
+            items.forEach(function (item, index) {
+                if (index >= startIndex && index < endIndex) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function updatePagination() {
+            var pageCount = Math.ceil(items.length / itemsPerPage);
+            var pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            for (var i = 1; i <= pageCount; i++) {
+                var li = document.createElement('li');
+                li.className = 'page-item';
+                var a = document.createElement('a');
+                a.className = 'page-link';
+                a.href = '#';
+                a.textContent = i;
+                a.addEventListener('click', function () {
+                    currentPage = parseInt(this.textContent);
+                    showPage(currentPage);
+                    updatePagination();
+                });
+                li.appendChild(a);
+                pagination.appendChild(li);
+            }
+        }
+
+        function showNextPage() {
+            if (currentPage < Math.ceil(items.length / itemsPerPage)) {
+                currentPage++;
+                showPage(currentPage);
+                updatePagination();
+            }
+        }
+
+        function showPrevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                updatePagination();
+            }
+        }
+
+        document.getElementById('nextPage').addEventListener('click', showNextPage);
+        document.getElementById('prevPage').addEventListener('click', showPrevPage);
+
+        showPage(currentPage);
+        updatePagination();
     });
-
-    // ...
-    // (Script lain di sini)
-    // ...
-});
+</script>
 
 
-
-    </script>
 
 
 

@@ -35,8 +35,6 @@ ob_start();
                 <button name="pelanggan">Login</button>
                 <p>
                     <a href="register.php">Register</a>
-                </p>
-                <p>
                     <a href="lupapassword.php">Forgot</a>
                 </p>
             </form>

@@ -58,6 +58,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["pelanggan"])) {
     <link rel="stylesheet" href="style.css">
 </head>
 
+<style>
+  
+</style>
+
 <body>
     <div class="container">
         <div class="login">

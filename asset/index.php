@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mlijo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/asset/img/logo mlijo.png">
     <!-- Custom fonts for this template-->
     <link href="../asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
@@ -27,22 +28,22 @@
         <div class="container">
             <!-- navbar brand start -->
             <div class="navbar-brand">
-                <a class="d-none d-lg-block mt-1" href="index.php">MLIJO</a>
-                <a class="d-sm-none mt-1" href="index.php">MLIJO</a>
+                <a class="d-none d-lg-block mt-1" href="index.php" ><img src="/asset/img/logo.jpg" alt="" width="120" height="30"></a>
+                <a class="d-sm-none mt-1" href="index.php"><img src="/asset/img/logo mlijo.png" alt="" width="120" height="30"></a>
             </div>
             <!-- navbar brand end -->
             <!-- btn navbar start -->
             <div class="btn-navbar">
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-search"></i>
-                </button>
+                </button> -->
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-list"></i>
-                </button> -->
-                <!-- btn navbar end -->
-                <!-- navbar start -->
+                </button> 
+                <btn navbar end
+                 <!-- navbar start  -->
             </div>
             <div class="collapse navbar-collapse mt-1" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
@@ -109,7 +110,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>  -->
     <!-- owl carousel banner end -->
 
     <section class="carousel" id="home">
@@ -122,7 +123,7 @@
           <p class="display-6">Tersedia berbagai macam sayur yang selalu fresh dan terjamin mutunya</p>
           <!-- tombol -->
           <div class="button">
-            <a class="btn btn-outline-light" href="Menu.html" role="button">Lebih Lanjut</a>
+            <a class="btn btn-outline-light" href="/asset/produk.php" role="button">Lebih Lanjut</a>
           </div>
         </div>
       </div>
@@ -133,7 +134,7 @@
           <h1 class="display-1"><strong>BUAH-BUAHAN</strong></h1>
           <p class="display-6">Tersedia berbagai macam buah-buah dengan kualitas yang terbaik.</p>
           <div class="button">
-            <a class="btn btn-outline-light" href="Menu.html" role="button">Lebih Lanjut</a>
+            <a class="btn btn-outline-light" href="/asset/produk.php" role="button">Lebih Lanjut</a>
           </div>
         </div>
       </div>
@@ -144,7 +145,7 @@
           <h1 class="display-1"><strong>PAKET SAYUR</strong></h1>
           <p class="display-6">Dengan adanya paket sayur akan mempermudah anda untuk memasak sesuai keinginan anda</p>
           <div class="button">
-            <a class="btn btn-outline-light" href="Menu.html" role="button">Lebih Lanjut</a>
+            <a class="btn btn-outline-light" href="/asset/produk.php" role="button">Lebih Lanjut</a>
           </div>
         </div>
       </div>

@@ -25,5 +25,52 @@
         vertical-align: middle; /* Pusatkan teks secara vertikal */
         height: 100%; /* Sesuaikan tinggi agar tombol memiliki tinggi yang sesuai */
     }
+    .card.kategori {
+    margin-top: 20px;
+    border: 2px solid #4fbfa8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #4fbfa8;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav.kecil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav.kecil button {
+    background-color: #4fbfa8;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav.kecil button:hover {
+    background-color: #2980b9;
+}
+/* Aturan media query untuk responsif */
+@media (max-width: 767px) {
+    nav.kecil {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav.kecil button {
+        margin: 5px 0;
+    }
+}
+
 </style>
 

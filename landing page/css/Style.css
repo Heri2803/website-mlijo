@@ -140,7 +140,7 @@ body{
     box-sizing: 0 5px 15px -5px #00000070;
     overflow: hidden;
     position: relative;
-    color: #d35400;
+    color: rgb(5, 5, 5);
     font-size: 40px;
 }
 

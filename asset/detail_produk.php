@@ -23,6 +23,7 @@ if (isset($_POST["kirimproduk"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mlijo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/asset/img/logo.jpg">
     <!-- Custom fonts for this template-->
     <link href="/asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
@@ -43,16 +44,16 @@ if (isset($_POST["kirimproduk"])) {
         <div class="container">
             <!-- navbar brand start -->
             <div class="navbar-brand">
-                <a class="d-none d-lg-block mt-1" href="index.php">MLIJO</a>
-                <a class="d-sm-none mt-1" href="index.php">MLIJO</a>
+                <a class="d-none d-lg-block mt-1" href="index.php"><img src="/asset/img/logo mlijo.png" alt="" width="120" height="30"></a>
+                <a class="d-sm-none mt-1" href="index.php"><img src="/asset/img/logo mlijo.png" alt="" width="120" height="30"></a>
             </div>
             <!-- navbar brand end -->
             <!-- btn navbar start -->
             <div class="btn-navbar">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-search"></i>
-                </button>
+                </button> -->
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler"></span>
                     <i class="fas fa-list"></i>
@@ -79,16 +80,16 @@ if (isset($_POST["kirimproduk"])) {
                     </li> -->
                 </ul>
                 <!-- search start -->
-                <div class=" clearfix" id="search">
+                <!-- <div class=" clearfix" id="search">
                     <form action="produk.php" method="post" class="navbar-form">
                         <div class="input-group">
                             <input id="search-detail" type="search" name="keyword" class="form-control" placeholder="search" required>
-                            <!-- <span class="input-group-btn">
+                            <span class="input-group-btn">
                                 <button class="btn btn-primary" name="cari" value="search" type="submit"><i class="fas fa-search"></i></button>
-                            </span> -->
+                            </span>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <!-- seacrh end -->
                 <!-- btn search start -->
                 <!-- <div class="btn-search">
@@ -101,9 +102,9 @@ if (isset($_POST["kirimproduk"])) {
                 </div> -->
                 <!-- btn search end -->
                 <!-- btn keranjang start -->
-                <div class="btn-keranjang">
+                <!-- <div class="btn-keranjang">
                     <a href="keranjang.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
-                </div>
+                </div> -->
                 <!-- btn keranjang end -->
             </div>
             <!-- navbar end -->

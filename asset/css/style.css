@@ -281,9 +281,16 @@ body{
 @media(max-width: 991px){
     #terbaru .card-box{
         height: 60%;
+        position: relative;
     }
     #terbaru h2{
-        font-size: 24px;
+        font-size: 18px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        height: 100%;
+        margin: 0; /* Pastikan height 100% untuk memanjangkan tulisan */
     }
 }
 /* content produk style */
@@ -462,6 +469,8 @@ body{
     font-size: 16px;
 }
 
+
+
 /* keranjang style */
 @media(max-width: 991px){
     #content .keranjang h2{
@@ -519,6 +528,9 @@ body{
     margin-top: 15px;
 }
 #copyright .left span{
+    color: #3cb371;
+}
+#copyright .right span{
     color: #3cb371;
 }
 #copyright .right{
@@ -609,3 +621,41 @@ body{
     background-size: 100%;
   
 }
+
+/* Tampilan responsif untuk bagian carousel */
+@media (max-width: 767px) {
+    .carousel-item {
+      height: auto;
+    }
+  
+    .carousel-caption {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .carousel-item .display-1 {
+      font-size: 1.5rem;
+    }
+  
+    .carousel-item .display-6 {
+      font-size: 14px;
+    }
+  
+    .carousel-control-prev, .carousel-control-next {
+      display: none;
+    }
+  }
+  
+  /* Tampilan responsif untuk bagian box di about2 */
+@media (max-width: 767px) {
+    .box h4 {
+      font-size: 1.2rem;
+    }
+  
+    .box p {
+      font-size: 14px;
+    }
+  }
+
+  
+ 

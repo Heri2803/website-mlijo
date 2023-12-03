@@ -22,6 +22,7 @@ if (isset($_POST["lunas"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mlijo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/asset/img/logo.jpg">
     <!-- Custom fonts for this template-->
     <link href="/asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
@@ -72,9 +73,9 @@ if (isset($_POST["lunas"])) {
                                         <?php foreach ($tampil_keranjang as $row) : ?>
                                             <tr>
                                                 <td>
-                                                    <input type="text" value="<?= $row["id_keranjang"]; ?>" name="idkeranjang[]">
+                                                    <input type="text" value="<?= $row["id_keranjang"]; ?>" name="idkeranjang[]" hidden>
                                                     <a href="detail_produk.php?id=<?= $row["id_produk"]; ?>">
-                                                    <input type="text" value="<?= $row["id_produk"]; ?>" name="idproduk[]">
+                                                    <input type="text" value="<?= $row["id_produk"]; ?>" name="idproduk[]" hidden>
                                                         <img src="/asset/img/<?= $row["foto_produk"]; ?>" class="img-responsive" width="100">
                                                     </a>
                                                 </td>
@@ -108,7 +109,7 @@ if (isset($_POST["lunas"])) {
                                         <div class="card">
                                             <div class="card-body">
                                                 <?php foreach ($tampiltransaksi as $row) : ?>
-                                                    <input type="text" value="<?= $row["id_pembelian"]; ?>" name="id">
+                                                    <input type="text" value="<?= $row["id_pembelian"]; ?>" name="id" hidden>
                                                 <?php endforeach; ?>
                                                 <?php foreach ($tampil_pelanggan as $row) : ?>
                                                     <label for="">Nama :</label>

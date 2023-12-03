@@ -1,5 +1,14 @@
 <?php
-include('../../config/koneksi.php');
+$server = "localhost";
+$username = "root";
+$password = "";
+$db = "mlijo";
+
+// $server = "mifa.myhost.id";
+// $username = "mifamyho_mlijo";
+// $password = "WSImif2023";
+// $db = "mifamyho_mlijo";
+$koneksi = mysqli_connect($server, $username, $password, $db);
 
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
@@ -39,9 +48,17 @@ if (isset($_POST['update'])) {
         }
     }
 
+
     // Perbaiki query UPDATE dan jalankan langsung di $koneksi
     $query = "UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoName' WHERE id_admin='$id'";
     $result = $koneksi->query($query);
+
+    // $query = "UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoFileName' WHERE id_admin='$id'";
+
+    $query = ("UPDATE admin SET nama_lengkap='$fullname', username='$username', password='$password', email='$email', foto_admin='$fotoName' WHERE id_admin='$id'");
+    $result = mysqli_query($koneksi, $query);
+
+
 
     if ($result) {
         header('Location: ../index.php?admin');

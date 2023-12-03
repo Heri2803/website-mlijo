@@ -47,17 +47,6 @@ while ($pecah = $ambil->fetch_assoc()) {
                                         <button type="button" name="edit" class="btn btn-primary btn-sm" data-toggle="modal"
                                             data-target="#editModal<?= $value['id_produk'] ?>"><i class="fa fa-edit"></i>
                                             Edit</button>
-                                        <!-- <a type="button" name="edit" class="btn btn-sm btn-primary mb-3 ml-3"
-                                            data-toggle="modal" data-target="#editModal" style="color: white;"
-                                            onclick="edit(<?= json_encode($value); ?>)">
-                                            <i class="fa fa-edit"></i> Edit
-                                        </a> -->
-
-                                        <!-- Tombol Detail
-                                        <a href="index.php?detail_produk=<?php echo $value['id_produk']; ?>"
-                                            class="btn btn-sm btn-info">
-                                            <i class="fa fa-edit"></i> Detail
-                                        </a> -->
 
                                         <!-- Tombol Hapus -->
                                         <a href="index.php?hapus_produk=<?php echo $value['id_produk']; ?>"

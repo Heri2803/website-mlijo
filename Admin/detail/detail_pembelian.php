@@ -8,6 +8,10 @@
     on pembelian.id_pelanggan=pelanggan.id_pelanggan where pembelian.id_pembelian='$id_pembelian'");
 
     $detail = $ambil->fetch_assoc();
+
+    $result = $koneksi->query("select * from ongkir");
+
+    $detail1 = $result->fetch_assoc();
     ?>
 
 
@@ -87,9 +91,15 @@
                                 <table class="table">
                                     <tr>
                                         <th>Alamat</th>
+                                        <td>
+                                            <?php echo $detail['alamat']; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Ongkir</th>
+                                        <td>
+                                            <?php echo $detail1['tarif']; ?>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>

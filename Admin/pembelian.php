@@ -1,22 +1,15 @@
+<?php
+$data = array();
+$ambil = $koneksi->query("SELECT pembelian.*, pelanggan.nama_pelanggan FROM pembelian LEFT JOIN pelanggan ON pembelian.id_pelanggan = pelanggan.id_pelanggan");
+
+while ($pecah = $ambil->fetch_assoc()) {
+    $data[] = $pecah;
+    // var_dump($pecah);
+}
+
+?>
+
 <div class="animated fadeIn">
-
-
-    <?php
-    $peembelian = array();
-    $ambil = $koneksi->query("SELECT pembelian.*, pelanggan.nama_pelanggan
-    FROM pembelian
-    LEFT JOIN pelanggan ON pembelian.id_pelanggan = pelanggan.id_pelanggan");
-
-
-    // $ambil = $koneksi->query("select * from pembelian");
-    
-    while ($pecah = $ambil->fetch_assoc()) {
-        $peembelian[] = $pecah;
-    }
-
-
-    ?>
-
     <div class="row">
         <div class="col-md-12 mt-3">
             <div class="card">
@@ -36,37 +29,34 @@
                             </tr>
                         </thead>
                         <tbody>
-
-                            <?php foreach ($peembelian as $key => $value): ?>
-
+                            <?php foreach ($data as $key => $value): ?>
                                 <tr>
-                                    <td width="50">
-                                        <?php echo $key + 1 ?>
+                                    <td>
+                                        <?= $key + 1; ?>
                                     </td>
-                                    <td width="170">
-                                        <?php echo $value['nama_pelanggan']; ?>
+                                    <td>
+                                        <?= $value['nama_pelanggan']; ?>
                                     </td>
-                                    <td width="150">
-                                        <?php echo date("d F Y", strtotime($value['tanggal_pembelian'])); ?>
+                                    <td>
+                                        <?= $value['tanggal_pembelian']; ?>
                                     </td>
-                                    <td width="150">
-                                        Rp
-                                        <?php echo number_format($value['total_pembelian']); ?>
+                                    <td>
+                                        <?= $value['total_pembelian']; ?>
                                     </td>
-
-                                    <td width="150">
-                                        <?php echo $value['status_pembayaran']; ?>
+                                    <td>
+                                        <?= $value['status_pembayaran']; ?>
                                     </td>
-
-                                    <td class="text center" width="200">
+                                    <td class="text center">
                                         <a href="index.php?detail_pembelian=<?php echo $value['id_pembelian']; ?>"
                                             class="btn btn-sm btn-info">
-                                            <i class="fa fa-edit"></i>Detail Pembelian
+                                            <i class=""></i>Detail
                                         </a>
+                                        <?php if ($value['status_pembayaran'] == 'Sedang Proses' || $value['status_pembayaran'] == 'barang dikirim'):?>
+                                            <button type="button" name="detail" class="btn btn-sm btn-success"
+                                                data-toggle="modal" data-target="#detailModal<?= $value['id_pembelian']; ?>">
+                                                Lihat Bukti</button>
+                                        <?php endif; ?>
                                     </td>
-                                </tr>
-
-
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -74,7 +64,75 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
+
+<?php foreach ($data as $key => $value): ?>
+    <div class="modal fade" id="detailModal<?= $value['id_pembelian']; ?>" tabindex="-1" role="dialog"
+        aria-labelledby="mediumModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document" style="margin-left: 30%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="card-header py-3">
+                        <strong class="card-title">Halaman Pembayaran</strong>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="card shadow bg-white">
+                        <div class="card-body row">
+                            <div class="col-md-8">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Nama</th>
+                                            <td>
+                                                <?= $value['nama_pelanggan']; ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Jumlah</th>
+                                            <td>
+                                                <?= $value['total_pembelian']; ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tanggal</th>
+                                            <td>
+                                                <?= $value['tanggal_pembelian']; ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                            <img src="/../../asset/img/<?= $value['Bukti_pembayaran']; ?>" width="250" class="img-thumbnail img-responsive">
+
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <!-- <form method="post"> -->
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Status</label>
+                                    <div class="col-sm-9">
+                                        <form action="/Admin/edit/edit_status.php" method="POST">
+                                            <input type="text" name="id" value="<?= $value['id_pembelian']; ?>" hidden>
+                                            <select name="status" class="form-control">
+                                                <option selected disabled>Pilih Status</option>
+                                                <option value="barang dikirim">Barang dikirim</option>
+                                                <option value="pengiriman dibatalkan">Pengiriman dibatalkan</option>
+                                            </select>
+                                    </div>
+                                </div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" name="simpan" class="btn btn-primary">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>

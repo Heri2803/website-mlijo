@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lobster&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="/landing page/assets/mlijo.png">
-  <title>Mlijo.com</title>
+  <title>Mlijo</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-          <a class="nav-link" href="/landing page/Menu.php">Menu</a>
+          <a class="nav-link" href="/landing page/Menu.php">Product</a>
           <a class="nav-link" href="/landing page/Contact.php">Contact</a>
           <a class="nav-link" href="/login user/index.php" type="submit">Login</a>
 

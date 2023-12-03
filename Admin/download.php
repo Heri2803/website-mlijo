@@ -1,13 +1,13 @@
 <?php
-// $server = "localhost";
-// $username = "root";
-// $password = "";
-// $db = "mlijo";
+$server = "localhost";
+$username = "root";
+$password = "";
+$db = "mlijo";
 
-$server = "mifa.myhost.id";
-$username = "mifamyho_mlijo";
-$password = "WSImif2023";
-$db = "mifamyho_mlijo";
+// $server = "mifa.myhost.id";
+// $username = "mifamyho_mlijo";
+// $password = "WSImif2023";
+// $db = "mifamyho_mlijo";
 $koneksi = mysqli_connect($server, $username, $password, $db);
 
 // memanggil library FPDF
@@ -41,13 +41,14 @@ foreach ($result as $key => $data) {
     $pdf->Cell(10, 6, $no++, 1, 0, 'C');
     $pdf->Cell(50, 6, $data['nama_pelanggan'], 1, 0);
     $pdf->Cell(75, 6, $data['tanggal_pembelian'], 1, 0);
-    $pdf->Cell(55, 6, number_format($data['total_pembelian']), 1, 1);
+    $pdf->Cell(55, 6, isset($data['total_pembelian']) ? number_format($data['total_pembelian']) : '', 1, 1);
 }
 
 foreach ($result1 as $key => $data) {
     $pdf->Cell(135, 6, 'TOTAL', 1, 0, );
-    $pdf->Cell(55, 6, number_format($data['totalPembelian']), 1, 1, );
+    $pdf->Cell(55, 6, isset($data['totalPembelian']) ? number_format($data['totalPembelian']) : '', 1, 1, );
 }
+
 // $data = mysqli_query($koneksi, "SELECT  * FROM tbl_karyawan");
 // while ($d = mysqli_fetch_array($data)) {
 //     $pdf->Cell(10, 6, $no++, 1, 0, 'C');
