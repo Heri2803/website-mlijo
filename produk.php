@@ -259,7 +259,7 @@ $isipencarian = isset($_GET["keyword"]) ? $_GET["keyword"] : '';
    <script>
     document.addEventListener("DOMContentLoaded", function () {
         var items = document.querySelectorAll('.product-item');
-        var itemsPerPage = 6;
+        var itemsPerPage = 3;
         var currentPage = 1;
 
         function showPage(page) {

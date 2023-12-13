@@ -24,12 +24,12 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Email</th>
-
                                  <th>Telepon</th>
                                 <th>Foto</th>
-                                <th>Opsi</th>
+                                <th>Alamat</th>
+                               
 
-                                <th>Telepon</th>
+                            
                               
 
                             </tr>
@@ -44,21 +44,18 @@
                                     <td width="150">
                                         <?php echo $value['nama_pelanggan']; ?>
                                     </td>
-                                    <td width="200">
+                                    <td >
                                         <?php echo $value['email_pelanggan']; ?>
                                     </td>
-                                    <td width="130">
+                                    <td width="170">
                                         <?php echo $value['telepon_pelanggan']; ?>
                                     </td>
 
-                                    <td>
+                                    <td width="270">
                                     <img src="/../../asset/img/<?php echo $value['foto_pelanggan']; ?>" alt="">
-
-                                    <td width="200">
-                                        <?php echo $value['foto_pelanggan'] ?>
-
                                     </td>
-                                    <td>
+
+                                    <td width="150">
                                         <?php echo $value['alamat'] ?>
                                     </td>
                                 </tr>

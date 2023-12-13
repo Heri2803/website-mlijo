@@ -1,13 +1,13 @@
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$db = "mlijo";
+// $server = "localhost";
+// $username = "root";
+// $password = "";
+// $db = "mlijo";
 
-// $server = "mifa.myhost.id";
-// $username = "mifamyho_mlijo";
-// $password = "WSImif2023";
-// $db = "mifamyho_mlijo";
+$server = "mifa.myhost.id";
+$username = "mifamyho_mlijo";
+$password = "WSImif2023";
+$db = "mifamyho_mlijo";
 $koneksi = mysqli_connect($server, $username, $password, $db);
 
 if (isset($_POST['update'])) {

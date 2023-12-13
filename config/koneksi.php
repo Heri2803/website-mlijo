@@ -1,4 +1,6 @@
 <?php
+
+
 // $server = "mifa.myhost.id";
 // $username = "mifamyho_mlijo";
 // $password = "WSImif2023";
@@ -207,8 +209,7 @@ function perbarui($data){
 
     $nama = $data["nama"];
     $email = $data["email"];
-    $telepon = $data["telepon"];
-    $password = $data["password"];
+    $telepon = $data["telpon"];
     $addres = $data["alamat"];
     
   
@@ -216,12 +217,18 @@ $tambah = tambah();
   if (!$tambah) {
     return false;
   }
-  $query = "UPDATE `pelanggan` SET `email_pelanggan` = '$email', `password_pelanggan` = '$password', `telepon_pelanggan` = '$telepon', `nama_pelanggan` = '$nama', `foto_pelanggan` = '$tambah', `alamat` = '$addres' WHERE `pelanggan`.`id_pelanggan` = 2;";
+  $query = "UPDATE `pelanggan` SET 
+        `email_pelanggan` = '$email', 
+        `telepon_pelanggan` = '$telepon', 
+        `nama_pelanggan` = '$nama', 
+        `foto_pelanggan` = '$tambah', 
+        `alamat` = '$addres' 
+        WHERE `pelanggan`.`id_pelanggan` = " . $_SESSION['id_pelanggan'];
 
   mysqli_query($koneksi, $query);
 
   return mysqli_affected_rows($koneksi);
-  
+
 }
 
 //upload foto 

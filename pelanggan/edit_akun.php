@@ -15,7 +15,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Telephone : </label>
         <div class="col-sm-9">
-            <input type="number" name="telpon" class="form-control" value="<?php echo isset($_SESSION['tlpn']) ? $_SESSION['tlpn'] : ''; ?>">
+            <input type="text" name="telpon" class="form-control" value="<?php echo isset($_SESSION['tlpn']) ? $_SESSION['tlpn'] : ''; ?>">
         </div>
     </div>
 
@@ -49,7 +49,13 @@ if (session_status() == PHP_SESSION_NONE) {
 require('../config/koneksi.php');
 
 if (isset($_POST["update"])) {
+    $_SESSION['tlpn'] =  $_POST['telpon'];
+    $id_pelanggan1 = $_SESSION['id_pelanggan'];
+
+$caripelanggan1 = query("SELECT * FROM `pelanggan` WHERE pelanggan.id_pelanggan=$id_pelanggan1;");
+$_SESSION['foto_pelanggab'] = $caripelanggan1[0]['foto_pelanggan'];
     if (perbarui($_POST) > 0) {
+
         echo "<script>location='profil.php';</script>";
     }
 }

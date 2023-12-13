@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -193,8 +194,8 @@ session_start();
         </div>
     </div>
 
-    <!-- footer start -->
-    <?php include '/laragon/www/ProjectMlijo/Mlijo/asset/includes/footer.php' ?>
+   <!-- footer start -->
+   <?php include 'includes/footer.php' ?>
     <!-- footer End -->
 
 
